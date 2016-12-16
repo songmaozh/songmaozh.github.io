@@ -4,10 +4,10 @@ date: 2016-12-15 14:49:37
 tags:
 ---
 ## ~ function($) {}($) 
-
+```python
 var fn = function(opt){};
 fn($);
-
+```
 ## $this和$(this)
 // this其实是一个Html 元素。
 // $this 只是个变量名，加$是为说明其是个jquery对象。
@@ -16,13 +16,15 @@ fn($);
 ## return this.each(function () {})
 因为each返回的也是this对象，所以直接return this.each可以执行你的相关操作，还可以保持链式调用功能
 因为this.each保证了遍历完成才执行下一个操作，否则迭代是延迟执行的，前面的插件并没有实际执行。
+```python
 jQuery.fn.test2= function(){ 
    this.css("background","#ff0");//这里面的this为jquery对象，而不是dom对象 
    return this.each(function(){ //遍历匹配的元素，此处的this表示为jquery对象，而不是dom对象 
-          alert("this"+this+this.innerHTML); //提示当前对象的dom节点名称,这里的this关键字都指向一个不同的DOM元素（每次都是一个不同的匹配元素）。 
-          }); 
-
+    alert("this"+this+this.innerHTML); 
+    //提示当前对象的dom节点名称,这里的this关键字都指向一个不同的DOM元素（每次都是一个不同的匹配元素）。 
+     }); 
 };
+```
 this.css(),this.each（）里面的this为jquery对象，但是alert里面this为dom对象.
 为什么要return this.each()
 先return this.each(),后调用each（）方法，而each（）方法返回jQuery对象，所以这样就可以继续链式操作了。
@@ -59,32 +61,31 @@ apply方法：
 如果没有提供 argArray 和 thisObj 任何一个参数，那么 Global 对象将被用作 thisObj， 并且无法被传递任何参数。 
 
 
-复制代码
+```python
   
     <script language="javascript"><!--
    
     /**定义一个animal类*/  
     function Animal(){   
-        this.name = "Animal";   
-        this.showName = function(){   
-            alert(this.name);   
-        }   
+    this.name = "Animal";   
+    this.showName = function(){   
+    alert(this.name);   
+    }   
     }   
     /**定义一个Cat类*/  
     function Cat(){   
-        this.name = "Cat";   
+    this.name = "Cat";   
     }   
-      
+  
     /**创建两个类对象*/  
     var animal = new Animal();   
     var cat = new Cat();   
-      
+  
     //通过call或apply方法，将原本属于Animal对象的showName()方法交给当前对象cat来使用了。   
     //输入结果为"Cat"   
     animal.showName.call(cat,",");   
     //animal.showName.apply(cat,[]);   
-        
       
     
 // --></script> 
-复制代码
+```

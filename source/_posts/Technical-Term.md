@@ -3,6 +3,8 @@ title: Technical Term
 date: 2016-12-14 09:10:25
 tags:
 ---
+
+
 ###模块规范
 
 * CommonJS - 规范了js在任何地方运行，不限于浏览器中，定义的模块为模块引用（require）、模块定义（exports）、模块标识（module）,NodeJs就是基于CommonJs做了一些取舍和补充的重要应用。
@@ -14,3 +16,6 @@ tags:
 * flexible - 灵活
 * unbiased - 无偏
 * extensible - 可扩展的
+* framework - 框架
+ 
+ 
