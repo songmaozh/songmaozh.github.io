@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>js自执行函数 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="js自执行函数的几种不同写法的比较
+经常需要一个函数自执行，可惜这一种写法是错的：复制代码 代码如下:1function()&amp;#123;alert(1);&amp;#125;();
+原因是前半段“function(){alert(1);}”被当成了函数声明，而不是一个函数表达式，从而让后面的“();”变得孤立，产生语法错。 
+按上面的分析，这一段代码虽说没有语法错，但也是不符合我们的预期的，因为这个函数并">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js自执行函数">
+<meta property="og:url" content="http://yoursite.com/2016/12/15/js自执行函数/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="js自执行函数的几种不同写法的比较
+经常需要一个函数自执行，可惜这一种写法是错的：复制代码 代码如下:1function()&amp;#123;alert(1);&amp;#125;();
+原因是前半段“function(){alert(1);}”被当成了函数声明，而不是一个函数表达式，从而让后面的“();”变得孤立，产生语法错。 
+按上面的分析，这一段代码虽说没有语法错，但也是不符合我们的预期的，因为这个函数并">
+<meta property="og:updated_time" content="2016-12-16T08:01:44.510Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="js自执行函数">
+<meta name="twitter:description" content="js自执行函数的几种不同写法的比较
+经常需要一个函数自执行，可惜这一种写法是错的：复制代码 代码如下:1function()&amp;#123;alert(1);&amp;#125;();
+原因是前半段“function(){alert(1);}”被当成了函数声明，而不是一个函数表达式，从而让后面的“();”变得孤立，产生语法错。 
+按上面的分析，这一段代码虽说没有语法错，但也是不符合我们的预期的，因为这个函数并">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-js自执行函数" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/12/15/js自执行函数/" class="article-date">
+  <time datetime="2016-12-15T06:59:19.000Z" itemprop="datePublished">2016-12-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      js自执行函数
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>js自执行函数的几种不同写法的比较</p>
+<p>经常需要一个函数自执行，可惜这一种写法是错的：<br>复制代码 代码如下:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">function()&#123;alert(<span class="number">1</span>);&#125;();</div></pre></td></tr></table></figure></p>
+<p>原因是前半段“function(){alert(1);}”被当成了函数声明，而不是一个函数表达式，从而让后面的“();”变得孤立，产生语法错。 </p>
+<p>按上面的分析，这一段代码虽说没有语法错，但也是不符合我们的预期的，因为这个函数并没有自执行。<br>复制代码 代码如下:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">function()&#123;alert(<span class="number">1</span>);&#125;(<span class="number">1</span>);</div></pre></td></tr></table></figure>
+<p>综上，症结在于，如何明确代码描述的是一个函数表达式，而不是函数声明语句。<br>正确的写法多种多样，也各有利弊： </p>
+<p>方法1：最前最后加括号 </p>
+<p>复制代码 代码如下:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(function()&#123;alert(<span class="number">1</span>);&#125;());</div></pre></td></tr></table></figure></p>
+<p>这是jslint推荐的写法，好处是，能提醒阅读代码的人，这段代码是一个整体。<br>例如，在有语法高亮匹配功能的编辑器里，光标在第一个左括号后时，最后一个右括号也会高亮，看代码的人一眼就可以看到这个整体。<br>不过，对于某些写代码不喜欢在行后加分号的同学，也会形成一些坑坑，例如以下代码会报运行错：<br>复制代码 代码如下:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var a=<span class="number">1</span> </div><div class="line">(function()&#123;alert(<span class="number">1</span>);&#125;());</div></pre></td></tr></table></figure></p>
+<p>方法2：function外面加括号 </p>
+<p>复制代码 代码如下:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(function()&#123;alert(<span class="number">1</span>);&#125;)();</div></pre></td></tr></table></figure></p>
+<p>这种做法比方法1少了一个代码整体性的好处。 </p>
+<p>方法3：function前面加运算符，常见的是!与void 。<br>复制代码 代码如下:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">!function()&#123;alert(<span class="number">1</span>);&#125;(); </div><div class="line">void function()&#123;alert(<span class="number">2</span>);&#125;();</div></pre></td></tr></table></figure></p>
+<p>显然，加上“!”或“+”等运算符，写起来是最简单的。<br>加上“void ”要敲五下键盘，但是听说有一个好处是，比加”!”少一次逻辑运算。—-我只是听说，不明所以。 </p>
+<p>最后，代表我个人，强烈支持方法1,即jslint的推荐写法：<br>复制代码 代码如下:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(function()&#123;alert(<span class="number">1</span>);&#125;());</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/12/15/js自执行函数/" data-id="cixr541ra0000nojortdssdq6" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/12/15/Jquery简写/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">Jquery简写</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/12/15/js自执行函数/">js自执行函数</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/15/Jquery简写/">Jquery简写</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/15/Namespace/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/14/Technical-Term/">Technical Term</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/13/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
