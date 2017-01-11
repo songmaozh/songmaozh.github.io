@@ -206,7 +206,7 @@ public class HelloController {
 
 ## URL中的变量——PathVariable
 
-在Web应用中URL通常不是一成不变的，例如微博两个不同用户的个人主页对应两个不同的URL:http://weibo.com/user1，http://weibo.com/user2。我们不可能对于每一个用户都编写一个被@RequestMapping注解的方法来处理其请求，Spring MVC提供了一套机制来处理这种情况：
+在Web应用中URL通常不是一成不变的，例如微博两个不同用户的个人主页对应两个不同的URL:http://weibo.com/user1，http://weibo.com/user2。 我们不可能对于每一个用户都编写一个被@RequestMapping注解的方法来处理其请求，Spring MVC提供了一套机制来处理这种情况：
 ```python
  @RequestMapping("/users/{username}")
 public String userProfile(@PathVariable("username") String username) {
