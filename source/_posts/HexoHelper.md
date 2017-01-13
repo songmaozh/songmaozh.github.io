@@ -15,3 +15,8 @@ git push origin hexo提交网站相关的文件；
 
 # 创建新文件
 hexo new "filename"
+
+# 图片链接
+```python
+![image](http://images2015.cnblogs.com/blog/33454/201607/33454-20160722105819779-322820644.png)
+```

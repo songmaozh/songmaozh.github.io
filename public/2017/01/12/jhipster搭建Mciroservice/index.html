@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>jhipster搭建Mciroservice | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="简介jhipster简单来说是一个基于nodejs+yeoman的java代码生成器。往大了说是基于java的一套微服务解决方案。请注意是一整套的微服务解决方案。jhipster在整个程序架构上都做好了整合，包括前端mvvm框架（angularjs），前端构建工具（gulp）到后端的微服务框架（spring cloud）和hibernate/mongodb，再到单元测试/ui测试。毫不客气的说 ：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jhipster搭建Mciroservice">
+<meta property="og:url" content="http://yoursite.com/2017/01/12/jhipster搭建Mciroservice/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="简介jhipster简单来说是一个基于nodejs+yeoman的java代码生成器。往大了说是基于java的一套微服务解决方案。请注意是一整套的微服务解决方案。jhipster在整个程序架构上都做好了整合，包括前端mvvm框架（angularjs），前端构建工具（gulp）到后端的微服务框架（spring cloud）和hibernate/mongodb，再到单元测试/ui测试。毫不客气的说 ：">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/33454/201607/33454-20160722105819779-322820644.png">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/33454/201607/33454-20160722105802779-429391766.png">
+<meta property="og:updated_time" content="2017-01-13T02:03:54.138Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="jhipster搭建Mciroservice">
+<meta name="twitter:description" content="简介jhipster简单来说是一个基于nodejs+yeoman的java代码生成器。往大了说是基于java的一套微服务解决方案。请注意是一整套的微服务解决方案。jhipster在整个程序架构上都做好了整合，包括前端mvvm框架（angularjs），前端构建工具（gulp）到后端的微服务框架（spring cloud）和hibernate/mongodb，再到单元测试/ui测试。毫不客气的说 ：">
+<meta name="twitter:image" content="http://images2015.cnblogs.com/blog/33454/201607/33454-20160722105819779-322820644.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-jhipster搭建Mciroservice" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/01/12/jhipster搭建Mciroservice/" class="article-date">
+  <time datetime="2017-01-12T05:41:34.000Z" itemprop="datePublished">2017-01-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      jhipster搭建Mciroservice
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>简介<br>jhipster简单来说是一个基于nodejs+yeoman的java代码生成器。往大了说是基于java的一套微服务解决方案。请注意是一整套的微服务解决方案。jhipster在整个程序架构上都做好了整合，包括前端mvvm框架（angularjs），前端构建工具（gulp）到后端的微服务框架（spring cloud）和hibernate/mongodb，再到单元测试/ui测试。<br>毫不客气的说 ：学会了这套框架，你就是程序开发/程序架构界的潮男。对,hipster的意思就是：追求新奇的人。</p>
+<p>demo<br>下面跟着我来一步一步的来见证奇迹。</p>
+<p>1.安装nodejs。</p>
+<p>2.安装yeoman/bower/gulp npm install -g yo bower gulp-cli</p>
+<p>3.安装jhipster npm install -g generator-jhipster</p>
+<p>是不是被gfw艹翻了？哈哈哈</p>
+<h2 id="生成单机服务app"><a href="#生成单机服务app" class="headerlink" title="生成单机服务app"></a>生成单机服务app</h2><p>cd到你想存放代码的路径，然后运行：yo jhipster<br>第一个选择很重要，项目类型要选择第一个，单机服务<br>后面的根据实际情况，选择就可以。失败了也没关系，删掉文件夹重新来过。</p>
+<p>——生成成功后运行<br>./mvnw 或者gradlew下载依赖包。<br>./mvnw (on Mac OS X/Linux) of mvnw (on Windows)</p>
+<h2 id="生成mciroservice-app"><a href="#生成mciroservice-app" class="headerlink" title="生成mciroservice app"></a>生成mciroservice app</h2><p>生成基础架构</p>
+<p>cd到你想存放代码的路径，然后运行：yo jhipster</p>
+<p>这时候jhipster向导就会启动了,如图：<br><img src="http://images2015.cnblogs.com/blog/33454/201607/33454-20160722105819779-322820644.png" alt="image"></p>
+<p>第一个选择很重要，项目类型要选择microservice application<br>后面的根据实际情况，选择就可以。失败了也没关系，删掉文件夹重新来过。</p>
+<p>——生成成功后运行 ./mvnw 或者gradlew下载依赖包。</p>
+<p>jhipster是可以生成实体和实体的增删改查带分页的</p>
+<p>运行yo jhipster:entity <entityname>来启动实体生成向导。</entityname></p>
+<p>然后跟着向导输入信息。</p>
+<h2 id="生成microservie-gateway"><a href="#生成microservie-gateway" class="headerlink" title="生成microservie gateway"></a>生成microservie gateway</h2><p>生成基础架构</p>
+<p>继续运行：yo jhipster<br>第一个选择很重要，项目类型要选择*microservice gateway</p>
+<p>这个时候如果还被gfw折磨，你应该考虑ss或者vpn了。</p>
+<p>生成实体</p>
+<p>运行yo jhipster:entity <entityname>来启动实体生成向导。</entityname></p>
+<p>然后跟着向导输入信息。</p>
+<p>此处需要注意：</p>
+<p>1.询问是否选择存在的app时 选择是</p>
+<p>2.<entityname>需要时在app中生成过的</entityname></p>
+<h2 id="运行-jhipster-registry"><a href="#运行-jhipster-registry" class="headerlink" title="运行 jhipster registry"></a>运行 jhipster registry</h2><p>jhipster registry是一个基于spring cloud的配置中心，jhipster的微服务架构依赖此程序。</p>
+<p>1 从github下载源码<a href="https://github.com/jhipster/jhipster-registry" target="_blank" rel="external">https://github.com/jhipster/jhipster-registry</a></p>
+<p>2 cd 到解压目录 然后运行 ./mvnw或者gradlew 启动应用</p>
+<p>浏览器地址：<a href="http://127.0.0.1:8761/" target="_blank" rel="external">http://127.0.0.1:8761/</a>.<br>效果如图<br><img src="http://images2015.cnblogs.com/blog/33454/201607/33454-20160722105802779-429391766.png" alt="image"><br>默认用户名：密码  admin:admin</p>
+<p>这个时候就可以启动app和gateway了。</p>
+<p>cd到刚才存放microservice app的目录 运行./</p>
+<p>cd到刚才存放microservice gateway的目录 运行./mvnw</p>
+<p>然后打开浏览器见证奇迹</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/01/12/jhipster搭建Mciroservice/" data-id="cixvdnvbd00090cjoubb04add" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/01/13/Microservice/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Microservice
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/01/12/AngularJS/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">AngularJS</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/01/13/Microservice/">Microservice</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/12/jhipster搭建Mciroservice/">jhipster搭建Mciroservice</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/12/AngularJS/">AngularJS</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/12/Html-标签/">Html 标签</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/10/SpringBoot-Help/">SpringBoot Help</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
