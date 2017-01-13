@@ -17,5 +17,6 @@ tags:
 * unbiased - 无偏
 * extensible - 可扩展的
 * framework - 框架
+* Monolithic - [ˌmɒnə'lɪθɪk]整体的,独块巨石的
  
- 
+###概念
