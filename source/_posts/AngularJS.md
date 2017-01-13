@@ -5,7 +5,7 @@ tags:
 ---
 
 angular -  ng关键字缩写
-AngularJS 是一个 JavaScript 框架。它可通过 <script> 标签添加到 HTML 页面。
+AngularJS 是一个 JavaScript 框架。它可通过 script 标签添加到 HTML 页面。
 AngularJS 通过 指令 扩展了 HTML，且通过 表达式 绑定数据到 HTML。
 AngularJS 是一个 JavaScript 框架
 AngularJS 是一个 JavaScript 框架。它是一个以 JavaScript 编写的库。
@@ -13,8 +13,9 @@ AngularJS 是以一个 JavaScript 文件形式发布的，可通过 script 标�
 
 ```python
 <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js">
-</scrip t  >
+</script>
 ```
+
 各个 angular.js 版本下载： https://github.com/angular/angular.js/releases
 AngularJS 扩展了 HTML
 AngularJS 通过 ng-directives 扩展了 HTML。
@@ -22,6 +23,7 @@ ng-app 指令定义一个 AngularJS 应用程序。
 ng-model 指令把元素值（比如输入域的值）绑定到应用程序。
 ng-bind 指令把应用程序数据绑定到 HTML 视图。
 AngularJS 实例
+
 ```python
 <!DOCTYPE html>
 <html>
@@ -39,6 +41,7 @@ AngularJS 实例
 </body>
 </html>
 ```
+
 实例讲解：
 当网页加载完毕，AngularJS 自动开启。
 ng-app 指令告诉 AngularJS，<div> 元素是 AngularJS 应用程序 的"所有者"。
