@@ -57,3 +57,21 @@ class说明是一个类，class=“active”本身这句是html代码，如果�
 
 Angular-UI-Router里的指令ui-sref-active 查看当前激活状态并设置 Class
 <li ui-sref-active="active"><a ui-sref="about">About</a></li>
+
+上一篇中讲到使用$http同服务器进行通信，但是功能上比较简单，AngularJS还提供了另外一个可选的服务$resource,使用它可以非常方便的同支持restful的服务单进行数据交互。
+
+五种默认行为：
+
+{
+
+　　“get”:{method:“get”},
+
+　　“save”:{method:“post”}
+
+　　“query”:{method:“get”,isArray:true}
+
+　　“remove”:{method:“delete”}
+
+　　“delete”:{method:“delete”}
+
+}
