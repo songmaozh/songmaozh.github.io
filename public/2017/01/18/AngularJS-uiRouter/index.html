@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>AngularJS uiRouter | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="angular的uiRouter服务学习(5) — $state.includes()方法
+$state.includes方法用于判断当前激活状态是否是指定的状态或者是指定状态的子状态.
+$state.includes(stateOrName,params,options)
+$state.includes方法接受三个参数,其中第二和第三个都不知道是干啥的…估计也不太用得到,就暂时不管了…
+stat">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AngularJS uiRouter">
+<meta property="og:url" content="http://yoursite.com/2017/01/18/AngularJS-uiRouter/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="angular的uiRouter服务学习(5) — $state.includes()方法
+$state.includes方法用于判断当前激活状态是否是指定的状态或者是指定状态的子状态.
+$state.includes(stateOrName,params,options)
+$state.includes方法接受三个参数,其中第二和第三个都不知道是干啥的…估计也不太用得到,就暂时不管了…
+stat">
+<meta property="og:updated_time" content="2017-01-18T09:58:33.698Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AngularJS uiRouter">
+<meta name="twitter:description" content="angular的uiRouter服务学习(5) — $state.includes()方法
+$state.includes方法用于判断当前激活状态是否是指定的状态或者是指定状态的子状态.
+$state.includes(stateOrName,params,options)
+$state.includes方法接受三个参数,其中第二和第三个都不知道是干啥的…估计也不太用得到,就暂时不管了…
+stat">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-AngularJS-uiRouter" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/01/18/AngularJS-uiRouter/" class="article-date">
+  <time datetime="2017-01-18T01:37:22.000Z" itemprop="datePublished">2017-01-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      AngularJS uiRouter
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>angular的uiRouter服务学习(5) — $state.includes()方法</p>
+<p>$state.includes方法用于判断当前激活状态是否是指定的状态或者是指定状态的子状态.</p>
+<p>$state.includes(stateOrName,params,options)</p>
+<p>$state.includes方法接受三个参数,其中第二和第三个都不知道是干啥的…估计也不太用得到,就暂时不管了…</p>
+<p>stateOrName:字符串(必填). 是一个状态的名字.</p>
+<p>比如当前的激活状态是 “contacts.details.item” </p>
+<p>如下调用:</p>
+<p>$state.includes(“contacts”);                              //返回true<br>$state.includes(“contacts.details”);                      //返回true<br>$state.includes(“contacts.details.item”);                 //返回true<br>$state.includes(“detail”);                                //返回undefined<br>$state.includes(“item”);                                  //返回undefined<br>也可以使用glob语法:</p>
+<p>复制代码<br>$state.$current.name = ‘contacts.details.item.url’;</p>
+<p>$state.includes(“<em>.details.</em>.<em>“); // returns true<br>$state.includes(“</em>.details.<strong>“); // returns true<br>$state.includes(“</strong>.item.<strong>“); // returns true<br>$state.includes(“<em>.details.item.url”); // returns true<br>$state.includes(“</em>.details.<em>.url”); // returns true<br>$state.includes(“</em>.details.*”); // returns undefined<br>$state.includes(“item.</strong>“); // returns undefined<br>复制代码<br>可以用于激活某个tab,让当前项高亮显示:</p>
+<li ng-class="{active:state.includes('dashboard.report')}"><a ui-sref="dashboard.report">Reports</a></li><br>需要注意的是,在表达式里直接用$state是不行的,需要在控制器中把$state赋值给$scope下的变量.这样在表达式里才能使用:<br><br>复制代码<br>    $stateProvider.state(‘dashboard’,{<br>        url:’/dashboard’,<br>        templateUrl:’./tpls/dashboard.html’,<br>        controller:function($scope,$state){<br>            $scope.state = $state;<br>        }<br>    })<br>复制代码<br><br><br>ng-class是增加相关样式，可以和class同时使用<br><br>class说明是一个类，class=“active”本身这句是html代码，如果在css里设置样式应该在类名前加个点，如.active{}，从经验看，active这个类一般用在导航条中当前高亮的栏目，或者选项卡中当前活动着的选项<br><br>Angular-UI-Router里的指令ui-sref-active 查看当前激活状态并设置 Class<br><li ui-sref-active="active"><a ui-sref="about">About</a></li>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/01/18/AngularJS-uiRouter/" data-id="ciy2supz70000bgjo8u8zi48j" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/01/18/css小记录/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          css小记录
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/01/17/我在AngularJS的曲折路/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">我在AngularJS的曲折路</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/01/18/css小记录/">css小记录</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/18/AngularJS-uiRouter/">AngularJS uiRouter</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/17/我在AngularJS的曲折路/">我在AngularJS的曲折路</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/17/angular-translate/">angular-translate</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/16/UI-Bootstrap/">UI-Bootstrap</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
