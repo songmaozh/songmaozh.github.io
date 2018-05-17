@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>我在AngularJS的曲折路 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="新手单枪匹马闯AngularJS之路，走过的每个弯路，遇到的每个难题，都是汗和泪，再次记录下来，共勉。
+1.实现AngularJS的国际化问题的时候，按照网上的步骤进行配置Angular-translate，进行了translate配置，切换控制器，设置支持JSON文件的多语过滤器。
+多语文件目录 webapp/i18n/cn.json  webapp/i18n/cn.json
+lang.tran">
+<meta property="og:type" content="article">
+<meta property="og:title" content="我在AngularJS的曲折路">
+<meta property="og:url" content="http://yoursite.com/2017/01/17/我在AngularJS的曲折路/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="新手单枪匹马闯AngularJS之路，走过的每个弯路，遇到的每个难题，都是汗和泪，再次记录下来，共勉。
+1.实现AngularJS的国际化问题的时候，按照网上的步骤进行配置Angular-translate，进行了translate配置，切换控制器，设置支持JSON文件的多语过滤器。
+多语文件目录 webapp/i18n/cn.json  webapp/i18n/cn.json
+lang.tran">
+<meta property="og:updated_time" content="2018-05-16T09:03:16.183Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="我在AngularJS的曲折路">
+<meta name="twitter:description" content="新手单枪匹马闯AngularJS之路，走过的每个弯路，遇到的每个难题，都是汗和泪，再次记录下来，共勉。
+1.实现AngularJS的国际化问题的时候，按照网上的步骤进行配置Angular-translate，进行了translate配置，切换控制器，设置支持JSON文件的多语过滤器。
+多语文件目录 webapp/i18n/cn.json  webapp/i18n/cn.json
+lang.tran">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-我在AngularJS的曲折路" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/01/17/我在AngularJS的曲折路/" class="article-date">
+  <time datetime="2017-01-17T07:18:55.000Z" itemprop="datePublished">2017-01-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      我在AngularJS的曲折路
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>新手单枪匹马闯AngularJS之路，走过的每个弯路，遇到的每个难题，都是汗和泪，再次记录下来，共勉。</p>
+<p>1.实现AngularJS的国际化问题的时候，按照网上的步骤进行配置Angular-translate，进行了translate配置，切换控制器，设置支持JSON文件的多语过滤器。</p>
+<p>多语文件目录 webapp/i18n/cn.json  webapp/i18n/cn.json</p>
+<p>lang.translate.js 配置translateConfig<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">(function() &#123;</div><div class="line">    <span class="string">'use strict'</span>;</div><div class="line"></div><div class="line">    angular</div><div class="line">        .module(<span class="string">'jhipsterApp'</span>, [<span class="string">'pascalprecht.translate'</span>])</div><div class="line">        .config(translateConfig);</div><div class="line"></div><div class="line">    translateConfig.$inject = [<span class="string">'$translateProvider'</span>];</div><div class="line"></div><div class="line">    function translateConfig($translateProvider) &#123;</div><div class="line">        var lang = window.localStorage.lang || <span class="string">'cn'</span>;</div><div class="line">        $translateProvider.preferredLanguage(lang);</div><div class="line">        $translateProvider.useStaticFilesLoader(&#123;</div><div class="line">            prefix: <span class="string">'/i18n/'</span>,</div><div class="line">            suffix: <span class="string">'.json'</span></div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line">&#125;)();</div></pre></td></tr></table></figure></p>
+<p>lang.controller.js配置控制器<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">(function() &#123;</div><div class="line">    <span class="string">'use strict'</span>;</div><div class="line"></div><div class="line">    angular</div><div class="line">        .module(<span class="string">'jhipsterApp'</span>)</div><div class="line">        .controller(<span class="string">'LanguageSwitchingCtrl'</span>, LanguageSwitchingCtrl);</div><div class="line"></div><div class="line">    LanguageSwitchingCtrl.$inject = [<span class="string">'$scope'</span>, <span class="string">'$translate'</span>];</div><div class="line"></div><div class="line">    function LanguageSwitchingCtrl($scope, $translate) &#123;</div><div class="line">        var vm = this;</div><div class="line">        $scope.switching = function(lang) &#123;</div><div class="line">            $translate.use(lang);</div><div class="line">            window.localStorage.lang = lang;</div><div class="line">            window.location.reload();</div><div class="line">        &#125;;</div><div class="line">        // $scope.cur_lang = $translate.use();</div><div class="line">        // vm.cur_lang = $translate.use();</div><div class="line">        vm.cur_lang = <span class="string">"cn"</span>;</div><div class="line">        $translate.use(<span class="string">"cn"</span>);</div><div class="line">        $scope.cur_lang = <span class="string">"cn"</span>;</div><div class="line">        window.localStorage.lang = <span class="string">"cn"</span>;</div><div class="line">    &#125;</div><div class="line">&#125;)();</div></pre></td></tr></table></figure></p>
+<p>T.js配置过滤器<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">(function() &#123;</div><div class="line">	<span class="string">'use strict'</span>;</div><div class="line"></div><div class="line">	angular</div><div class="line">		.module(<span class="string">'jhipsterApp'</span>)</div><div class="line">		.filter(<span class="string">'T'</span>,T);</div><div class="line">		</div><div class="line">	T.$inject = [<span class="string">'$translate'</span>];</div><div class="line"></div><div class="line">	function T($translate) &#123;</div><div class="line">		<span class="keyword">return</span> function(key) &#123;</div><div class="line">			<span class="keyword">if</span> (key) &#123;</div><div class="line">				<span class="keyword">return</span> $translate.instant(key);</div><div class="line">			&#125;</div><div class="line">		&#125;;</div><div class="line">	&#125;</div><div class="line">&#125;)();</div></pre></td></tr></table></figure></p>
+<p>app.module.js这是原来的APP初始化方法<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">(function() &#123;</div><div class="line">    <span class="string">'use strict'</span>;</div><div class="line">    angular</div><div class="line">        .module(<span class="string">'jhipsterApp'</span>, [</div><div class="line">            <span class="string">'ngStorage'</span>,</div><div class="line">            <span class="string">'ngResource'</span>,</div><div class="line">            <span class="string">'ngCookies'</span>,</div><div class="line">            <span class="string">'ngAria'</span>,</div><div class="line">            <span class="string">'ngCacheBuster'</span>,</div><div class="line">            <span class="string">'ngFileUpload'</span>,</div><div class="line">            <span class="string">'ui.bootstrap'</span>,</div><div class="line">            <span class="string">'ui.bootstrap.datetimepicker'</span>,</div><div class="line">            <span class="string">'ui.router'</span>,</div><div class="line">            <span class="string">'infinite-scroll'</span>,</div><div class="line">            // jhipster-needle-angularjs-add-module JHipster will add new module here</div><div class="line">            <span class="string">'angular-loading-bar'</span>,</div><div class="line">        ])</div><div class="line">        .run(run);</div><div class="line"></div><div class="line">    run.$inject = [<span class="string">'stateHandler'</span>];</div><div class="line"></div><div class="line">    function run(stateHandler) &#123;</div><div class="line">        stateHandler.initialize();</div><div class="line">    &#125;</div><div class="line">&#125;)();</div></pre></td></tr></table></figure></p>
+<p>index.html中引入顺序<br>原引入</p>
+<script src="app/app.module.js"></script>
+
+<p>新引入</p>
+<p><script src="app/lang/lang.translate.js"></script></p>
+<p><script src="app/lang/lang.controller.js"></script></p>
+<p><script src="app/services/lang/T.js"></script><br>发现新引入后置于app/app.module.js前后效果都不同，置于后面，app.module.js不能顺利执行，置于最前面，引入的模块不能生效，折磨了很久，加了N个技术群，查了N多资料，重新看了模块和注入依赖的内容，还是找不到根源。终于在长达6小时的折磨后，我猛然发现了问题。<br>lang.translate.js 中<br>angular.module(‘jhipsterApp’, [‘pascalprecht.translate’])<br>        .config(translateConfig);<br>这种写法是进行模块的配置，与app.module中 angular<br>        .module(‘jhipsterApp’, [<br>            ‘ngStorage’,<br>            ‘ngResource’,<br>            ‘ngCookies’,<br>            ‘ngAria’,<br>            ‘ngCacheBuster’,<br>            ‘ngFileUpload’,<br>            ‘ui.bootstrap’,<br>            ‘ui.bootstrap.datetimepicker’,<br>            ‘ui.router’,<br>            ‘infinite-scroll’,<br>            // jhipster-needle-angularjs-add-module JHipster will add new module here<br>            ‘angular-loading-bar’,<br>        ])有冲突！都在进行模块配置生成模块实例，会发生错误，导致后续的链式操作不能正常执行。</p>
+<p>修改如下：<br>app.module.js<br> angular<br>        .module(‘jhipsterApp’, [<br>            ‘ngStorage’,<br>            ‘ngResource’,<br>            ‘ngCookies’,<br>            ‘ngAria’,<br>            ‘ngCacheBuster’,<br>            ‘ngFileUpload’,<br>            ‘ui.bootstrap’,<br>            ‘ui.bootstrap.datetimepicker’,<br>            ‘ui.router’,<br>            ‘infinite-scroll’,<br>            // jhipster-needle-angularjs-add-module JHipster will add new module here<br>            ‘angular-loading-bar’,<br>            ‘pascalprecht.translate’<br>        ])<br>        .run(run);<br>lang.translate.js<br> angular<br>        .module(‘jhipsterApp’)<br>        .config(translateConfig);</p>
+<p>测试成功，很感动，6个多小时的反复查看，就是基本概念没有掌握，这个弯路走的很深刻。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/01/17/我在AngularJS的曲折路/" data-id="cjh9xenez000hhpff3uvhro65" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/01/18/AngularJS-uiRouter/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          AngularJS uiRouter
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/01/17/angular-translate/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">angular-translate</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/05/16/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/19/Webflow配置文件分析/">Webflow配置文件分析</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/19/AngularJS供应商/">AngularJS供应商</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/18/css小记录/">css小记录</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/18/AngularJS-uiRouter/">AngularJS uiRouter</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Webflow配置文件分析 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Webflow配置文件分析在WEB-INF文件夹下的login-webflow.xml是登陆流程的主要配置文件。在该文件中，定义了用户登录的整个处理流程。首先，配置文件中的 on-start标签定义了用户第一次进入流程中的预处理动作。该标签对应spring中的id为initialFlowSetupAction的bean。查看该bean（InitialFlowSetupAction）的代码。该类需要">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Webflow配置文件分析">
+<meta property="og:url" content="http://yoursite.com/2017/01/19/Webflow配置文件分析/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Webflow配置文件分析在WEB-INF文件夹下的login-webflow.xml是登陆流程的主要配置文件。在该文件中，定义了用户登录的整个处理流程。首先，配置文件中的 on-start标签定义了用户第一次进入流程中的预处理动作。该标签对应spring中的id为initialFlowSetupAction的bean。查看该bean（InitialFlowSetupAction）的代码。该类需要">
+<meta property="og:updated_time" content="2018-05-16T09:03:16.182Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Webflow配置文件分析">
+<meta name="twitter:description" content="Webflow配置文件分析在WEB-INF文件夹下的login-webflow.xml是登陆流程的主要配置文件。在该文件中，定义了用户登录的整个处理流程。首先，配置文件中的 on-start标签定义了用户第一次进入流程中的预处理动作。该标签对应spring中的id为initialFlowSetupAction的bean。查看该bean（InitialFlowSetupAction）的代码。该类需要">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Webflow配置文件分析" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/01/19/Webflow配置文件分析/" class="article-date">
+  <time datetime="2017-01-19T07:38:31.000Z" itemprop="datePublished">2017-01-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Webflow配置文件分析
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Webflow配置文件分析<br>在WEB-INF文件夹下的login-webflow.xml是登陆流程的主要配置文件。在该文件中，定义了用户登录的整个处理流程。<br>首先，配置文件中的 on-start标签定义了用户第一次进入流程中的预处理动作。该标签对应spring中的id为initialFlowSetupAction的bean。查看该bean（InitialFlowSetupAction）的代码。该类需要继承自AbstractAction，AbstractAction方法是org.springframework.webflow.action包中的类。是webflow中的基础类。该类中的doExecute方法是对应处理业务的方法。就犹如servlet中的service方法一样。该方法的参数是RequestContext对象，该参数是一个流程的容器。该方法从request中获取TGT，并且构建一个临时的service对象（不同域注册的service，详情见接入系统管理）。并且，将TGT和service放在FlowScope作用域中。<br>流程的初始化完毕之后，就开始一系列的判断了。也就是进入decision-state节点。这些节点是依次执行的。<br><!-- 检查flow中是否存在TGT如果存在，存在进入hasServiceCheck,为空进入gatewayRequestCheck --><br>    <decision-state id="ticketGrantingTicketExistsCheck"><br>       <if test="flowScope.ticketGrantingTicketId neq null" then="hasServiceCheck" else="gatewayRequestCheck"><br>    </if></decision-state></p>
+<pre><code>&lt;!-- 主要是CS结构使用gatewat,暂时不研究 --&gt;
+&lt;decision-state id=&quot;gatewayRequestCheck&quot;&gt;
+   &lt;if test=&quot;externalContext.requestParameterMap[&apos;gateway&apos;] neq &apos;&apos; &amp;amp;&amp;amp; externalContext.requestParameterMap[&apos;gateway&apos;] neq null &amp;amp;&amp;amp; flowScope.service neq null&quot; then=&quot;gatewayServicesManagementCheck&quot; else=&quot;viewLoginForm&quot; /&gt;
+&lt;/decision-state&gt;
+
+&lt;!-- 存在TGT，说明用户已经登陆,测试flow中service是否为空，不为空，进入renewRequestCheck，为空，进入viewGenericLoginSuccess --&gt;
+&lt;decision-state id=&quot;hasServiceCheck&quot;&gt;
+   &lt;if test=&quot;flowScope.service != null&quot; then=&quot;renewRequestCheck&quot; else=&quot;viewGenericLoginSuccess&quot; /&gt;
+&lt;/decision-state&gt;
+&lt;!--
+   用户已经登陆，且请求参数中存在service 判断请求中是否存在&apos;renew&apos;参数，如果renew参数为空或者没有内容，那么，进入viewLoginForm，否则进入generateServiceTicket
+   renew参数和gateway参数不兼容。renew参数将绕过单点登录。也就是说即使用户登录了，还将要求用户登录。(等你妹啊，人家都登录了，凭什么还要让人家再登录一次)
+ --&gt;
+&lt;decision-state id=&quot;renewRequestCheck&quot;&gt;
+   &lt;if test=&quot;externalContext.requestParameterMap[&apos;renew&apos;] neq &apos;&apos; &amp;amp;&amp;amp; externalContext.requestParameterMap[&apos;renew&apos;] neq null&quot; then=&quot;viewLoginForm&quot; else=&quot;generateServiceTicket&quot; /&gt;
+&lt;/decision-state&gt;
+
+&lt;decision-state id=&quot;warn&quot;&gt;
+   &lt;if test=&quot;flowScope.warnCookieValue&quot; then=&quot;showWarningView&quot; else=&quot;redirect&quot; /&gt;
+&lt;/decision-state&gt;
+</code></pre><p>对应的dicision-state走完之后，如果不存在TGT，其实就会进入voiwLoginForm节点。该节点是一个view-state类型的，这也就是说明该节点是一个页面，view=“casLoginView”属性定义了该view对应的页面是“casLoginView”。这个视图会被spring的视图解析器解析成/WEB-INF/view/jsp/default/ui/casLoginView.jsp页面。用户这时候就能看到一个登陆界面了。<br>需要注意的是，用户看到的登录界面中，会有hidden类型的一个lt参数：</p>
+<p><input type="hidden" name="lt" value="${flowExecutionKey}"><br>该参数可以理解成每个需要登录的用户都有一个流水号。只有有了webflow发放的有效的流水号，用户才可以说明是已经进入了webflow流程。否则，没有流水号的情况下，webflow会认为用户还没有进入webflow流程，从而会重新进入一次webflow流程，从而会重新出现登录界面。</p>
+<p>用户点击登录之后，提交到realSubmit节点。该节点执行的是authenticationViaFormAction.submit方法，在该方法中，将会验证用户的认证信息是否正确。验证成功之后，跳转到sendTicketGrantingTicket,在这里，将生成TGT，然后，进入serviceCheck，在serviceCheck中，将会验证flowScope作用域中是否存在service，如果存在，则进入generateServiceTicket，否则进入登录成功页面。在generateServiceTicket中，也将生成ST，同时检查是否有警告信息，然后进行重定向到用户最开始请求的地址。<br>至此，springMVC与webflow整合以及登录整个流程已经讲解完毕。</p>
+<p>login-webflow.xml</p>
+<p><view-state id="viewLoginForm" view="casLoginView" model="credential"><br>        <binder><br>            <!-- 增加惠商云企业账号登录 --><br>            <binding property="tenantCode" required="true"><br>            <binding property="username" required="true"><br>            <binding property="md5Password" required="true"><br>            <binding property="shaPassword" required="true"><br>            <binding property="sysid" required="true"><br>            <binding property="verify_code" required="true"><br>            <binding property="isAutoLogin" required="true"><br>            <binding property="tokeninfo" required="true"><br>            <binding property="openid" required="true"><br>            <binding property="tenantid" required="true"><br>            <binding property="service" required="true"></binding></binding></binding></binding></binding></binding></binding></binding></binding></binding></binding></binder></view-state></p>
+<pre><code>        &lt;binding property=&quot;newpass&quot; required=&quot;true&quot;/&gt; &lt;!-- 修改的新的用户名--&gt;
+        &lt;binding property=&quot;randomvalue&quot; required=&quot;true&quot;/&gt;  
+    &lt;/binder&gt;
+    &lt;on-entry&gt;
+        &lt;set name=&quot;viewScope.commandName&quot; value=&quot;&apos;credential&apos;&quot;/&gt;
+
+        &lt;!--
+        &lt;evaluate expression=&quot;samlMetadataUIParserAction&quot; /&gt;
+        --&gt;
+    &lt;/on-entry&gt;
+    &lt;transition on=&quot;submit&quot; bind=&quot;true&quot; validate=&quot;true&quot; to=&quot;realSubmit&quot;/&gt;
+
+    &lt;transition on=&quot;modifyPW&quot; bind=&quot;true&quot; validate=&quot;true&quot; to=&quot;modifyPWSubmit&quot;/&gt;
+&lt;/view-state&gt;
+</code></pre><p>casLoginView.jsp</p>
+<pre><code> &lt;% String sysid =  request.getParameter(&quot;sysid&quot;)  ;
+String verify_code = request.getParameter(&quot;verify_code&quot;)  ; 
+String service= request.getParameter(&quot;service&quot;)  ;  //客户端服务的 地
+String openid = request.getParameter(&quot;openid&quot;)  ;
+</code></pre><p>%&gt;</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/01/19/Webflow配置文件分析/" data-id="cjh9xenev000chpffckbl4uje" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/05/16/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/01/19/AngularJS供应商/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">AngularJS供应商</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/05/16/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/19/Webflow配置文件分析/">Webflow配置文件分析</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/19/AngularJS供应商/">AngularJS供应商</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/18/css小记录/">css小记录</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/18/AngularJS-uiRouter/">AngularJS uiRouter</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

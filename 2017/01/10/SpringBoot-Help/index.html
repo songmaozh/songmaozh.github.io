@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>SpringBoot Help | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Spring Boot MVC使用Spring Boot你可以像使用标准的Java库文件一样使用Spring Boot。简单的将需要的 spring-boot-*.jar 添加到classpath即可。 Spring Boot不要求任何特殊的工具集成，所以可以使用任何IDE，甚至文本编辑器。
+只是，仍然建议使用build工具：Maven 或 Gradle。
+Spring Boot依赖 使用 org">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SpringBoot Help">
+<meta property="og:url" content="http://yoursite.com/2017/01/10/SpringBoot-Help/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Spring Boot MVC使用Spring Boot你可以像使用标准的Java库文件一样使用Spring Boot。简单的将需要的 spring-boot-*.jar 添加到classpath即可。 Spring Boot不要求任何特殊的工具集成，所以可以使用任何IDE，甚至文本编辑器。
+只是，仍然建议使用build工具：Maven 或 Gradle。
+Spring Boot依赖 使用 org">
+<meta property="og:updated_time" content="2018-05-16T09:03:16.181Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SpringBoot Help">
+<meta name="twitter:description" content="Spring Boot MVC使用Spring Boot你可以像使用标准的Java库文件一样使用Spring Boot。简单的将需要的 spring-boot-*.jar 添加到classpath即可。 Spring Boot不要求任何特殊的工具集成，所以可以使用任何IDE，甚至文本编辑器。
+只是，仍然建议使用build工具：Maven 或 Gradle。
+Spring Boot依赖 使用 org">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-SpringBoot-Help" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/01/10/SpringBoot-Help/" class="article-date">
+  <time datetime="2017-01-10T06:39:17.000Z" itemprop="datePublished">2017-01-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      SpringBoot Help
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Spring-Boot-MVC"><a href="#Spring-Boot-MVC" class="headerlink" title="Spring Boot MVC"></a>Spring Boot MVC</h1><h2 id="使用Spring-Boot"><a href="#使用Spring-Boot" class="headerlink" title="使用Spring Boot"></a>使用Spring Boot</h2><p>你可以像使用标准的Java库文件一样使用Spring Boot。简单的将需要的 spring-boot-*.jar 添加到classpath即可。<br> Spring Boot不要求任何特殊的工具集成，所以可以使用任何IDE，甚至文本编辑器。</p>
+<p>只是，仍然建议使用build工具：Maven 或 Gradle。</p>
+<pre><code>Spring Boot依赖 使用 org.springframework.boot groupId 。
+通常，让你的Maven POM文件继承 spring-boot-starter-parent，并声明一个或多个 Starter POMs依赖即可。Spring Boot也提供了一个可选的 Maven Plugin来创建可执行的jars。 
+</code></pre><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">    &lt;parent&gt;</div><div class="line">    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</div><div class="line">    &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;</div><div class="line">    &lt;version&gt;1.4.3.RELEASE&lt;/version&gt;</div><div class="line">&lt;/parent&gt;</div><div class="line">&lt;dependencies&gt;</div><div class="line">    &lt;dependency&gt;</div><div class="line">        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</div><div class="line">        &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;</div><div class="line">    &lt;/dependency&gt;</div><div class="line">&lt;/dependencies&gt;</div></pre></td></tr></table></figure>
+<h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><p>一个称手的文本编辑器（例如Vim、Emacs、Sublime Text）或者IDE（Eclipse、Idea Intellij）<br>Java环境（JDK 1.7或以上版本）<br>Maven 3.0+（Eclipse和Idea IntelliJ内置，如果使用IDE并且不使用命令行工具可以不安装）<br>一个最简单的Web应用</p>
+<h2 id="pom配置依赖"><a href="#pom配置依赖" class="headerlink" title="pom配置依赖"></a>pom配置依赖</h2><p>使用Spring Boot框架可以大大加速Web应用的开发过程，首先在Maven项目依赖中引入spring-boot-starter-web：</p>
+<p>pom.xml</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</div><div class="line">&lt;project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"</div><div class="line">    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"&gt;</div><div class="line">    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</div><div class="line">    &lt;groupId&gt;org.springframework&lt;/groupId&gt;</div><div class="line">    &lt;artifactId&gt;gs-maven&lt;/artifactId&gt;</div><div class="line">    &lt;packaging&gt;jar&lt;/packaging&gt;</div><div class="line">    &lt;version&gt;0.1.0&lt;/version&gt;</div><div class="line"></div><div class="line">    &lt;parent&gt;</div><div class="line">        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</div><div class="line">        &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;</div><div class="line">        &lt;version&gt;1.4.3.RELEASE&lt;/version&gt;</div><div class="line">    &lt;/parent&gt;</div><div class="line">    &lt;dependencies&gt;</div><div class="line">    &lt;dependency&gt;</div><div class="line">        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</div><div class="line">        &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;</div><div class="line">    &lt;/dependency&gt;</div><div class="line">    &lt;dependency&gt;</div><div class="line">        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</div><div class="line">        &lt;artifactId&gt;spring-boot-devtools&lt;/artifactId&gt;</div><div class="line">        &lt;optional&gt;true&lt;/optional&gt;</div><div class="line">    &lt;/dependency&gt;</div><div class="line"></div><div class="line">    &lt;dependency&gt;</div><div class="line">        &lt;groupId&gt;com.fasterxml.jackson.core&lt;/groupId&gt;</div><div class="line">        &lt;artifactId&gt;jackson-databind&lt;/artifactId&gt;</div><div class="line">        &lt;version&gt;2.7.0&lt;/version&gt;</div><div class="line">        &lt;/dependency&gt;</div><div class="line">    &lt;dependency&gt;</div><div class="line">        &lt;groupId&gt;com.fasterxml.jackson.core&lt;/groupId&gt;</div><div class="line">        &lt;artifactId&gt;jackson-annotations&lt;/artifactId&gt;</div><div class="line">        &lt;version&gt;2.7.0&lt;/version&gt;</div><div class="line">    &lt;/dependency&gt;</div><div class="line">    &lt;/dependencies&gt;</div><div class="line"></div><div class="line">    &lt;build&gt;</div><div class="line">        &lt;plugins&gt;</div><div class="line">            &lt;plugin&gt;</div><div class="line">                &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</div><div class="line">                &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;</div><div class="line">                &lt;configuration&gt;</div><div class="line">                    &lt;fork&gt;true&lt;/fork&gt;</div><div class="line">                &lt;/configuration&gt;</div><div class="line">            &lt;/plugin&gt;</div><div class="line">        &lt;/plugins&gt;</div><div class="line"> </div><div class="line">    &lt;/build&gt;</div><div class="line"></div><div class="line"></div><div class="line">&lt;/project&gt;</div></pre></td></tr></table></figure>
+<h2 id="Controller-含main方法"><a href="#Controller-含main方法" class="headerlink" title="Controller 含main方法"></a>Controller 含main方法</h2><p>SampleController.java<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line">package hello;</div><div class="line"></div><div class="line">import org.springframework.boot.*;</div><div class="line">import org.springframework.boot.autoconfigure.*;</div><div class="line">import org.springframework.stereotype.*;</div><div class="line">import org.springframework.web.bind.annotation.*;</div><div class="line">import org.springframework.ui.Model;</div><div class="line">import org.springframework.context.annotation.ComponentScan;</div><div class="line"></div><div class="line">@RestController</div><div class="line">@Controller</div><div class="line">@ComponentScan</div><div class="line">@EnableAutoConfiguration</div><div class="line"></div><div class="line"></div><div class="line">// @Configuration  </div><div class="line">// @ComponentScan  </div><div class="line">public class SampleController &#123;</div><div class="line"></div><div class="line">    @RequestMapping("/")</div><div class="line">    @ResponseBody</div><div class="line">    String home() &#123;</div><div class="line">        return "Hello World222!";</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @RequestMapping("/hello")</div><div class="line">    public String hello() &#123;</div><div class="line">        return "Hello World!";</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @RequestMapping("/index")</div><div class="line">    public String index(Model model)&#123;</div><div class="line"> </div><div class="line">        model.addAttribute("name","Ryan");</div><div class="line"> </div><div class="line">        return "index";</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public static void main(String[] args) throws Exception &#123;</div><div class="line">        SpringApplication.run(SampleController.class, args);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="Controller-不含main-的rest风格"><a href="#Controller-不含main-的rest风格" class="headerlink" title="Controller 不含main 的rest风格"></a>Controller 不含main 的rest风格</h2><p>HelloController.java</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">package hello;</div><div class="line"> </div><div class="line">import org.springframework.boot.*;</div><div class="line">import org.springframework.boot.autoconfigure.*;</div><div class="line">import org.springframework.stereotype.*;</div><div class="line">import org.springframework.web.bind.annotation.*;</div><div class="line">import org.springframework.ui.Model; </div><div class="line">import java.util.HashMap;</div><div class="line">import java.util.Map;</div><div class="line"> </div><div class="line">/**</div><div class="line"> * Created by miaorf on 2016/6/19.</div><div class="line"> */</div><div class="line">@Controller</div><div class="line">@RestController</div><div class="line">@RequestMapping("/hello")</div><div class="line">public class HelloController &#123;</div><div class="line"> </div><div class="line">    @RequestMapping("/index")</div><div class="line">    public String index(Model model)&#123;</div><div class="line"> </div><div class="line">        model.addAttribute("name","Ryan");</div><div class="line"> </div><div class="line">        return "index";</div><div class="line">    &#125;</div><div class="line"> </div><div class="line"> </div><div class="line">    @RequestMapping("/json")</div><div class="line">    @ResponseBody</div><div class="line">    public Map&lt;String,Object&gt; json()&#123;</div><div class="line">        Map&lt;String,Object&gt; map = new HashMap&lt;String,Object&gt;();</div><div class="line">        map.put("name","Ryan");</div><div class="line">        map.put("age","18");</div><div class="line">        map.put("sex","man");</div><div class="line">        return map;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="运行应用：mvn-spring-boot-run或在IDE中运行main-方法，在浏览器中访问http-localhost-8080"><a href="#运行应用：mvn-spring-boot-run或在IDE中运行main-方法，在浏览器中访问http-localhost-8080" class="headerlink" title="运行应用：mvn spring-boot:run或在IDE中运行main()方法，在浏览器中访问http://localhost:8080"></a>运行应用：mvn spring-boot:run或在IDE中运行main()方法，在浏览器中访问<a href="http://localhost:8080" target="_blank" rel="external">http://localhost:8080</a></h2><h2 id="简单分析"><a href="#简单分析" class="headerlink" title="简单分析"></a>简单分析</h2><p>我们从程序的入口SpringApplication.run(Application.class, args);开始分析：</p>
+<ul>
+<li><p>SpringApplication是Spring Boot框架中描述Spring应用的类，它的run()方法会创建一个Spring应用上下文（Application Context）。另一方面它会扫描当前应用类路径上的依赖，例如本例中发现spring-webmvc（由 spring-boot-starter-web传递引入）在类路径中，那么Spring Boot会判断这是一个Web应用，并启动一个内嵌的Servlet容器（默认是Tomcat）用于处理HTTP请求。</p>
+</li>
+<li><p>Spring WebMvc框架会将Servlet容器里收到的HTTP请求根据路径分发给对应的@Controller类进行处理，@RestController是一类特殊的@Controller，它的返回值直接作为HTTP Response的Body部分返回给浏览器。</p>
+</li>
+<li><p>@RequestMapping注解表明该方法处理那些URL对应的HTTP请求，也就是我们常说的URL路由（routing)，请求的分发工作是有Spring完成的。例如上面的代码中<a href="http://localhost:8080/" target="_blank" rel="external">http://localhost:8080/</a> 根路径就被路由至greeting()方法进行处理。如果访问<a href="http://localhost:8080/hello" target="_blank" rel="external">http://localhost:8080/hello</a> ，则会出现404 Not Found错误，因为我们并没有编写任何方法来处理/hello请求。</p>
+</li>
+<li><p>例如HelloController中，method方法匹配的URL是/classPath/methodPath”。</p>
+<p>提示</p>
+</li>
+</ul>
+<p>可以定义多个@Controller将不同URL的处理方法分散在不同的类中</p>
+<h2 id="URL中的变量——PathVariable"><a href="#URL中的变量——PathVariable" class="headerlink" title="URL中的变量——PathVariable"></a>URL中的变量——PathVariable</h2><p>在Web应用中URL通常不是一成不变的，例如微博两个不同用户的个人主页对应两个不同的URL:<a href="http://weibo.com/user1，http://weibo.com/user2。" target="_blank" rel="external">http://weibo.com/user1，http://weibo.com/user2。</a> 我们不可能对于每一个用户都编写一个被@RequestMapping注解的方法来处理其请求，Spring MVC提供了一套机制来处理这种情况：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta"> @RequestMapping("/users/&#123;username&#125;")</span></div><div class="line">public String userProfile(@PathVariable(<span class="string">"username"</span>) String username) &#123;</div><div class="line">    <span class="keyword">return</span> String.format(<span class="string">"user %s"</span>, username);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="meta">@RequestMapping("/posts/&#123;id&#125;")</span></div><div class="line">public String post(@PathVariable(<span class="string">"id"</span>) int id) &#123;</div><div class="line">    <span class="keyword">return</span> String.format(<span class="string">"post %d"</span>, id);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>在上述例子中，URL中的变量可以用{variableName}来表示，同时在方法的参数中加上@PathVariable(“variableName”)，那么当请求被转发给该方法处理时，对应的URL中的变量会被自动赋值给被@PathVariable注解的参数（能够自动根据参数类型赋值，例如上例中的int）。</p>
+<p>支持HTTP方法</p>
+<p>对于HTTP请求除了其URL，还需要注意它的方法（Method）。例如我们在浏览器中访问一个页面通常是GET方法，而表单的提交一般是POST方法。@Controller中的方法同样需要对其进行区分：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta"> @RequestMapping(value = "/login", method = RequestMethod.GET)</span></div><div class="line">public String loginGet() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="string">"Login Page"</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="meta">@RequestMapping(value = "/login", method = RequestMethod.POST)</span></div><div class="line">public String loginPost() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="string">"Login Post Request"</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="模板渲染"><a href="#模板渲染" class="headerlink" title="模板渲染"></a>模板渲染</h2><p>在之前所有的@RequestMapping注解的方法中，返回值字符串都被直接传送到浏览器端并显示给用户。但是为了能够呈现更加丰富、美观的页面，我们需要将HTML代码返回给浏览器，浏览器再进行页面的渲染、显示。</p>
+<p>一种很直观的方法是在处理请求的方法中，直接返回HTML代码，但是这样做的问题在于——一个复杂的页面HTML代码往往也非常复杂，并且嵌入在Java代码中十分不利于维护。更好的做法是将页面的HTML代码写在模板文件中，渲染后再返回给用户。为了能够进行模板渲染，需要将@RestController改成@Controller：<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"> import org.springframework.ui.Model;</div><div class="line"></div><div class="line">@Controller</div><div class="line">public class HelloController &#123;</div><div class="line"></div><div class="line">    @RequestMapping("/hello/&#123;name&#125;")</div><div class="line">    public String hello(@PathVariable("name") String name, Model model) &#123;</div><div class="line">        model.addAttribute("name", name);</div><div class="line">        return "hello"</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>在上述例子中，返回值”hello”并非直接将字符串返回给浏览器，而是寻找名字为hello的模板进行渲染，我们使用Thymeleaf模板引擎进行模板渲染，需要引入依赖：<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"> &lt;dependency&gt;</div><div class="line">  &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</div><div class="line">  &lt;artifactId&gt;spring-boot-starter-thymeleaf&lt;/artifactId&gt;</div><div class="line">&lt;/dependency&gt;</div></pre></td></tr></table></figure></p>
+<p>接下来需要在默认的模板文件夹src/main/resources/templates/目录下添加一个模板文件hello.html：<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"> &lt;!DOCTYPE HTML&gt;</div><div class="line">&lt;html xmlns:th="http://www.thymeleaf.org"&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;title&gt;Getting Started: Serving Web Content&lt;/title&gt;</div><div class="line">    &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">    &lt;p th:text="'Hello, ' + $&#123;name&#125; + '!'" /&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
+<p>th:text=”‘Hello, ‘ + ${name} + ‘!’”也就是将我们之前在@Controller方法里添加至Model的属性name进行渲染，并放入</p><p>标签中（因为th:text是</p><p>标签的属性）。模板渲染还有更多的用法，请参考Thymeleaf官方文档。</p>
+<h2 id="处理静态文件"><a href="#处理静态文件" class="headerlink" title="处理静态文件"></a>处理静态文件</h2><p>浏览器页面使用HTML作为描述语言，那么必然也脱离不了CSS以及JavaScript。为了能够浏览器能够正确加载类似/css/style.css, /js/main.js等资源，默认情况下我们只需要在src/main/resources/static目录下添加css/style.css和js/main.js文件后，Spring MVC能够自动将他们发布，通过访问/css/style.css, /js/main.js也就可以正确加载这些资源。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/01/10/SpringBoot-Help/" data-id="cjh9xenet0008hpff7r3sgp5r" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/01/12/Html-标签/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Html 标签
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/01/10/HexoHelper/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">HexoHelper</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/05/16/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/19/Webflow配置文件分析/">Webflow配置文件分析</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/19/AngularJS供应商/">AngularJS供应商</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/18/css小记录/">css小记录</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/18/AngularJS-uiRouter/">AngularJS uiRouter</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

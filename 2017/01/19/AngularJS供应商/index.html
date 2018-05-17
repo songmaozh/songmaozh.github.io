@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>AngularJS供应商 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="引言看了很多文章可能还是不太说得出AngularJS中的几个创建供应商(provider)的方法(factory(),service(),provider())到底有啥区别，啥时候该用啥，之前一直傻傻分不清楚，现在来总结一下。
+下文中泛指统一用中文，英文即为特指$provide方法中对应方法创建出的东东
+供应商==&amp;gt;泛指provider服务==&amp;gt;泛指service
+provider==">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AngularJS供应商">
+<meta property="og:url" content="http://yoursite.com/2017/01/19/AngularJS供应商/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="引言看了很多文章可能还是不太说得出AngularJS中的几个创建供应商(provider)的方法(factory(),service(),provider())到底有啥区别，啥时候该用啥，之前一直傻傻分不清楚，现在来总结一下。
+下文中泛指统一用中文，英文即为特指$provide方法中对应方法创建出的东东
+供应商==&amp;gt;泛指provider服务==&amp;gt;泛指service
+provider==">
+<meta property="og:updated_time" content="2018-05-16T09:03:16.179Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AngularJS供应商">
+<meta name="twitter:description" content="引言看了很多文章可能还是不太说得出AngularJS中的几个创建供应商(provider)的方法(factory(),service(),provider())到底有啥区别，啥时候该用啥，之前一直傻傻分不清楚，现在来总结一下。
+下文中泛指统一用中文，英文即为特指$provide方法中对应方法创建出的东东
+供应商==&amp;gt;泛指provider服务==&amp;gt;泛指service
+provider==">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-AngularJS供应商" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/01/19/AngularJS供应商/" class="article-date">
+  <time datetime="2017-01-19T02:21:50.000Z" itemprop="datePublished">2017-01-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      AngularJS供应商
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>引言<br>看了很多文章可能还是不太说得出AngularJS中的几个创建供应商(provider)的方法(factory(),service(),provider())到底有啥区别，啥时候该用啥，之前一直傻傻分不清楚，现在来总结一下。</p>
+<p>下文中泛指统一用中文，英文即为特指$provide方法中对应方法创建出的东东</p>
+<p>供应商==&gt;泛指provider<br>服务==&gt;泛指service</p>
+<p>provider==&gt;provider()方法创建的东东<br>service==&gt;service()方法创建的东东</p>
+<p>先说说供应商（$provide）<br>$provide服务负责告诉Angular如何创造一个新的可注入的东西：即服务。服务会被叫做供应商的东西来定义，你可以使用$provide来创建一个供应商。你需要使用$provide中的provider()方法来定义一个供应商，同时你也可以通过要求$provide被注入到一个应用的config函数中来获得$provide服务。</p>
+<p>上面的描述是官方wiki的翻译版，如果有些绕的话，看下这张图：<br><a href="https://segmentfault.com/img/bVm9Et" target="_blank" rel="external">https://segmentfault.com/img/bVm9Et</a></p>
+<p>$provide是一个服务，在Auto模块中<br>这个服务下面有好多方法，是用来定义供应商<br>而供应商是用来提供服务的，被注入来注入去的东西就是供应商们提供的服务了<br>下面是一个例子：</p>
+<p>myMod.config(function($provide) {<br>  $provide.provider(‘greeting’, function() {<br>    this.$get = function() {<br>      return function(name) {<br>        alert(“Hello, “ + name);<br>      };<br>    };<br>  });<br>});<br>这个例子可以说是最终形态，先大概看下</p>
+<p>定义供应商的方法们<br>AngularJS用$provide去定义一个供应商,这个$provide有5个用来创建供应商的方法：</p>
+<p>constant<br>value<br>service<br>factory<br>provider<br>decorator 我没有说我也是，我只是路过o(╯□╰)o<br>Constant<br>定义常量用的，这货定义的值当然就不能被改变，它可以被注入到任何地方，但是不能被装饰器(decorator)装饰</p>
+<p>var app = angular.module(‘app’, []);</p>
+<p>app.config(function ($provide) {<br>  $provide.constant(‘movieTitle’, ‘The Matrix’);<br>});</p>
+<p>app.controller(‘ctrl’, function (movieTitle) {<br>  expect(movieTitle).toEqual(‘The Matrix’);<br>});<br>语法糖：</p>
+<p>app.constant(‘movieTitle’, ‘The Matrix’);<br>Value<br>这货可以是string,number甚至function,它和constant的不同之处在于，它可以被修改，不能被注入到config中，但是它可以被decorator装饰</p>
+<p>var app = angular.module(‘app’, []);</p>
+<p>app.config(function ($provide) {<br>  $provide.value(‘movieTitle’, ‘The Matrix’)<br>});</p>
+<p>app.controller(‘ctrl’, function (movieTitle) {<br>  expect(movieTitle).toEqual(‘The Matrix’);<br>})<br>语法糖：</p>
+<p>app.value(‘movieTitle’, ‘The Matrix’);<br>Service<br>它是一个可注入的构造器，在AngularJS中它是单例的，用它在Controller中通信或者共享数据都很合适</p>
+<p>var app = angular.module(‘app’ ,[]);</p>
+<p>app.config(function ($provide) {<br>  $provide.service(‘movie’, function () {<br>    this.title = ‘The Matrix’;<br>  });<br>});</p>
+<p>app.controller(‘ctrl’, function (movie) {<br>  expect(movie.title).toEqual(‘The Matrix’);<br>});<br>语法糖：</p>
+<p>app.service(‘movie’, function () {<br>  this.title = ‘The Matrix’;<br>});<br>在service里面可以不用返回东西，因为AngularJS会调用new关键字来创建对象。但是返回一个自定义对象好像也不会出错。</p>
+<p>Factory<br>它是一个可注入的function，它和service的区别就是：factory是普通function，而service是一个构造器(constructor)，这样Angular在调用service时会用new关键字，而调用factory时只是调用普通的function，所以factory可以返回任何东西，而service可以不返回(可查阅new关键字的作用)</p>
+<p>var app = angular.module(‘app’, []);</p>
+<p>app.config(function ($provide) {<br>  $provide.factory(‘movie’, function () {<br>    return {<br>      title: ‘The Matrix’;<br>    }<br>  });<br>});</p>
+<p>app.controller(‘ctrl’, function (movie) {<br>  expect(movie.title).toEqual(‘The Matrix’);<br>});<br>语法糖：</p>
+<p>app.factory(‘movie’, function () {<br>  return {<br>    title: ‘The Matrix’;<br>  }<br>});<br>factory可以返回任何东西，它实际上是一个只有$get方法的provider</p>
+<p>Provider<br>provider是他们的老大，上面的几乎(除了constant)都是provider的封装，provider必须有一个$get方法，当然也可以说provider是一个可配置的factory</p>
+<p>var app = angular.module(‘app’, []);</p>
+<p>app.provider(‘movie’, function () {<br>  var version;<br>  return {<br>    setVersion: function (value) {<br>      version = value;<br>    },<br>    $get: function () {<br>      return {<br>          title: ‘The Matrix’ + ‘ ‘ + version<br>      }<br>    }<br>  }<br>});</p>
+<p>app.config(function (movieProvider) {<br>  movieProvider.setVersion(‘Reloaded’);<br>});</p>
+<p>app.controller(‘ctrl’, function (movie) {<br>  expect(movie.title).toEqual(‘The Matrix Reloaded’);<br>});<br>注意这里config方法注入的是movieProvider，上面定义了一个供应商叫movie，但是注入到config中不能直接写movie，因为前文讲了注入的那个东西就是服务，是供应商提供出来的，而config中又只能注入供应商（两个例外是$provide和$injector），所以用驼峰命名法写成movieProvider，Angular就会帮你注入它的供应商。（更详细可参考文末官方wiki翻译版中的配置provider）</p>
+<p>Decorator<br>这个比较特殊，它不是provider,它是用来装饰其他provider的，而前面也说过，他不能装饰Constant，因为实际上Constant不是通过provider()方法创建的。</p>
+<p>var app = angular.module(‘app’, []);</p>
+<p>app.value(‘movieTitle’, ‘The Matrix’);</p>
+<p>app.config(function ($provide) {<br>  $provide.decorator(‘movieTitle’, function ($delegate) {<br>    return $delegate + ‘ - starring Keanu Reeves’;<br>  });<br>});</p>
+<p>app.controller(‘myController’, function (movieTitle) {<br>  expect(movieTitle).toEqual(‘The Matrix - starring Keanu Reeves’);<br>});<br>总结<br>所有的供应商都只被实例化一次，也就说他们都是单例的<br>除了constant，所有的供应商都可以被装饰器(decorator)装饰<br>value就是一个简单的可注入的值<br>service是一个可注入的构造器<br>factory是一个可注入的方法<br>decorator可以修改或封装其他的供应商，当然除了constant<br>provider是一个可配置的factory<br>最后来看一张对比图：<br><a href="https://segmentfault.com/img/bVnbg2" target="_blank" rel="external">https://segmentfault.com/img/bVnbg2</a></p>
+<p>最近，在项目中遇到需要在 config 阶段中注入一些service的情况，然而 factory，service 还有 value 是不能在 config 中注入的，先看一个清单:<br>服务/阶段    provider    factory    service    value    constant<br>config阶段    Yes    No    No    No    Yes<br>run 阶段    Yes    Yes    Yes    Yes    Yes</p>
+<p>注意，provider 在config阶段，注入的时候需要加上 provider 后缀，可以调用非 $get 返回的方法在 run 阶段注入的时候，无需加 provider 后缀，只能调用 $get 返回的方法</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/01/19/AngularJS供应商/" data-id="cjh9xenep0002hpffp8izy4wl" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/01/19/Webflow配置文件分析/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Webflow配置文件分析
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/01/18/css小记录/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">css小记录</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/05/16/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/19/Webflow配置文件分析/">Webflow配置文件分析</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/19/AngularJS供应商/">AngularJS供应商</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/18/css小记录/">css小记录</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/18/AngularJS-uiRouter/">AngularJS uiRouter</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
