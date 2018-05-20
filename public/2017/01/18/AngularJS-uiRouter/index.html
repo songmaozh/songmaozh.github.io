@@ -19,7 +19,7 @@ $state.includes方法用于判断当前激活状态是否是指定的状态或�
 $state.includes(stateOrName,params,options)
 $state.includes方法接受三个参数,其中第二和第三个都不知道是干啥的…估计也不太用得到,就暂时不管了…
 stat">
-<meta property="og:updated_time" content="2017-01-18T09:58:33.698Z">
+<meta property="og:updated_time" content="2018-05-16T09:03:16.178Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AngularJS uiRouter">
 <meta name="twitter:description" content="angular的uiRouter服务学习(5) — $state.includes()方法
@@ -64,9 +64,9 @@ stat">
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -108,10 +108,21 @@ stat">
 <p>复制代码<br>$state.$current.name = ‘contacts.details.item.url’;</p>
 <p>$state.includes(“<em>.details.</em>.<em>“); // returns true<br>$state.includes(“</em>.details.<strong>“); // returns true<br>$state.includes(“</strong>.item.<strong>“); // returns true<br>$state.includes(“<em>.details.item.url”); // returns true<br>$state.includes(“</em>.details.<em>.url”); // returns true<br>$state.includes(“</em>.details.*”); // returns undefined<br>$state.includes(“item.</strong>“); // returns undefined<br>复制代码<br>可以用于激活某个tab,让当前项高亮显示:</p>
 <li ng-class="{active:state.includes('dashboard.report')}"><a ui-sref="dashboard.report">Reports</a></li><br>需要注意的是,在表达式里直接用$state是不行的,需要在控制器中把$state赋值给$scope下的变量.这样在表达式里才能使用:<br><br>复制代码<br>    $stateProvider.state(‘dashboard’,{<br>        url:’/dashboard’,<br>        templateUrl:’./tpls/dashboard.html’,<br>        controller:function($scope,$state){<br>            $scope.state = $state;<br>        }<br>    })<br>复制代码<br><br><br>ng-class是增加相关样式，可以和class同时使用<br><br>class说明是一个类，class=“active”本身这句是html代码，如果在css里设置样式应该在类名前加个点，如.active{}，从经验看，active这个类一般用在导航条中当前高亮的栏目，或者选项卡中当前活动着的选项<br><br>Angular-UI-Router里的指令ui-sref-active 查看当前激活状态并设置 Class<br><li ui-sref-active="active"><a ui-sref="about">About</a></li>
+
+<p>上一篇中讲到使用$http同服务器进行通信，但是功能上比较简单，AngularJS还提供了另外一个可选的服务$resource,使用它可以非常方便的同支持restful的服务单进行数据交互。</p>
+<p>五种默认行为：</p>
+<p>{</p>
+<p>　　“get”:{method:“get”},</p>
+<p>　　“save”:{method:“post”}</p>
+<p>　　“query”:{method:“get”,isArray:true}</p>
+<p>　　“remove”:{method:“delete”}</p>
+<p>　　“delete”:{method:“delete”}</p>
+<p>}</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/01/18/AngularJS-uiRouter/" data-id="ciy2supz70000bgjo8u8zi48j" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/01/18/AngularJS-uiRouter/" data-id="cjhcqjk280000oyffgqose1ta" class="article-share-link">Share</a>
       
       
     </footer>
@@ -121,7 +132,7 @@ stat">
 <nav id="article-nav">
   
     <a href="/2017/01/18/css小记录/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Récent</strong>
+      <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
           css小记录
@@ -131,7 +142,7 @@ stat">
   
   
     <a href="/2017/01/17/我在AngularJS的曲折路/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Ancien</strong>
+      <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title">我在AngularJS的曲折路</div>
     </a>
   
@@ -145,6 +156,13 @@ stat">
           <aside id="sidebar">
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/小玖乐团/">小玖乐团</a></li></ul>
+    </div>
+  </div>
+
 
   
     
@@ -156,7 +174,7 @@ stat">
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li></ul>
     </div>
   </div>
 
@@ -164,28 +182,28 @@ stat">
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
         
           <li>
+            <a href="/2018/05/17/给阿玖做件小睡衣/">给阿玖做件小睡衣</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/16/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/19/Webflow配置文件分析/">Webflow配置文件分析</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/19/AngularJS供应商/">AngularJS供应商</a>
+          </li>
+        
+          <li>
             <a href="/2017/01/18/css小记录/">css小记录</a>
-          </li>
-        
-          <li>
-            <a href="/2017/01/18/AngularJS-uiRouter/">AngularJS uiRouter</a>
-          </li>
-        
-          <li>
-            <a href="/2017/01/17/我在AngularJS的曲折路/">我在AngularJS的曲折路</a>
-          </li>
-        
-          <li>
-            <a href="/2017/01/17/angular-translate/">angular-translate</a>
-          </li>
-        
-          <li>
-            <a href="/2017/01/16/UI-Bootstrap/">UI-Bootstrap</a>
           </li>
         
       </ul>
@@ -200,8 +218,8 @@ stat">
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2017 John Doe<br>
-      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
