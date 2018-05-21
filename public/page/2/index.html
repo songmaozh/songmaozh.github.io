@@ -1,920 +1,452 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+<html lang="">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/default" title="Hexo">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=1.1" />
+
+
+
+<link rel="canonical" href="http://yoursite.com/page/2/"/>
+
+
+<meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
 <meta property="og:url" content="http://yoursite.com/page/2/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=1.1" />
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+
+
+
+
+
+<script type="text/javascript">
+  var themeConfig = {
+    fancybox: {
+      enable: false
+    },
+  };
+</script>
+
+
+
+
   
 
-</head>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-Microservice" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/01/13/Microservice/" class="article-date">
-  <time datetime="2017-01-13T02:14:24.000Z" itemprop="datePublished">2017-01-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/13/Microservice/">Microservice</a>
+
+    <title> Hexo - </title>
+  </head>
+
+  <body>
+    <div id="page">
+      <header id="masthead"><div class="site-header-inner">
+    <h1 class="site-title">
+        <a href="/." class="logo">Hexo</a>
     </h1>
-  
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Microservice"><a href="#Microservice" class="headerlink" title="Microservice"></a>Microservice</h2><p>什么是微服务<br>Martin Fowler是国际著名的OO专家，敏捷开发方法的创始人之一，现为ThoughtWorks公司的首席科学家.福勒（Martin Fowler），在面向对象分析设计、UML、模式、软件开发方法学、XP、重构等方面，都是世界顶级的专家，现为Thought Works公司的首席科学家。Thought Works是一家从事企业应用开发和集成的公司。早在20世纪80年代，Fowler就是使用对象技术构建多层企业应用的倡导者，他著有几本经典书籍： 《企业应用架构模式》、《UML精粹》和《重构》等。—— 百度百科</p>
-<p>先来看看传统的web开发方式，通过对比比较容易理解什么是Microservice Architecture。和Microservice相对应的，这种方式一般被称为Monolithic（比较难传神的翻译）。所有的功能打包在一个 WAR包里，基本没有外部依赖（除了容器），部署在一个JEE容器（Tomcat，JBoss，WebLogic）里，包含了 DO/DAO，Service，UI等所有逻辑。<br><img src="http://img3.tbcdn.cn/L1/461/1/cb87aabb9b184df0edd6769ef877b4b16b200855.png" alt="image"><br>Monolithic比较适合小项目，优点是：</p>
-<p>开发简单直接，集中式管理</p>
-<p>基本不会重复开发</p>
-<p>功能都在本地，没有分布式的管理开销和调用开销</p>
-<p>它的缺点也非常明显，特别对于互联网公司来说（不一一列举了）：</p>
-<p>开发效率低：所有的开发在一个项目改代码，递交代码相互等待，代码冲突不断</p>
-<p>代码维护难：代码功能耦合在一起，新人不知道何从下手</p>
-<p>部署不灵活：构建时间长，任何小修改必须重新构建整个项目，这个过程往往很长</p>
-<p>稳定性不高：一个微不足道的小问题，可以导致整个应用挂掉</p>
-<p>扩展性不够：无法满足高并发情况下的业务需求</p>
-<p>所以，现在主流的设计一般会采用Microservice Architecture，就是基于微服务的架构。简单来说， 微服务的目的是有效的拆分应用，实现敏捷开发和部署 。<br> <img src="http://img3.tbcdn.cn/L1/461/1/6a2474878e4c1000335770fe64269269f9211d17.png" alt="image"><br> 用《The art of scalability》一书里提到的scale cube比较容易理解如何拆分。你看，我们叫分库分表，别人总结成了scale cube，这就是抽象的能力啊，把复杂的东西用最简单的概念解释和总结。X轴代表运行多个负载均衡器之后运行的实例，Y轴代表将应用进一步分解为微服务 （分库），数据量大时，还可以用Z轴将服务按数据分区（分表）<br> <img src="http://img4.tbcdn.cn/L1/461/1/238adf07b6afdc6ae246e2da83f83ce2e144cbeb.png" alt="image"></p>
-<p> 先看看最官方的定义吧</p>
-<p>The microservice architectural style is an approach to developing a single application as a suite of small services, each running in its own process and communicating with lightweight mechanisms, often an HTTP resource API. These services are <strong>built around business capabilities</strong> and independently deployable by fully automated deployment machinery. There is a bare minimum of centralized management of these services , which may be written in different programming languages and use different data storage technologies.<br>– James Lewis and Martin Fowler</p>
-<p>把Martin老头的定义大概的翻译一下就是下面几条，这个定义还是太抽象是不是，那就对了，就是要务虚，都说明白了谁还找他付费咨询啊，这么贵。</p>
-<ol>
-<li>一些列的独立的服务共同组成系统</li>
-<li>单独部署，跑在自己的进程里</li>
-<li>每个服务为独立的业务开发</li>
-<li>分布式的管理</li>
-</ol>
-<p>Martin自己也说了，每个人对微服务都可以有自己的理解，不过大概的标准还是有一些的。</p>
-<p>分布式服务组成的系统</p>
-<p>按照业务而不是技术来划分组织</p>
-<p>做有生命的产品而不是项目</p>
-<p>Smart endpoints and dumb pipes（我的理解是强服务个体和弱通信）</p>
-<p>自动化运维（DevOps）</p>
-<p>容错</p>
-<p>快速演化</p>
-<p>SOA vs Microservice</p>
-<p>除了Smart endpoints and dumb pipes都很容易理解对吗？相信很多人都会问一个问题，这是不是就是SOA换了个概念，挂羊头卖狗肉啊，有说法把Microservice叫成 Lightway SOA。也有很多传统砖家跳出来说Microservice就是SOA。其实Martin也没否认SOA和Microservice的关系。</p>
-<p>我个人理解，Microservice是SOA的传承，但一个最本质的区别就在于Smart endpoints and dumb pipes，或者说是真正的分布式的、去中心化的。Smart endpoints and dumb pipes本质就是去ESB，把所有的“思考”逻辑包括路由、消息解析等放在服务内部（Smart endpoints），去掉一个大一统的ESB，服务间轻（dumb pipes）通信，是比SOA更彻底的拆分。</p>
-<p>客户端如何访问这些服务？</p>
-<p>原来的Monolithic方式开发，所有的服务都是本地的，UI可以直接调用，现在按功能拆分成独立的服务，跑在独立的一般都在独立的虚拟机上的 Java进程了。客户端UI如何访问他的？后台有N个服务，前台就需要记住管理N个服务，一个服务下线/更新/升级，前台就要重新部署，这明显不服务我们 拆分的理念，特别当前台是移动应用的时候，通常业务变化的节奏更快。另外，N个小服务的调用也是一个不小的网络开销。还有一般微服务在系统内部，通常是无 状态的，用户登录信息和权限管理最好有一个统一的地方维护管理（OAuth）。</p>
-<p>所以，一般在后台N个服务和UI之间一般会一个代理或者叫API Gateway，他的作用包括</p>
-<p>提供统一服务入口，让微服务对前台透明</p>
-<p>聚合后台的服务，节省流量，提升性能</p>
-<p>提供安全，过滤，流控等API管理功能</p>
-<p>我的理解其实这个API Gateway可以有很多广义的实现办法，可以是一个软硬一体的盒子，也可以是一个简单的MVC框架，甚至是一个Node.js的服务端。他们最重要的作 用是为前台（通常是移动应用）提供后台服务的聚合，提供一个统一的服务出口，解除他们之间的耦合，不过API Gateway也有可能成为单点故障点或者性能的瓶颈。</p>
-<p>一般用过Taobao Open Platform的就能很容易的体会，TAO就是这个API Gateway。<br><img src="http://img2.tbcdn.cn/L1/461/1/4da28f2382d64d39ee4942c51636af31e9cc1d0b.png" alt="image"></p>
-<p>服务之间如何通信？</p>
-<p>因为所有的微服务都是独立的Java进程跑在独立的虚拟机上，所以服务间的通行就是IPC（inter process communication），已经有很多成熟的方案。现在基本最通用的有两种方式。这几种方式，展开来讲都可以写本书，而且大家一般都比较熟悉细节了， 就不展开讲了。</p>
-<p>同步调用</p>
-<p>REST（JAX-RS，Spring Boot）</p>
-<p>RPC（Thrift, Dubbo）</p>
-<p>异步消息调用(Kafka, Notify, MetaQ)<br><img src="http://img2.tbcdn.cn/L1/461/1/d7e9a881c8940c216e6c1d8cb3bbbe7407e1e63b.png" alt="image"></p>
-<p><a href="https://www.oschina.net/news/70121/microservice" target="_blank" rel="external">https://www.oschina.net/news/70121/microservice</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/01/13/Microservice/" data-id="cjhcqjk2m0007oyffz3vg5m8e" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-jhipster搭建Mciroservice" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/01/12/jhipster搭建Mciroservice/" class="article-date">
-  <time datetime="2017-01-12T05:41:34.000Z" itemprop="datePublished">2017-01-12</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <nav id="nav-top">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/12/jhipster搭建Mciroservice/">jhipster搭建Mciroservice</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>简介<br>jhipster简单来说是一个基于nodejs+yeoman的java代码生成器。往大了说是基于java的一套微服务解决方案。请注意是一整套的微服务解决方案。jhipster在整个程序架构上都做好了整合，包括前端mvvm框架（angularjs），前端构建工具（gulp）到后端的微服务框架（spring cloud）和hibernate/mongodb，再到单元测试/ui测试。<br>毫不客气的说 ：学会了这套框架，你就是程序开发/程序架构界的潮男。对,hipster的意思就是：追求新奇的人。</p>
-<p>demo<br>下面跟着我来一步一步的来见证奇迹。</p>
-<p>1.安装nodejs。</p>
-<p>2.安装yeoman/bower/gulp npm install -g yo bower gulp-cli</p>
-<p>3.安装jhipster npm install -g generator-jhipster</p>
-<p>是不是被gfw艹翻了？哈哈哈</p>
-<h2 id="生成单机服务app"><a href="#生成单机服务app" class="headerlink" title="生成单机服务app"></a>生成单机服务app</h2><p>cd到你想存放代码的路径，然后运行：yo jhipster<br>第一个选择很重要，项目类型要选择第一个，单机服务<br>后面的根据实际情况，选择就可以。失败了也没关系，删掉文件夹重新来过。</p>
-<p>——生成成功后运行<br>./mvnw 或者gradlew下载依赖包。<br>./mvnw (on Mac OS X/Linux) of mvnw (on Windows)</p>
-<h2 id="生成mciroservice-app"><a href="#生成mciroservice-app" class="headerlink" title="生成mciroservice app"></a>生成mciroservice app</h2><p>生成基础架构</p>
-<p>cd到你想存放代码的路径，然后运行：yo jhipster</p>
-<p>这时候jhipster向导就会启动了,如图：<br><img src="http://images2015.cnblogs.com/blog/33454/201607/33454-20160722105819779-322820644.png" alt="image"></p>
-<p>第一个选择很重要，项目类型要选择microservice application<br>后面的根据实际情况，选择就可以。失败了也没关系，删掉文件夹重新来过。</p>
-<p>——生成成功后运行 ./mvnw 或者gradlew下载依赖包。</p>
-<p>jhipster是可以生成实体和实体的增删改查带分页的</p>
-<p>运行yo jhipster:entity <entityname>来启动实体生成向导。</entityname></p>
-<p>然后跟着向导输入信息。</p>
-<h2 id="生成microservie-gateway"><a href="#生成microservie-gateway" class="headerlink" title="生成microservie gateway"></a>生成microservie gateway</h2><p>生成基础架构</p>
-<p>继续运行：yo jhipster<br>第一个选择很重要，项目类型要选择*microservice gateway</p>
-<p>这个时候如果还被gfw折磨，你应该考虑ss或者vpn了。</p>
-<p>生成实体</p>
-<p>运行yo jhipster:entity <entityname>来启动实体生成向导。</entityname></p>
-<p>然后跟着向导输入信息。</p>
-<p>此处需要注意：</p>
-<p>1.询问是否选择存在的app时 选择是</p>
-<p>2.<entityname>需要时在app中生成过的</entityname></p>
-<h2 id="运行-jhipster-registry"><a href="#运行-jhipster-registry" class="headerlink" title="运行 jhipster registry"></a>运行 jhipster registry</h2><p>jhipster registry是一个基于spring cloud的配置中心，jhipster的微服务架构依赖此程序。</p>
-<p>1 从github下载源码<a href="https://github.com/jhipster/jhipster-registry" target="_blank" rel="external">https://github.com/jhipster/jhipster-registry</a></p>
-<p>2 cd 到解压目录 然后运行 ./mvnw或者gradlew 启动应用</p>
-<p>浏览器地址：<a href="http://127.0.0.1:8761/" target="_blank" rel="external">http://127.0.0.1:8761/</a>.<br>效果如图<br><img src="http://images2015.cnblogs.com/blog/33454/201607/33454-20160722105802779-429391766.png" alt="image"><br>默认用户名：密码  admin:admin</p>
-<p>这个时候就可以启动app和gateway了。</p>
-<p>cd到刚才存放microservice app的目录 运行./</p>
-<p>cd到刚才存放microservice gateway的目录 运行./mvnw</p>
-<p>然后打开浏览器见证奇迹</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/01/12/jhipster搭建Mciroservice/" data-id="cjhcqjk2s000foyffnnhk6bby" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-AngularJS" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/01/12/AngularJS/" class="article-date">
-  <time datetime="2017-01-12T03:01:24.000Z" itemprop="datePublished">2017-01-12</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+            <ul id="menu-top" class="nav-top-items">
+                
+                    <li class="menu-item">
+                        <a href="/archives">
+                            
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li class="menu-item">
+                        <a href="/about">
+                            
+                            
+                                About
+                            
+                        </a>
+                    </li>
+                
+            </ul>
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/12/AngularJS/">AngularJS</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>angular -  ng关键字缩写<br>AngularJS 是一个 JavaScript 框架。它可通过 script 标签添加到 HTML 页面。<br>AngularJS 通过 指令 扩展了 HTML，且通过 表达式 绑定数据到 HTML。<br>AngularJS 是一个 JavaScript 框架<br>AngularJS 是一个 JavaScript 框架。它是一个以 JavaScript 编写的库。<br>AngularJS 是以一个 JavaScript 文件形式发布的，可通过 script 标签添加到网页中：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"&gt;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<p>各个 angular.js 版本下载： <a href="https://github.com/angular/angular.js/releases" target="_blank" rel="external">https://github.com/angular/angular.js/releases</a><br>AngularJS 扩展了 HTML<br>AngularJS 通过 ng-directives 扩展了 HTML。<br>ng-app 指令定义一个 AngularJS 应用程序。<br>ng-model 指令把元素值（比如输入域的值）绑定到应用程序。<br>ng-bind 指令把应用程序数据绑定到 HTML 视图。<br>AngularJS 实例</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;meta charset="utf-8"&gt;</div><div class="line">&lt;script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"&gt;&lt;/scrip t &gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line"> </div><div class="line">&lt;div ng-app=""&gt;</div><div class="line">     &lt;p&gt;名字 : &lt;input type="text" ng-model="name"&gt;&lt;/p&gt;</div><div class="line">     &lt;h1&gt;Hello &#123;&#123;name&#125;&#125;&lt;/h1&gt;</div><div class="line">&lt;/div&gt;</div><div class="line"> </div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
-<p>实例讲解：<br>当网页加载完毕，AngularJS 自动开启。<br>ng-app 指令告诉 AngularJS，<div> 元素是 AngularJS 应用程序 的”所有者”。<br>ng-model 指令把输入域的值绑定到应用程序变量 name。<br>ng-bind 指令把应用程序变量 name 绑定到某个段落的 innerHTML。</div></p>
-<p>什么是 AngularJS？<br>AngularJS 使得开发现代的单一页面应用程序（SPAs：Single Page Applications）变得更加容易。<br>AngularJS 把应用程序数据绑定到 HTML 元素。<br>AngularJS 可以克隆和重复 HTML 元素。<br>AngularJS 可以隐藏和显示 HTML 元素。<br>AngularJS 可以在 HTML 元素”背后”添加代码。<br>AngularJS 支持输入验证。<br>AngularJS 指令<br>正如您所看到的，AngularJS 指令是以 ng 作为前缀的 HTML 属性。<br>ng-init 指令初始化 AngularJS 应用程序变量。<br>AngularJS 实例<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;div ng-app="" ng-init="firstName='John'"&gt;</div><div class="line"> </div><div class="line">&lt;p&gt;姓名为 &lt;span ng-bind="firstName"&gt;&lt;/span&gt;&lt;/p&gt;</div><div class="line"> </div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
-<p>HTML5 允许扩展的（自制的）属性，以 data- 开头。<br>AngularJS 属性以 ng- 开头，但是您可以使用 data-ng- 来让网页对 HTML5 有效。<br>AngularJS 实例<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;div data-ng-app="" data-ng-init="firstName='John'"&gt;</div><div class="line"> </div><div class="line">&lt;p&gt;姓名为 &lt;span data-ng-bind="firstName"&gt;&lt;/span&gt;&lt;/p&gt;</div><div class="line"> </div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
-<p>AngularJS 表达式<br>AngularJS 表达式写在双大括号内：。<br>AngularJS 表达式把数据绑定到 HTML，这与 ng-bind 指令有异曲同工之妙。<br>AngularJS 将在表达式书写的位置”输出”数据。<br>AngularJS 表达式 很像 JavaScript 表达式：它们可以包含文字、运算符和变量。<br>实例 10 或 undefined undefined<br>AngularJS 实例<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;meta charset="utf-8"&gt;</div><div class="line">&lt;script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"&gt;&lt;/scrip t&gt; </div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line"> </div><div class="line">&lt;div ng-app=""&gt;</div><div class="line">     &lt;p&gt;我的第一个表达式： &#123;&#123; 5 + 5 &#125;&#125;&lt;/p&gt;</div><div class="line">&lt;/div&gt;</div><div class="line"> </div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
-<p>AngularJS 应用<br>AngularJS 模块（Module） 定义了 AngularJS 应用。<br>AngularJS 控制器（Controller） 用于控制 AngularJS 应用。<br>ng-app指令定义了应用, ng-controller 定义了控制器。<br>AngularJS 实例<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&lt;div ng-app="myApp" ng-controller="myCtrl"&gt;</div><div class="line"> </div><div class="line">名: &lt;input type="text" ng-model="firstName"&gt;&lt;br&gt;</div><div class="line">姓: &lt;input type="text" ng-model="lastName"&gt;&lt;br&gt;</div><div class="line">&lt;br&gt;</div><div class="line">姓名: &#123;&#123;firstName + " " + lastName&#125;&#125;</div><div class="line"> </div><div class="line">&lt;/div&gt;</div><div class="line"> </div><div class="line">&lt;script&gt;</div><div class="line">var app = angular.module('myApp', []);</div><div class="line">app.controller('myCtrl', function($scope) &#123;</div><div class="line">    $scope.firstName= "John";</div><div class="line">    $scope.lastName= "Doe";</div><div class="line">&#125;);</div><div class="line">&lt;/scrip t&gt;</div></pre></td></tr></table></figure></p>
-<p>AngularJS 模块定义应用:<br>AngularJS 模块<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var app = angular.module(<span class="string">'myApp'</span>, []);</div></pre></td></tr></table></figure></p>
-<p>AngularJS 控制器控制应用:<br>AngularJS 控制器<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">app.controller(<span class="string">'myCtrl'</span>, function($scope) &#123;</div><div class="line">    $scope.firstName= <span class="string">"John"</span>;</div><div class="line">    $scope.lastName= <span class="string">"Doe"</span>;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p>使用 ng-init 不是很常见。您将在控制器一章中学习到一个更好的初始化数据的方式。</p>
-<h2 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h2><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">数字</div><div class="line">&lt;div ng-app="" ng-init="quantity=1;cost=5"&gt;</div><div class="line"> </div><div class="line">&lt;p&gt;总价： &#123;&#123; quantity * cost &#125;&#125;&lt;/p&gt;</div><div class="line"> </div><div class="line">&lt;/div&gt;</div><div class="line"></div><div class="line">字符串</div><div class="line">&lt;div ng-app="" ng-init="firstName='John';lastName='Doe'"&gt;</div><div class="line"> </div><div class="line">&lt;p&gt;姓名： &#123;&#123; firstName + " " + lastName &#125;&#125;&lt;/p&gt;</div><div class="line"> </div><div class="line">&lt;/div&gt;</div><div class="line"></div><div class="line">对象</div><div class="line">&lt;div ng-app="" ng-init="person=&#123;firstName:'John',lastName:'Doe'&#125;"&gt;</div><div class="line"> </div><div class="line">&lt;p&gt;姓为 &#123;&#123; person.lastName &#125;&#125;&lt;/p&gt;</div><div class="line"> </div><div class="line">&lt;/div&gt;</div><div class="line"></div><div class="line">数组</div><div class="line">&lt;div ng-app="" ng-init="points=[1,15,19,2,40]"&gt;</div><div class="line"> </div><div class="line">&lt;p&gt;第三个值为 &#123;&#123; points[2] &#125;&#125;&lt;/p&gt;</div><div class="line"> </div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
-<p>AngularJS 表达式 与 JavaScript 表达式<br>类似于 JavaScript 表达式，AngularJS 表达式可以包含字母，操作符，变量。<br>与 JavaScript 表达式不同，AngularJS 表达式可以写在 HTML 中。<br>与 JavaScript 表达式不同，AngularJS 表达式不支持条件判断，循环及异常。<br>与 JavaScript 表达式不同，AngularJS 表达式支持过滤器。</p>
-<h2 id="AngularJS-指令"><a href="#AngularJS-指令" class="headerlink" title="AngularJS 指令"></a>AngularJS 指令</h2><p>AngularJS 通过被称为 指令 的新属性来扩展 HTML。<br>AngularJS 通过内置的指令来为应用添加功能。<br>AngularJS 允许你自定义指令。<br>AngularJS 指令是扩展的 HTML 属性，带有前缀 ng-。<br>ng-app 指令初始化一个 AngularJS 应用程序。<br>ng-init 指令初始化应用程序数据。<br>ng-model 指令把元素值（比如输入域的值）绑定到应用程序。</p>
-<p>ng-app 指令告诉 AngularJS，<div> 元素是 AngularJS 应用程序 的”所有者”。<br>一个网页可以包含多个运行在不同元素中的 AngularJS 应用程序。</div></p>
-<h2 id="数据绑定"><a href="#数据绑定" class="headerlink" title="数据绑定"></a>数据绑定</h2><p>上面实例中的  表达式是一个 AngularJS 数据绑定表达式。<br>AngularJS 中的数据绑定，同步了 AngularJS 表达式与 AngularJS 数据。<br> 是通过 ng-model=”firstName” 进行同步。<br>在下一个实例中，两个文本域是通过两个 ng-model 指令同步的：<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;div ng-app="" ng-init="quantity=1;price=5"&gt;</div><div class="line"> </div><div class="line">&lt;h2&gt;价格计算器&lt;/h2&gt;</div><div class="line"> </div><div class="line">数量： &lt;input type="number"    ng-model="quantity"&gt;</div><div class="line">价格： &lt;input type="number" ng-model="price"&gt;</div><div class="line"> </div><div class="line">&lt;p&gt;&lt;b&gt;总价：&lt;/b&gt; &#123;&#123; quantity * price &#125;&#125;&lt;/p&gt;</div><div class="line"> </div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
-<h2 id="重复-HTML-元素"><a href="#重复-HTML-元素" class="headerlink" title="重复 HTML 元素"></a>重复 HTML 元素</h2><p>ng-repeat 指令会重复一个 HTML 元素：<br>AngularJS 实例<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;div ng-app="" ng-init="names=['Jani','Hege','Kai']"&gt;</div><div class="line">  &lt;p&gt;使用 ng-repeat 来循环数组&lt;/p&gt;</div><div class="line">  &lt;ul&gt;</div><div class="line">    &lt;li ng-repeat="x in names"&gt;</div><div class="line">      &#123;&#123; x &#125;&#125;</div><div class="line">    &lt;/li&gt;</div><div class="line">  &lt;/ul&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
-<p>ng-repeat 指令用在一个对象数组上：<br>AngularJS 实例<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;div ng-app="" ng-init="names=[</div><div class="line">&#123;name:'Jani',country:'Norway'&#125;,</div><div class="line">&#123;name:'Hege',country:'Sweden'&#125;,</div><div class="line">&#123;name:'Kai',country:'Denmark'&#125;]"&gt;</div><div class="line"> </div><div class="line">&lt;p&gt;循环对象：&lt;/p&gt;</div><div class="line">&lt;ul&gt;</div><div class="line">  &lt;li ng-repeat="x    in names"&gt;</div><div class="line">    &#123;&#123; x.name + ', ' + x.country &#125;&#125;</div><div class="line">  &lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div><div class="line"> </div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
-<p>AngularJS 完美支持数据库的 CRUD（增加Create、读取Read、更新Update、删除Delete）应用程序。<br>把实例中的对象想象成数据库中的记录。</p>
-<p>ng-app 指令<br>ng-app 指令定义了 AngularJS 应用程序的 根元素。<br>ng-app 指令在网页加载完毕时会自动引导（自动初始化）应用程序。<br>稍后您将学习到 ng-app 如何通过一个值（比如 ng-app=”myModule”）连接到代码模块。<br>ng-init 指令<br>ng-init 指令为 AngularJS 应用程序定义了 初始值。<br>通常情况下，不使用 ng-init。您将使用一个控制器或模块来代替它。<br>稍后您将学习更多有关控制器和模块的知识。<br>ng-model 指令<br>ng-model 指令 绑定 HTML 元素 到应用程序数据。<br>ng-model 指令也可以：<br>为应用程序数据提供类型验证（number、email、required）。<br>为应用程序数据提供状态（invalid、dirty、touched、error）。<br>为 HTML 元素提供 CSS 类。<br>绑定 HTML 元素到 HTML 表单。<br>ng-repeat 指令<br>ng-repeat 指令对于集合中（数组中）的每个项会 克隆一次 HTML 元素。</p>
-<p>创建自定义的指令<br>除了 AngularJS 内置的指令外，我们还可以创建自定义指令。<br>你可以使用 .directive 函数来添加自定义的指令。<br>要调用自定义指令，HTML 元素上需要添加自定义指令名。<br>使用驼峰法来命名一个指令， runoobDirective, 但在使用它时需要以 - 分割, runoob-directive:<br>AngularJS 实例<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;body ng-app="myApp"&gt;</div><div class="line"></div><div class="line">&lt;runoob-directive&gt;&lt;/runoob-directive&gt;</div><div class="line"></div><div class="line">&lt;script&gt;</div><div class="line">var app = angular.module("myApp", []);</div><div class="line">app.directive("runoobDirective", function() &#123;</div><div class="line">    return &#123;</div><div class="line">        template : "&lt;h1&gt;自定义指令!&lt;/h1&gt;"</div><div class="line">    &#125;;</div><div class="line">&#125;);</div><div class="line">&lt;/scrip t&gt;</div><div class="line"></div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure></p>
-<p>你可以通过以下方式来调用指令：<br>元素名<br>属性<br>类名<br>注释<br>以下实例方式也能输出同样结果:</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">元素名</div><div class="line">&lt;runoob-directive&gt;&lt;/runoob-directive&gt;</div><div class="line"></div><div class="line">属性</div><div class="line">&lt;div runoob-directive&gt;&lt;/div&gt;</div><div class="line"></div><div class="line">类名</div><div class="line">&lt;div class="runoob-directive"&gt;&lt;/div&gt;</div><div class="line"></div><div class="line">注释</div><div class="line">&lt;!-- directive: runoob-directive --&gt;</div></pre></td></tr></table></figure>
-<p>限制使用<br>你可以限制你的指令只能通过特定的方式来调用。<br>实例<br>通过添加 restrict 属性,并设置只值为 “A”, 来设置指令只能通过属性的方式来调用:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var app = angular.module(<span class="string">"myApp"</span>, []);</div><div class="line">app.directive(<span class="string">"runoobDirective"</span>, function() &#123;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">        restrict : <span class="string">"A"</span>,</div><div class="line">        template : <span class="string">"&lt;h1&gt;自定义指令!&lt;/h1&gt;"</span></div><div class="line">    &#125;;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p>restrict 值可以是以下几种:<br>E 作为元素名使用<br>A 作为属性使用<br>C 作为类名使用<br>M 作为注释使用<br>restrict 默认值为 EA, 即可以通过元素名和属性名来调用指令。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div></pre></td><td class="code"><pre><div class="line">angular自定义指令的两种写法：</div><div class="line">上面这种，感觉更清晰明确一点。</div><div class="line">// angular.module(<span class="string">'MyApp'</span>,[])</div><div class="line">// .directive(<span class="string">'zl1'</span>,zl1)</div><div class="line">// .controller(<span class="string">'con1'</span>,[<span class="string">'$scope'</span>,func1]);</div><div class="line">//</div><div class="line">// function zl1()&#123;</div><div class="line">//   var directive=&#123;</div><div class="line">//     restrict:<span class="string">'AEC'</span>,</div><div class="line">//     template:<span class="string">'this is the it-first directive'</span>,</div><div class="line">//   &#125;;</div><div class="line">//   <span class="keyword">return</span> directive;</div><div class="line">// &#125;;</div><div class="line">//</div><div class="line">// function func1($scope)&#123;</div><div class="line">//   $scope.name=<span class="string">"alice"</span>;</div><div class="line">// &#125;</div><div class="line"></div><div class="line">//这是教程里类似的写法</div><div class="line">angular.module(<span class="string">'myApp'</span>,[]).directive(<span class="string">'zl1'</span>,[ function()&#123;</div><div class="line">  <span class="keyword">return</span> &#123;</div><div class="line">    restrict:<span class="string">'AE'</span>,</div><div class="line">    template:<span class="string">'thirective'</span>,</div><div class="line">    link:function($scope,elm,attr,controller)&#123;</div><div class="line">      console.log(<span class="string">"这是link"</span>);</div><div class="line">    &#125;,</div><div class="line">    controller:function($scope,$element,$attrs)&#123;</div><div class="line">      console.log(<span class="string">"这是con"</span>);</div><div class="line">    &#125;</div><div class="line">  &#125;;</div><div class="line">&#125;]).controller(<span class="string">'Con1'</span>,[<span class="string">'$scope'</span>,function($scope)&#123;</div><div class="line">  $scope.name=<span class="string">"aliceqqq"</span>;</div><div class="line">&#125;]);</div><div class="line">Alice2周前 (<span class="number">12</span><span class="number">-29</span>)</div><div class="line"></div><div class="line">还有指令配置项的：link controller等在项目运用中有遇到过：</div><div class="line">angular.module(<span class="string">'myApp'</span>, []).directive(<span class="string">'first'</span>, [ function()&#123;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">        // scope: false, // 默认值，共享父级作用域</div><div class="line">        // controller: function($scope, $element, $attrs, $transclude) &#123;&#125;,</div><div class="line">        restrict: <span class="string">'AE'</span>, // E = Element, A = Attribute, C = Class, M = Comment</div><div class="line">        template: <span class="string">'first name:&#123;&#123;name&#125;&#125;'</span>,</div><div class="line">    &#125;;</div><div class="line">&#125;]).directive(<span class="string">'second'</span>, [ function()&#123;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">        scope: true, // 继承父级作用域并创建指令自己的作用域</div><div class="line">        // controller: function($scope, $element, $attrs, $transclude) &#123;&#125;,</div><div class="line">        restrict: <span class="string">'AE'</span>, // E = Element, A = Attribute, C = Class, M = Comment</div><div class="line">        //当修改这里的name时，second会在自己的作用域中新建一个name变量，与父级作用域中的</div><div class="line">        // name相对独立，所以再修改父级中的name对second中的name就不会有影响了</div><div class="line">        template: <span class="string">'second name:&#123;&#123;name&#125;&#125;'</span>,</div><div class="line">    &#125;;</div><div class="line">&#125;]).directive(<span class="string">'third'</span>, [ function()&#123;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">        scope: &#123;&#125;, // 创建指令自己的独立作用域，与父级毫无关系</div><div class="line">        // controller: function($scope, $element, $attrs, $transclude) &#123;&#125;,</div><div class="line">        restrict: <span class="string">'AE'</span>, // E = Element, A = Attribute, C = Class, M = Comment</div><div class="line">        template: <span class="string">'third name:&#123;&#123;name&#125;&#125;'</span>,</div><div class="line">    &#125;;</div><div class="line">&#125;])</div><div class="line">.controller(<span class="string">'DirectiveController'</span>, [<span class="string">'$scope'</span>, function($scope)&#123;</div><div class="line">    $scope.name=<span class="string">"mike"</span>;</div><div class="line">&#125;]);</div></pre></td></tr></table></figure>
-<h2 id="AngularJS-ng-model-指令"><a href="#AngularJS-ng-model-指令" class="headerlink" title="AngularJS ng-model 指令"></a>AngularJS ng-model 指令</h2><p>ng-model 指令用于绑定应用程序数据到 HTML 控制器(input, select, textarea)的值。<br>ng-model 指令<br>ng-model 指令可以将输入域的值与 AngularJS 创建的变量绑定。<br>AngularJS 实例<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;div ng-app="myApp" ng-controller="myCtrl"&gt;</div><div class="line">    名字: &lt;input ng-model="name"&gt;</div><div class="line">&lt;/div&gt;</div><div class="line"></div><div class="line">&lt;script&gt;</div><div class="line">var app = angular.module('myApp', []);</div><div class="line">app.controller('myCtrl', function($scope) &#123;</div><div class="line">    $scope.name = "John Doe";</div><div class="line">&#125;);</div><div class="line">&lt;/scrip t&gt;</div></pre></td></tr></table></figure></p>
-<p>双向绑定<br>双向绑定，在修改输入域的值时， AngularJS 属性的值也将修改：<br>AngularJS 实例<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;div ng-app="myApp" ng-controller="myCtrl"&gt;</div><div class="line">    名字: &lt;input ng-model="name"&gt;</div><div class="line">    &lt;h1&gt;你输入了: &#123;&#123;name&#125;&#125;&lt;/h1&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
-<p>验证用户输入<br>AngularJS 实例<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;form ng-app="" name="myForm"&gt;</div><div class="line">    Email:</div><div class="line">    &lt;input type="email" name="myAddress" ng-model="text"&gt;</div><div class="line">    &lt;span ng-show="myForm.myAddress.$error.email"&gt;不是一个合法的邮箱地址&lt;/span&gt;</div><div class="line">&lt;/form&gt;</div></pre></td></tr></table></figure></p>
-<p>以上实例中，提示信息会在 ng-show 属性返回 true 的情况下显示。</p>
-<p>应用状态<br>ng-model 指令可以为应用数据提供状态值(invalid, dirty, touched, error):<br>AngularJS 实例<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;form ng-app="" name="myForm" ng-init="myText = 'test@runoob.com'"&gt;</div><div class="line">    Email:</div><div class="line">    &lt;input type="email" name="myAddress" ng-model="myText" required&gt;&lt;/p&gt;</div><div class="line">    &lt;h1&gt;状态&lt;/h1&gt;</div><div class="line">    &#123;&#123;myForm.myAddress.$valid&#125;&#125;</div><div class="line">    &#123;&#123;myForm.myAddress.$dirty&#125;&#125;</div><div class="line">    &#123;&#123;myForm.myAddress.$touched&#125;&#125;</div><div class="line">&lt;/form&gt;</div></pre></td></tr></table></figure></p>
-<p>CSS 类<br>ng-model 指令基于它们的状态为 HTML 元素提供了 CSS 类：<br>AngularJS 实例<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">input.ng-invalid &#123;</div><div class="line">    background-color: lightblue;</div><div class="line">&#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;body&gt;</div><div class="line"></div><div class="line">&lt;form ng-app="" name="myForm"&gt;</div><div class="line">    输入你的名字:</div><div class="line">    &lt;input name="myAddress" ng-model="text" required&gt;</div><div class="line">&lt;/form&gt;</div></pre></td></tr></table></figure></p>
-<p>ng-model 指令根据表单域的状态添加/移除以下类：<br>ng-empty<br>ng-not-empty<br>ng-touched<br>ng-untouched<br>ng-valid<br>ng-invalid<br>ng-dirty<br>ng-pending<br>ng-pristine</p>
-<h2 id="AngularJS-控制器"><a href="#AngularJS-控制器" class="headerlink" title="AngularJS 控制器"></a>AngularJS 控制器</h2><p>AngularJS 控制器 控制 AngularJS 应用程序的数据。<br> AngularJS 控制器是常规的 JavaScript 对象。<br> AngularJS 控制器<br>AngularJS 应用程序被控制器控制。<br>ng-controller 指令定义了应用程序控制器。<br>控制器是 JavaScript 对象，由标准的 JavaScript 对象的构造函数 创建。<br>AngularJS 实例<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&lt;div ng-app="myApp" ng-controller="myCtrl"&gt;</div><div class="line"></div><div class="line">名: &lt;input type="text" ng-model="firstName"&gt;&lt;br&gt;</div><div class="line">姓: &lt;input type="text" ng-model="lastName"&gt;&lt;br&gt;</div><div class="line">&lt;br&gt;</div><div class="line">姓名: &#123;&#123;firstName + " " + lastName&#125;&#125;</div><div class="line"></div><div class="line">&lt;/div&gt;</div><div class="line"></div><div class="line">&lt;script&gt;</div><div class="line">var app = angular.module('myApp', []);</div><div class="line">app.controller('myCtrl', function($scope) &#123;</div><div class="line">    $scope.firstName = "John";</div><div class="line">    $scope.lastName = "Doe";</div><div class="line">&#125;);</div><div class="line">&lt;/scrip t &gt;</div></pre></td></tr></table></figure></p>
-<p>应用解析：<br>AngularJS 应用程序由 ng-app 定义。应用程序在 <div> 内运行。<br>ng-controller=”myCtrl” 属性是一个 AngularJS 指令。用于定义一个控制器。<br>myCtrl 函数是一个 JavaScript 函数。<br>AngularJS 使用$scope 对象来调用控制器。<br>在 AngularJS 中， $scope 是一个应用对象(属于应用变量和函数)。<br>控制器的 $scope （相当于作用域、控制范围）用来保存AngularJS Model(模型)的对象。<br>控制器在作用域中创建了两个属性 (firstName 和 lastName)。<br>ng-model 指令绑定输入域到控制器的属性（firstName 和 lastName）。</div></p>
-<p>控制器方法<br>上面的实例演示了一个带有 lastName 和 firstName 这两个属性的控制器对象。<br>控制器也可以有方法（变量和函数）：<br>AngularJS 实例<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">&lt;div ng-app="myApp" ng-controller="personCtrl"&gt;</div><div class="line"></div><div class="line">名: &lt;input type="text" ng-model="firstName"&gt;&lt;br&gt;</div><div class="line">姓: &lt;input type="text" ng-model="lastName"&gt;&lt;br&gt;</div><div class="line">&lt;br&gt;</div><div class="line">姓名: &#123;&#123;fullName()&#125;&#125;</div><div class="line"></div><div class="line">&lt;/div&gt;</div><div class="line"></div><div class="line">&lt;script&gt;</div><div class="line">var app = angular.module('myApp', []);</div><div class="line">app.controller('personCtrl', function($scope) &#123;</div><div class="line">    $scope.firstName = "John";</div><div class="line">    $scope.lastName = "Doe";</div><div class="line">    $scope.fullName = function() &#123;</div><div class="line">        return $scope.firstName + " " + $scope.lastName;</div><div class="line">    &#125;</div><div class="line">&#125;);</div><div class="line">&lt;/scrip t&gt;</div></pre></td></tr></table></figure></p>
-<h2 id="AngularJS-包含"><a href="#AngularJS-包含" class="headerlink" title="AngularJS 包含"></a>AngularJS 包含</h2><p>在 AngularJS 中，你可以在 HTML 中包含 HTML 文件。<br>使用 AngularJS, 你可以使用 ng-include 指令来包含 HTML 内容:<br>实例<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;body ng-app=""&gt;</div><div class="line"> </div><div class="line">&lt;div ng-include="'runoob.htm'"&gt;&lt;/div&gt;</div><div class="line"> </div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure></p>
-<h2 id="AngularJS-依赖注入"><a href="#AngularJS-依赖注入" class="headerlink" title="AngularJS 依赖注入"></a>AngularJS 依赖注入</h2><p>依赖注入（Dependency Injection，简称DI）是一种软件设计模式，在这种模式下，一个或更多的依赖（或服务）被注入（或者通过引用传递）到一个独立的对象（或客户端）中，然后成为了该客户端状态的一部分。<br>该模式分离了客户端依赖本身行为的创建，这使得程序设计变得松耦合，并遵循了依赖反转和单一职责原则。与服务定位器模式形成直接对比的是，它允许客户端了解客户端如何使用该系统找到依赖<br>AngularJS 提供很好的依赖注入机制。以下5个核心组件用来作为依赖注入：<br>value<br>factory<br>service<br>provider<br>constant</p>
-<p>value<br>Value 是一个简单的 javascript 对象，用于向控制器传递值（配置阶段）：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">// 定义一个模块</div><div class="line">var mainApp = angular.module(<span class="string">"mainApp"</span>, []);</div><div class="line"></div><div class="line">// 创建 value 对象 <span class="string">"defaultInput"</span> 并传递数据</div><div class="line">mainApp.value(<span class="string">"defaultInput"</span>, <span class="number">5</span>);</div><div class="line">...</div><div class="line"></div><div class="line">// 将 <span class="string">"defaultInput"</span> 注入到控制器</div><div class="line">mainApp.controller(<span class="string">'CalcController'</span>, function($scope, CalcService, defaultInput) &#123;</div><div class="line">   $scope.number = defaultInput;</div><div class="line">   $scope.result = CalcService.square($scope.number);</div><div class="line">   </div><div class="line">   $scope.square = function() &#123;</div><div class="line">      $scope.result = CalcService.square($scope.number);</div><div class="line">   &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p>factory<br>factory 是一个函数用于返回值。在 service 和 controller 需要时创建。<br>通常我们使用 factory 函数来计算或返回值。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">// 定义一个模块</div><div class="line">var mainApp = angular.module(<span class="string">"mainApp"</span>, []);</div><div class="line"></div><div class="line">// 创建 factory <span class="string">"MathService"</span> 用于两数的乘积 provides a method multiply to <span class="keyword">return</span> multiplication of two numbers</div><div class="line">mainApp.factory(<span class="string">'MathService'</span>, function() &#123;</div><div class="line">   var factory = &#123;&#125;;</div><div class="line">   </div><div class="line">   factory.multiply = function(a, b) &#123;</div><div class="line">      <span class="keyword">return</span> a * b</div><div class="line">   &#125;</div><div class="line">   <span class="keyword">return</span> factory;</div><div class="line">&#125;); </div><div class="line"></div><div class="line">// 在 service 中注入 factory <span class="string">"MathService"</span></div><div class="line">mainApp.service(<span class="string">'CalcService'</span>, function(MathService)&#123;</div><div class="line">   this.square = function(a) &#123;</div><div class="line">      <span class="keyword">return</span> MathService.multiply(a,a);</div><div class="line">   &#125;</div><div class="line">&#125;);</div><div class="line">...</div></pre></td></tr></table></figure></p>
-<p>provider<br>AngularJS 中通过 provider 创建一个 service、factory等(配置阶段)。<br>Provider 中提供了一个 factory 方法 get()，它用于返回 value/service/factory。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">// 定义一个模块</div><div class="line">var mainApp = angular.module(<span class="string">"mainApp"</span>, []);</div><div class="line">...</div><div class="line"></div><div class="line">// 使用 provider 创建 service 定义一个方法用于计算两数乘积</div><div class="line">mainApp.config(function($provide) &#123;</div><div class="line">   $provide.provider(<span class="string">'MathService'</span>, function() &#123;</div><div class="line">      this.$get = function() &#123;</div><div class="line">         var factory = &#123;&#125;;  </div><div class="line">         </div><div class="line">         factory.multiply = function(a, b) &#123;</div><div class="line">            <span class="keyword">return</span> a * b; </div><div class="line">         &#125;</div><div class="line">         <span class="keyword">return</span> factory;</div><div class="line">      &#125;;</div><div class="line">   &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p>constant<br>constant(常量)用来在配置阶段传递数值，注意这个常量在配置阶段是不可用的。<br>mainApp.constant(“configParam”, “constant value”);</p>
-<p>以下实例提供了以上几个依赖注入机制的演示。<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div></pre></td><td class="code"><pre><div class="line">&lt;html&gt;</div><div class="line">   </div><div class="line">   &lt;head&gt;</div><div class="line">      &lt;meta charset="utf-8"&gt;</div><div class="line">      &lt;title&gt;AngularJS  依赖注入&lt;/title&gt;</div><div class="line">   &lt;/head&gt;</div><div class="line">   </div><div class="line">   &lt;body&gt;</div><div class="line">      &lt;h2&gt;AngularJS 简单应用&lt;/h2&gt;</div><div class="line">      </div><div class="line">      &lt;div ng-app = "mainApp" ng-controller = "CalcController"&gt;</div><div class="line">         &lt;p&gt;输入一个数字: &lt;input type = "number" ng-model = "number" /&gt;&lt;/p&gt;</div><div class="line">         &lt;button ng-click = "square()"&gt;X&lt;sup&gt;2&lt;/sup&gt;&lt;/button&gt;</div><div class="line">         &lt;p&gt;结果: &#123;&#123;result&#125;&#125;&lt;/p&gt;</div><div class="line">      &lt;/div&gt;</div><div class="line">      </div><div class="line">      &lt;script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"&gt;&lt;/scrip t&gt;</div><div class="line">      </div><div class="line">      &lt;script&gt;</div><div class="line">         var mainApp = angular.module("mainApp", []);</div><div class="line">         </div><div class="line">         mainApp.config(function($provide) &#123;</div><div class="line">            $provide.provider('MathService', function() &#123;</div><div class="line">               this.$get = function() &#123;</div><div class="line">                  var factory = &#123;&#125;;</div><div class="line">                  </div><div class="line">                  factory.multiply = function(a, b) &#123;</div><div class="line">                     return a * b;</div><div class="line">                  &#125;</div><div class="line">                  return factory;</div><div class="line">               &#125;;</div><div class="line">            &#125;);</div><div class="line">         &#125;);</div><div class="line">			</div><div class="line">         mainApp.value("defaultInput", 5);</div><div class="line">         </div><div class="line">         mainApp.factory('MathService', function() &#123;</div><div class="line">            var factory = &#123;&#125;;</div><div class="line">            </div><div class="line">            factory.multiply = function(a, b) &#123;</div><div class="line">               return a * b;</div><div class="line">            &#125;</div><div class="line">            return factory;</div><div class="line">         &#125;);</div><div class="line">         </div><div class="line">         mainApp.service('CalcService', function(MathService)&#123;</div><div class="line">            this.square = function(a) &#123;</div><div class="line">               return MathService.multiply(a,a);</div><div class="line">            &#125;</div><div class="line">         &#125;);</div><div class="line">         </div><div class="line">         mainApp.controller('CalcController', function($scope, CalcService, defaultInput) &#123;</div><div class="line">            $scope.number = defaultInput;</div><div class="line">            $scope.result = CalcService.square($scope.number);</div><div class="line"></div><div class="line">            $scope.square = function() &#123;</div><div class="line">               $scope.result = CalcService.square($scope.number);</div><div class="line">            &#125;</div><div class="line">         &#125;);</div><div class="line">			</div><div class="line">      &lt;/scrip t&gt;</div><div class="line">      </div><div class="line">   &lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
-<h2 id="AngularJS-服务-Service"><a href="#AngularJS-服务-Service" class="headerlink" title="AngularJS 服务(Service)"></a>AngularJS 服务(Service)</h2><p>AngularJS 中你可以创建自己的服务，或使用内建服务。<br>什么是服务？<br>在 AngularJS 中，服务是一个函数或对象，可在你的 AngularJS 应用中使用。<br>AngularJS 内建了30 多个服务。<br>有个 $location 服务，它可以返回当前页面的 URL 地址。<br>实例<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var app = angular.module(<span class="string">'myApp'</span>, []);</div><div class="line">app.controller(<span class="string">'customersCtrl'</span>, function($scope, $location) &#123;</div><div class="line">    $scope.myUrl = $location.absUrl();</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p>$http 服务<br>$http 是 AngularJS 应用中最常用的服务。 服务向服务器发送请求，应用响应服务器传送过来的数据。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var app = angular.module(<span class="string">'myApp'</span>, []);</div><div class="line">app.controller(<span class="string">'myCtrl'</span>, function($scope, $http) &#123;</div><div class="line">    $http.get(<span class="string">"welcome.htm"</span>).then(function (response) &#123;</div><div class="line">        $scope.myWelcome = response.data;</div><div class="line">    &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p>$timeout 服务<br>AngularJS $timeout 服务对应了 JS window.setTimeout 函数。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var app = angular.module(<span class="string">'myApp'</span>, []);</div><div class="line">app.controller(<span class="string">'myCtrl'</span>, function($scope, $timeout) &#123;</div><div class="line">    $scope.myHeader = <span class="string">"Hello World!"</span>;</div><div class="line">    $timeout(function () &#123;</div><div class="line">        $scope.myHeader = <span class="string">"How are you today?"</span>;</div><div class="line">    &#125;, <span class="number">2000</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p>$interval 服务<br>AngularJS $interval 服务对应了 JS window.setInterval 函数。</p>
-<p>创建自定义服务<br>你可以创建访问自定义服务，链接到你的模块中：<br>创建名为hexafy 的访问:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">app.service(<span class="string">'hexafy'</span>, function() &#123;</div><div class="line">    this.myFunc = function (x) &#123;</div><div class="line">        <span class="keyword">return</span> x.toString(<span class="number">16</span>);</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p>要使用访问自定义服务，需要在定义过滤器的时候独立添加:<br>实例<br>使用自定义的的服务 hexafy 将一个数字转换为16进制数:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">app.controller(<span class="string">'myCtrl'</span>, function($scope, hexafy) &#123;</div><div class="line">    $scope.hex = hexafy.myFunc(<span class="number">255</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>过滤器中，使用自定义服务<br>当你创建了自定义服务，并连接到你的应用上后，你可以在控制器，指令，过滤器或其他服务中使用它。<br>在过滤器 myFormat 中使用服务 hexafy:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">app.filter(<span class="string">'myFormat'</span>,[<span class="string">'hexafy'</span>, function(hexafy) &#123;</div><div class="line">    <span class="keyword">return</span> function(x) &#123;</div><div class="line">        <span class="keyword">return</span> hexafy.myFunc(x);</div><div class="line">    &#125;;</div><div class="line">&#125;]);</div></pre></td></tr></table></figure></p>
-<p>在对象数组中获取值时你可以使用过滤器：<br>创建服务 hexafy:<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;ul&gt;</div><div class="line">&lt;li ng-repeat="x in counts"&gt;&#123;&#123;x | myFormat&#125;&#125;&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div></pre></td></tr></table></figure></p>
-<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><p>ng-app 指令位于应用的根元素下。<br>对于单页Web应用（single page web application，SPA），应用的根通常为 <html> 元素。<br>一个或多个 ng-controller 指令定义了应用的控制器。每个控制器有他自己的作用域：: 定义的 HTML 元素。<br>AngularJS 在 HTML DOMContentLoaded 事件中自动开始。如果找到 ng-app 指令 ， AngularJS 载入指令中的模块，并将 ng-app 作为应用的根进行编译。<br>应用的根可以是整个页面，或者页面的一小部分，如果是一小部分会更快编译和执行。</html></p>
-<h2 id="AngularJS中的依赖注入"><a href="#AngularJS中的依赖注入" class="headerlink" title="AngularJS中的依赖注入"></a>AngularJS中的依赖注入</h2><p>1、angular.module()创建、获取、注册angular中的模块<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">/ 传递参数不止一个,代表新建模块;空数组代表该模块不依赖其他模块</div><div class="line">var createModule = angular.module(<span class="string">"myModule"</span>, []);</div><div class="line"></div><div class="line">// 只有一个参数(模块名),代表获取模块</div><div class="line">// 如果模块不存在,angular框架会抛异常</div><div class="line">var getModule = angular.module(<span class="string">"myModule"</span>);</div><div class="line"></div><div class="line">// true,都是同一个模块</div><div class="line">alert(createModule == getModule);</div></pre></td></tr></table></figure></p>
-<p>该函数既可以创建新的模块，也可以获取已有模块，是创建还是获取，通过参数的个数来区分。<br>angular.module(name, [requires], [configFn]);</p>
-<p>name：字符串类型，代表模块的名称；</p>
-<p>requires：字符串的数组，代表该模块依赖的其他模块列表，如果不依赖其他模块，用空数组即可；</p>
-<p>configFn：用来对该模块进行一些配置。</p>
-<p>4、angular中三种声明依赖的方式</p>
-<p>angular提供了3种获取依赖的方式：inference、annotation、inline方式。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">// 创建myModule模块、注册服务</div><div class="line">var myModule = angular.module(<span class="string">'myModule'</span>, []);</div><div class="line">myModule.service(<span class="string">'myService'</span>, function() &#123;</div><div class="line">			this.my = <span class="number">0</span>;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">// 获取injector</div><div class="line">var injector = angular.injector([<span class="string">"myModule"</span>]);</div><div class="line"></div><div class="line">// 第一种inference</div><div class="line">injector.invoke(function(myService)&#123;alert(myService.my);&#125;);</div><div class="line"></div><div class="line">// 第二种annotation</div><div class="line">function explicit(serviceA) &#123;alert(serviceA.my);&#125;;</div><div class="line">explicit.$inject = [<span class="string">'myService'</span>];</div><div class="line">injector.invoke(explicit);</div><div class="line"></div><div class="line">// 第三种inline</div><div class="line">injector.invoke([<span class="string">'myService'</span>, function(serviceA)&#123;alert(serviceA.my);&#125;]);</div></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http://blog.csdn.net/renfufei/article/details/<span class="number">19038123</span></div></pre></td></tr></table></figure>
-<p>依赖注解 | Dependency Annotation<br>injector 怎么知道需要注入何种 service 呢?<br>为了解决依赖关系,应用程序开发者需要提供 injector 需要的 annotation 信息。在 Angular 中,某些API函数通过使用 injector 来调用,请按照API文档。injector 需要知道注入哪些服务给函数。下面是通过 service name 信息对代码进行注解的三种等价方式。他们都是等价的，你可以在适当的地方互换使用.</p>
-<p>推断依赖关系 | Inferring Dependencies<br>最简单的获取依赖的方式,就是让函数参数名和依赖的名字一致。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">function MyController($scope, greeter) &#123;  </div><div class="line">  ...  </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>给定一个 function, injector 通过检查函数声明和提取参数名称可以推断出 service 的名称 。在上面的例子中, $scope 和 greeter 是需要注入 function 的两个 services。<br>虽然简单直接, 但这种方法在 JavaScript 压缩/混淆 时会失效,因为会重命名方法的参数名。这使得这种注解方式只适用于 pretotyping, 或者 demo 程序中。</p>
-<p>$inject 注解 | $inject Annotation<br>为了可以在压缩代码后依然可以注入正确的 services, 函数需要通过 $inject 属性来注解. $inject 属性是一个数组,包含 需要注入的 service 名字.</p>
-<p>var MyController = function(renamed$scope, renamedGreeter) {<br>}<br>MyController[‘$inject’] = [‘$scope’, ‘greeter’];  </p>
-<p>在这种情况下,$inject数组中的值的顺序必须和要注入的参数的顺序一致。使用上面的代码片段作为一个例子, ‘$scope’ 将注入到 “renamed$scope”, 而“greeter” 将注入到 “renamedGreeter”。再次提醒注意 $inject 注解必须和 函数声明时的实际参数保持同步(顺序,个数…)。<br>对于 controller 声明,这种注解方法是很有用的,因为它将注解信息赋给了 function。</p>
-<p>简介AngularJS中使用factory和service的方法<br>AngularJS支持使用服务的体系结构“关注点分离”的概念。服务是JavaScript函数，并负责只做一个特定的任务。这也使得他们即维护和测试的单独实体。控制器，过滤器可以调用它们作为需求的基础。服务使用AngularJS的依赖注入机制注入正常。<br>AngularJS提供例如许多内在的服务，如：$http, $route, $window, $location等。每个服务负责例如一个特定的任务，$http是用来创建AJAX调用，以获得服务器的数据。 $route用来定义路由信息等。内置的服务总是前缀$符号。<br>有两种方法来创建服务。<br>    工厂<br>    服务<br>使用工厂方法<br>使用工厂方法，我们先定义一个工厂，然后分配方法给它。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">var mainApp = angular.module(<span class="string">"mainApp"</span>, []);</div><div class="line">mainApp.factory(<span class="string">'MathService'</span>, function() &#123;   </div><div class="line">  var factory = &#123;&#125;; </div><div class="line">  factory.multiply = function(a, b) &#123;</div><div class="line">   <span class="keyword">return</span> a * b </div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> factory;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p>   使用服务方法<br>使用服务的方法，我们定义了一个服务，然后分配方法。还注入已经可用的服务。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">mainApp.service(<span class="string">'CalcService'</span>, function(MathService)&#123;</div><div class="line">  this.square = function(a) &#123; </div><div class="line"> <span class="keyword">return</span> MathService.multiply(a,a); </div><div class="line"> &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p>$rootScope</p>
-<p>一个网站中有很多页面都要判断登录状态 ， 我之前是直接在启动的时候查登录状态，并挂在$rootScope上，然后各个页面判断登录状态的操作逻辑直接与$rootScope对应属性双向绑定。 这样就不用事件传递了 ，如果涉及逻辑操作 ，还是建议放在服务里面。 services 相当于业务处理模块，而$rootScope 相当于全局变量。<br>scope是AngularJS中的作用域(其实就是存储数据的地方)，很类似JavaScript的原型链 。搜索的时候，优先找自己的scope，如果没有找到就沿着作用域链向上搜索，直至到达根作用域rootScope。<br>　　$rootScope是由angularJS加载模块的时候自动创建的，每个模块只会有1个rootScope。rootScope创建好会以服务的形式加入到 $injector中。也就是说通过 $injector.get(“$ rootScope “);能够获取到某个模块的根作用域。更准确的来说，$rootScope是由angularJS的核心模块ng创建的。</p>
-<p>　　scope是html和单个controller之间的桥梁，数据绑定就靠他了。rootscope是各个controller中scope的桥梁。用rootscope定义的值，可以在各个controller中使用</p>
-<p>事件：</p>
-<p>$stateChangeError</p>
-<p>路由状态变化发生错误时触发的事件。参数有：event，toState，toParams，fromState，fromParams，error。以上根据字面意思即可理解，哈哈。</p>
-<p>$stateChangeStart</p>
-<p>路由状态变化发生前触发的事件。参数有：event，toState，toParams，fromState，fromParams。</p>
-<p>$stateChangeSuccess</p>
-<p>路由状态变化正确时触发的事件。参数有：event，toState，toParams，fromState，fromParams。</p>
-<p>$stateNotFound</p>
-<p>路由状态没找到的时候触发的事件。参数有：event，unfoundState，fromState，fromParams。</p>
-<p>state(name,stateConfig);</p>
-<p>注册一个状态，并给定其配置。<br>参数：</p>
-<p>name：状态的名称。</p>
-<p>stateConfig：状态配置对象。配置具有以下各项属性：</p>
-<p>template： string/function，html模板字符串，或者一个返回html模板字符串的函数。</p>
-<p>templateUrl：string/function，模板路径的字符串，或者返回模板路径字符串的函数。</p>
-<p>templateProvider：function，返回html模板字符串或模板路径的服务。</p>
-<p>controller：string/function，新注册一个控制器函数或者一个已注册的控制器的名称字符串。</p>
-<p>controllerProvider：function，返回控制器或者控制器名称的服务</p>
-<p>controllerAs：string，控制器别名。</p>
-<p>parent：string/object，手动指定该状态的父级。</p>
-<p>resolve：object，将会被注入controller去执行的函数，<string,function>形式。</string,function></p>
-<p>url：string，当前状态的对应url。</p>
-<p>views：object，视图展示的配置。<string,object>形式。</string,object></p>
-<p>abstract：boolean，一个永远不会被激活的抽象的状态，但可以给其子级提供特性的继承。默认是true。</p>
-<p>onEnter：function，当进入一个状态后的回调函数。</p>
-<p>onExit：function，当退出一个状态后的回调函数。</p>
-<p>reloadOnSearch：boolean，如果为false，那么当一个search/query参数改变时不会触发相同的状态，用于当你修改$location.search()的时候不想重新加载页面。默认为true。</p>
-<p>data：object，任意对象数据，用于自定义配置。继承父级状态的data属性。换句话说，通过原型继承可以达到添加一个data数据从而整个树结构都能获取到。</p>
-<p>params：url里的参数值，通过它可以实现页面间的参数传递。</p>
-<p>AngularJS 中的 controllerAs</p>
-<p>Controller 在 AngularJS 应用中可以说是无处不在， 可以在 html 中通过 ngController 指令来指定 Controller ， 语法为：</p>
-<p><any ng-controller="expression"><br>    …<br></any><br>在 ngRoute 模块中使用， 语法为：</p>
-<p>$routeProvider<br>    .when(‘/my-url’, {<br>        controller: ‘MyController’<br>    });<br>在 ui.route 模块中使用， 语法为：</p>
-<p>$stateProvider<br>    .state(‘myState’, {<br>        controller: ‘MyController’<br>    })<br>上面用法在 AngularJS 的社区、示例程序中非常普遍。 但是， 有一个细节可能很多人没有注意到， 那就是 controllerAs ， 上面的三种用法还可以分别这样使用：</p>
-<p><any ng-controller="expression as myExpr"><br>    …<br></any><br>$routeProvider<br>    .when(‘/my-url’, {<br>        controller: ‘MyController’,<br>        controllerAs: ‘ctrl’<br>    });<br>$stateProvider<br>    .state(‘myState’, {<br>        controller: ‘MyController’,<br>        controllerAs: ‘ctrl’<br>    })<br>那么， 使用了 controllerAs 有什么区别呢？ 在 AngularJS 的文档中是这样说的：</p>
-<p>one binds methods and properties directly onto the controller using this: ng-controller=”SettingsController1 as settings”<br>one injects $scope into the controller: ng-controller=”SettingsController2”<br>上面的意思是说， 就是使用 controllerAs 将直接绑定 Controller 的属性和方法， 而不使用 controllerAs 将绑定到为 Controller 注入的 $scope 参数， 下面用一个具体的例子来说明一下：</p>
-<p>不使用 controllerAs 指令时， 通常我们这样做：<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">angular</div><div class="line">    .module('app', []).</div><div class="line">    controller('TestController', TestController);</div><div class="line"></div><div class="line">TestController.$inject = ['$scope', '$window'];</div><div class="line"></div><div class="line">function TestController($scope, $window) &#123;</div><div class="line">    $scope.name = 'beginor';</div><div class="line">    </div><div class="line">    $scope.greet = greet;</div><div class="line">    </div><div class="line">    function greet() &#123;</div><div class="line">        $window.alert('Hello, ' + $scope.name);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">&lt;div ng-Controller="TestController"&gt;</div><div class="line">    &lt;label&gt;Name:</div><div class="line">        &lt;input type="text" ng-model="name" /&gt;</div><div class="line">    &lt;/label&gt;</div><div class="line">    &lt;button type="button" ng-click="greet()"&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
-<p>在 HTML 视图中， 我们绑定的是 $scope 对象的属性和方法， 而不是 TestController 的实例。</p>
-<p>上面的例子在使用 controllerAs 时， 可以修改成这样：<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">angular</div><div class="line">    .module('app', []).</div><div class="line">    controller('TestController', TestController);</div><div class="line"></div><div class="line">TestController.$inject = ['$window'];</div><div class="line"></div><div class="line">function TestController($window) &#123;</div><div class="line">    this.name = 'beginor';</div><div class="line">    this.$window = $window;</div><div class="line">&#125;</div><div class="line"></div><div class="line">TestController.prototype.greet = function () &#123;</div><div class="line">    this.$window.alert('Hello, ' + this.name);</div><div class="line">&#125;</div><div class="line">&lt;div ng-Controller="TestController as vm"&gt;</div><div class="line">    &lt;label&gt;Name:</div><div class="line">        &lt;input type="text" ng-model="vm.name" /&gt;</div><div class="line">    &lt;/label&gt;</div><div class="line">    &lt;button type="button" ng-click="vm.greet()"&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
-<p>看到区别了吧， 使用 controllerAs 时， 可以将 Controller 定义成 Javascript 的原型类， 在 HTML 视图中直接绑定原型类的属性和方法。</p>
-<p>这样做的优点是：</p>
-<p>可以使用 Javascript 的原型类， 我们可以使用更加高级的 ES6 或者 TypeScript 来编写 Controller ；<br>避开了所谓的 child scope 原型继承带来的一些问题， 具体可以 参考这里 ；</p>
-<p>angular的uiRouter服务学习(5) — $state.includes()方法<br>$state.includes方法用于判断当前激活状态是否是指定的状态或者是指定状态的子状态.</p>
-<p>$state.includes(stateOrName,params,options)</p>
-<p>$state.includes方法接受三个参数,其中第二和第三个都不知道是干啥的…估计也不太用得到,就暂时不管了…</p>
-<p>stateOrName:字符串(必填). 是一个状态的名字.</p>
-<p>比如当前的激活状态是 “contacts.details.item” </p>
-<p>如下调用:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$state.includes(<span class="string">"contacts"</span>);                              //返回true</div><div class="line">$state.includes(<span class="string">"contacts.details"</span>);                      //返回true</div><div class="line">$state.includes(<span class="string">"contacts.details.item"</span>);                 //返回true</div><div class="line">$state.includes(<span class="string">"detail"</span>);                                //返回undefined</div><div class="line">$state.includes(<span class="string">"item"</span>);                                  //返回undefined</div></pre></td></tr></table></figure>
-<p>也可以使用glob语法:</p>
-<p>复制代码<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$state.$current.name = <span class="string">'contacts.details.item.url'</span>;</div><div class="line"> </div><div class="line">$state.includes(<span class="string">"*.details.*.*"</span>); // returns true</div><div class="line">$state.includes(<span class="string">"*.details.**"</span>); // returns true</div><div class="line">$state.includes(<span class="string">"**.item.**"</span>); // returns true</div><div class="line">$state.includes(<span class="string">"*.details.item.url"</span>); // returns true</div><div class="line">$state.includes(<span class="string">"*.details.*.url"</span>); // returns true</div><div class="line">$state.includes(<span class="string">"*.details.*"</span>); // returns undefined</div><div class="line">$state.includes(<span class="string">"item.**"</span>); // returns undefined</div></pre></td></tr></table></figure></p>
-<p>复制代码<br>可以用于激活某个tab,让当前项高亮显示:<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;li ng-class="&#123;active:state.includes('dashboard.report')&#125;"&gt;&lt;a ui-sref="dashboard.report"&gt;Reports&lt;/a&gt;&lt;/li&gt;</div></pre></td></tr></table></figure></p>
-<p>需要注意的是,在表达式里直接用$state是不行的,需要在控制器中把$state赋值给$scope下的变量.这样在表达式里才能使用:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$stateProvider.state(<span class="string">'dashboard'</span>,&#123;</div><div class="line">    url:<span class="string">'/dashboard'</span>,</div><div class="line">    templateUrl:<span class="string">'./tpls/dashboard.html'</span>,</div><div class="line">    controller:function($scope,$state)&#123;</div><div class="line">        $scope.state = $state;              </div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
-<p>AngularJS ng - swi tch 指令<br>根据选中的值显示对应部分:<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&lt;div ng-switch="myVar"&gt;</div><div class="line">  &lt;div ng-switch-when="runoob"&gt;</div><div class="line">     &lt;h1&gt;菜鸟教程&lt;/h1&gt;</div><div class="line">     &lt;p&gt;欢迎访问菜鸟教程&lt;/p&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">  &lt;div ng-switch-when="google"&gt;</div><div class="line">     &lt;h1&gt;Google&lt;/h1&gt;</div><div class="line">     &lt;p&gt;欢迎访问Google&lt;/p&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">  &lt;div ng-switch-when="taobao"&gt;</div><div class="line">     &lt;h1&gt;淘宝&lt;/h1&gt;</div><div class="line">     &lt;p&gt;欢迎访问淘宝&lt;/p&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">  &lt;div ng-switch-default&gt;</div><div class="line">     &lt;h1&gt;切换&lt;/h1&gt;</div><div class="line">     &lt;p&gt;选择不同选项显示对应的值。&lt;/p&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
-<p>定义和用法<br>ng-sw itch 指令根据表达式显示或隐藏对应的部分。<br>对应的子元素使用 ng-sw itch-when 指令，如果匹配选中选择显示，其他为匹配的则移除。<br>你可以通过使用 ng-s witch-default 指令设置默认选项，如果都没有匹配的情况，默认选项会显示。<br>语法<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;element ng-switch="expression"&gt;</div><div class="line">  &lt;element ng-switch-when="value"&gt;&lt;/element&gt;</div><div class="line">  &lt;element ng-switch-when="value"&gt;&lt;/element&gt;</div><div class="line">  &lt;element ng-switch-when="value"&gt;&lt;/element&gt;</div><div class="line">  &lt;element ng-switch-default&gt;&lt;/element&gt;</div><div class="line">&lt;/element&gt;</div><div class="line">&lt;form&gt; 元素支持该属性。</div></pre></td></tr></table></figure></p>
-<p>在 Angularjs 中 ui-sref 和 $state.go 如何传递参数<br>ui-sref、$state.go 的区别</p>
-<p>ui-sref 一般使用在 &lt; a &gt;…&lt; / a &gt;；</p>
-<p><a ui-sref="message-list">消息中心&lt; / a &gt;</a></p>
-<p>$state.go(‘someState’)一般使用在 controller里面；</p>
-<p>.controller(‘firstCtrl’, function($scope, $state) {<br>      $state.go(‘login’);<br> });<br>这两个本质上是一样的东西，我们看ui-sref的源码：</p>
-<p>复制代码<br>…<br>element.bind(“click”, function(e) {<br>    var button = e.which || e.button;<br>    if ( !(button &gt; 1 || e.ctrlKey || e.metaKey || e.shiftKey || element.attr(‘target’)) ) {</p>
-<pre><code>var transition = $timeout(function() {
-  // HERE we call $state.go inside of ui-sref
-  $state.go(ref.state, params, options);
-});
-</code></pre><p>复制代码<br>ui-sref最后调用的还是$state.go()方法<br>首先，要在目标页面定义接受的参数：<br>http://images2015.cnblogs.com/blog/337212/201603/337212-20160318181804412-426985465.png<br>传参，</p>
-<p>ui-sref:<br>http://images2015.cnblogs.com/blog/337212/201603/337212-20160318182142693-1979913166.png<br>http://images2015.cnblogs.com/blog/337212/201603/337212-20160318182359646-1518874208.png</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/01/12/AngularJS/" data-id="cjhcqjk2j0005oyff56u16m7r" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Html-标签" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/01/12/Html-标签/" class="article-date">
-  <time datetime="2017-01-12T02:00:06.000Z" itemprop="datePublished">2017-01-12</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/12/Html-标签/">Html 标签</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="HTML-lt-a-gt-标签"><a href="#HTML-lt-a-gt-标签" class="headerlink" title="HTML&lt; a &gt;标签"></a>HTML&lt; a &gt;标签</h1><h2 id="href-属性"><a href="#href-属性" class="headerlink" title="href 属性"></a>href 属性</h2><p>href 属性规定链接的目标：<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;a href="http://www.w3school.com.cn"&gt;W3School&lt;/a&gt;</div></pre></td></tr></table></figure></p>
-<p>定义和用法<br>href 属性用于指定超链接目标的 URL。<br>href 属性的值可以是任何有效文档的相对或绝对 URL，包括片段标识符和 JavaScript 代码段。如果用户选择了 &lt; a &gt; 标签中的内容，那么浏览器会尝试检索并显示 href 属性指定的 URL 所表示的文档，或者执行 JavaScript 表达式、方法和函数的列表。<br>提示和注释<br>注意：&lt; a &gt; 标签中必须提供 href 属性或 name 属性。</p>
-<p>一个引用其他文档的简单 &lt; a &gt; 标签可以是下列形式：<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;a href="http://www.w3school.com.cn/index.html"&gt; W3School 在线教程&lt;/a&gt;</div></pre></td></tr></table></figure></p>
-<p>浏览器用特殊效果显示短语“W3School 在线教程”（通常是带下划线的蓝色文本），这样用户就会知道它是一个可以链接到其他文档的超链接。就像这样：<br>W3School 在线教程<br>用户还可以利用浏览器中的选项来自己指定文本颜色、设置链接前和链接后链接文本的颜色。<br>提示：可以使用 CSS 伪类向文本超链接添加复杂而多样的样式。</p>
-<p>制作图像链接<br>更复杂的锚还可以包含图像。下面这个 LOGO 是一个图像链接，点击该图像，可以返回 W3school 的首页：<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;a href="http://www.w3school.com.cn/index.html"&gt;</div><div class="line">&lt;img src="/i/w3school_logo_white.gif" /&gt;</div><div class="line">&lt;/a&gt;</div></pre></td></tr></table></figure></p>
-<p>上面的代码会为 W3School 的 LOGO 添加一个返回首页的超链接：<br>W3School 在线教程<br>大多数图形浏览器都会在作为锚的一部分的图像周围放置特殊的边框。通过在 <img> 标签中把图像的 border 属性设置为 0 可以删除超链接的边框。也可以使用 CSS 的边框属性来全局性地改变元素的边框样式。<br>语法<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;a href=<span class="string">"value"</span>&gt;</div></pre></td></tr></table></figure></p>
-<p>属性值<br>值    描述<br>URL    超链接的 URL。可能的值：<br>绝对 URL - 指向另一个站点（比如 href=”<a href="http://www.example.com/index.htm&quot;）" target="_blank" rel="external">http://www.example.com/index.htm&quot;）</a><br>相对 URL - 指向站点内的某个文件（href=”index.htm”）<br>锚 URL - 指向页面中的锚（href=”#top”）</p>
-<p>文件名URL，可以不包含文件后缀<br>相对跳转有如下方式，需要了解（以下的例子中，分别以你的例子和带.html尾缀进行演示）：</p>
-<ol>
-<li>本目录的使用（与本文件在相同的文件夹下）：</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;a href=<span class="string">"123456"</span>&gt;</div><div class="line">&lt;a href=<span class="string">"123456.html"</span>&gt;</div></pre></td></tr></table></figure>
-<ol>
-<li>本目录下的子文件夹（设文件夹名为newdoc）的使用：</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;a href=<span class="string">"newdoc/123456"</span>&gt;</div><div class="line">&lt;a href=<span class="string">"newdoc/123456.html"</span>&gt;</div></pre></td></tr></table></figure>
-<ol>
-<li>本目录下的子文件夹下的子文件夹（设文件夹名为newdoc2）的使用(如果更多层，则依此类推)：</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;a href=<span class="string">"newdoc/newdoc2/123456"</span>&gt;</div><div class="line">&lt;a href=<span class="string">"newdoc/newdoc2/123456.html"</span>&gt;</div></pre></td></tr></table></figure>
-<ol>
-<li>本目录上一层父目录的使用：</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;a href=<span class="string">"../123456"</span>&gt;</div><div class="line">&lt;a href=<span class="string">"../123456.html"</span>&gt;</div></pre></td></tr></table></figure>
-<ol>
-<li>本目录上两层父目录的使用(如果更多层，则依此类推)：</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;a href=<span class="string">"../../123456"</span>&gt;</div><div class="line">&lt;a href=<span class="string">"../../123456.html"</span>&gt;</div></pre></td></tr></table></figure>
-<ol>
-<li>本目录上一层父目录下一个名为new文件夹下的使用(也就是和本文件所在的文件夹在相同目录下的那个new文件夹)：</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;a href=<span class="string">"../new/123456"</span>&gt;</div><div class="line">&lt;a href=<span class="string">"../new/123456.html"</span>&gt;</div></pre></td></tr></table></figure>
-<h2 id="html中a标签href属性的一个坑"><a href="#html中a标签href属性的一个坑" class="headerlink" title="html中a标签href属性的一个坑"></a>html中a标签href属性的一个坑</h2><p>由于公司需要，小菜最近在搞app web开发，目前只有ios和android版本，虽然仅此两个版本，但是依然要考虑浏览器兼容性问题，因为android和ios默认浏览器内核是不一样的。</p>
-<pre><code>先说说兼容性问题是什么。假如有这样一个URL：
-
-     http://www.kpdown.com/search?name=Ben Nadel 
-
-此URL后边有一个name参数，只不过参数的值竟然带了空格，这样的链接，直接用android浏览器访问，是没有问题的，但用ios的浏览器访问，这就是一个错误的URL，会报错的！
-
-所以，我们会想到编码，name参数的值，可以用encodeURIComponent()方法进行编码，然后再拼接到URL上，这样就安全了（encodeURIComponent是js原生方法，直接用即可）。
-
-然后，我们可以这样利用超链接：
-</code></pre><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;a href="javascript:openURL('http://www.kpdown.com/search?name=Ben%20Nadel');" &gt;查询&lt;/a&gt;</div></pre></td></tr></table></figure>
-<pre><code>利用openURL这个js方法进行页面跳转（假设有一个openURL方法，其中不涉及任何解码操作）。
-
-这段代码在android中运行正常，但到了ios中，依然报错，的确是编码了，为什么还是不行呢？
-
-请看如下代码：
-</code></pre><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;a href="javascript:openURL('http://www.kpdown.com/search?name=Ben%20Nadel');"&gt;测试href&lt;/a&gt;</div><div class="line">&lt;a href="javascript:;" onclick="javascript:openURL('http://www.kpdown.com/search?name=Ben%20Nadel');"&gt;测试onclick&lt;/a&gt;</div><div class="line"></div><div class="line">&lt;script&gt;</div><div class="line">  function openURL(url)&#123;</div><div class="line">    /*</div><div class="line">    * 测试href --print--&gt; http://www.kpdown.com/search?name=Ben Nadel</div><div class="line">    * 测试onclick --print--&gt; http://www.kpdown.com/search?name=Ben%20Nadel</div><div class="line">    */</div><div class="line">    console.log(url);</div><div class="line">  &#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<p>由此可见：“万恶”的href属性，在调用openURL传参时自动解码，而onclick属性则保持参数原封不动。<br>因此，小菜强烈不推荐使用a标签的href属性调用js，onclick方法非常的科学，非常的稳定，非常的正确，href的本意就是用来跳转URL，就不要用它来执行js啦。其实更好的做法是绑定事件，那样代码更好管理，看起来也整洁。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/01/12/Html-标签/" data-id="cjhcqjk2b0001oyffwvbysd3x" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-SpringBoot-Help" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/01/10/SpringBoot-Help/" class="article-date">
-  <time datetime="2017-01-10T06:39:17.000Z" itemprop="datePublished">2017-01-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/10/SpringBoot-Help/">SpringBoot Help</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Spring-Boot-MVC"><a href="#Spring-Boot-MVC" class="headerlink" title="Spring Boot MVC"></a>Spring Boot MVC</h1><h2 id="使用Spring-Boot"><a href="#使用Spring-Boot" class="headerlink" title="使用Spring Boot"></a>使用Spring Boot</h2><p>你可以像使用标准的Java库文件一样使用Spring Boot。简单的将需要的 spring-boot-*.jar 添加到classpath即可。<br> Spring Boot不要求任何特殊的工具集成，所以可以使用任何IDE，甚至文本编辑器。</p>
-<p>只是，仍然建议使用build工具：Maven 或 Gradle。</p>
-<pre><code>Spring Boot依赖 使用 org.springframework.boot groupId 。
-通常，让你的Maven POM文件继承 spring-boot-starter-parent，并声明一个或多个 Starter POMs依赖即可。Spring Boot也提供了一个可选的 Maven Plugin来创建可执行的jars。 
-</code></pre><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">    &lt;parent&gt;</div><div class="line">    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</div><div class="line">    &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;</div><div class="line">    &lt;version&gt;1.4.3.RELEASE&lt;/version&gt;</div><div class="line">&lt;/parent&gt;</div><div class="line">&lt;dependencies&gt;</div><div class="line">    &lt;dependency&gt;</div><div class="line">        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</div><div class="line">        &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;</div><div class="line">    &lt;/dependency&gt;</div><div class="line">&lt;/dependencies&gt;</div></pre></td></tr></table></figure>
-<h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><p>一个称手的文本编辑器（例如Vim、Emacs、Sublime Text）或者IDE（Eclipse、Idea Intellij）<br>Java环境（JDK 1.7或以上版本）<br>Maven 3.0+（Eclipse和Idea IntelliJ内置，如果使用IDE并且不使用命令行工具可以不安装）<br>一个最简单的Web应用</p>
-<h2 id="pom配置依赖"><a href="#pom配置依赖" class="headerlink" title="pom配置依赖"></a>pom配置依赖</h2><p>使用Spring Boot框架可以大大加速Web应用的开发过程，首先在Maven项目依赖中引入spring-boot-starter-web：</p>
-<p>pom.xml</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</div><div class="line">&lt;project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"</div><div class="line">    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"&gt;</div><div class="line">    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</div><div class="line">    &lt;groupId&gt;org.springframework&lt;/groupId&gt;</div><div class="line">    &lt;artifactId&gt;gs-maven&lt;/artifactId&gt;</div><div class="line">    &lt;packaging&gt;jar&lt;/packaging&gt;</div><div class="line">    &lt;version&gt;0.1.0&lt;/version&gt;</div><div class="line"></div><div class="line">    &lt;parent&gt;</div><div class="line">        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</div><div class="line">        &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;</div><div class="line">        &lt;version&gt;1.4.3.RELEASE&lt;/version&gt;</div><div class="line">    &lt;/parent&gt;</div><div class="line">    &lt;dependencies&gt;</div><div class="line">    &lt;dependency&gt;</div><div class="line">        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</div><div class="line">        &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;</div><div class="line">    &lt;/dependency&gt;</div><div class="line">    &lt;dependency&gt;</div><div class="line">        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</div><div class="line">        &lt;artifactId&gt;spring-boot-devtools&lt;/artifactId&gt;</div><div class="line">        &lt;optional&gt;true&lt;/optional&gt;</div><div class="line">    &lt;/dependency&gt;</div><div class="line"></div><div class="line">    &lt;dependency&gt;</div><div class="line">        &lt;groupId&gt;com.fasterxml.jackson.core&lt;/groupId&gt;</div><div class="line">        &lt;artifactId&gt;jackson-databind&lt;/artifactId&gt;</div><div class="line">        &lt;version&gt;2.7.0&lt;/version&gt;</div><div class="line">        &lt;/dependency&gt;</div><div class="line">    &lt;dependency&gt;</div><div class="line">        &lt;groupId&gt;com.fasterxml.jackson.core&lt;/groupId&gt;</div><div class="line">        &lt;artifactId&gt;jackson-annotations&lt;/artifactId&gt;</div><div class="line">        &lt;version&gt;2.7.0&lt;/version&gt;</div><div class="line">    &lt;/dependency&gt;</div><div class="line">    &lt;/dependencies&gt;</div><div class="line"></div><div class="line">    &lt;build&gt;</div><div class="line">        &lt;plugins&gt;</div><div class="line">            &lt;plugin&gt;</div><div class="line">                &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</div><div class="line">                &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;</div><div class="line">                &lt;configuration&gt;</div><div class="line">                    &lt;fork&gt;true&lt;/fork&gt;</div><div class="line">                &lt;/configuration&gt;</div><div class="line">            &lt;/plugin&gt;</div><div class="line">        &lt;/plugins&gt;</div><div class="line"> </div><div class="line">    &lt;/build&gt;</div><div class="line"></div><div class="line"></div><div class="line">&lt;/project&gt;</div></pre></td></tr></table></figure>
-<h2 id="Controller-含main方法"><a href="#Controller-含main方法" class="headerlink" title="Controller 含main方法"></a>Controller 含main方法</h2><p>SampleController.java<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line">package hello;</div><div class="line"></div><div class="line">import org.springframework.boot.*;</div><div class="line">import org.springframework.boot.autoconfigure.*;</div><div class="line">import org.springframework.stereotype.*;</div><div class="line">import org.springframework.web.bind.annotation.*;</div><div class="line">import org.springframework.ui.Model;</div><div class="line">import org.springframework.context.annotation.ComponentScan;</div><div class="line"></div><div class="line">@RestController</div><div class="line">@Controller</div><div class="line">@ComponentScan</div><div class="line">@EnableAutoConfiguration</div><div class="line"></div><div class="line"></div><div class="line">// @Configuration  </div><div class="line">// @ComponentScan  </div><div class="line">public class SampleController &#123;</div><div class="line"></div><div class="line">    @RequestMapping("/")</div><div class="line">    @ResponseBody</div><div class="line">    String home() &#123;</div><div class="line">        return "Hello World222!";</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @RequestMapping("/hello")</div><div class="line">    public String hello() &#123;</div><div class="line">        return "Hello World!";</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @RequestMapping("/index")</div><div class="line">    public String index(Model model)&#123;</div><div class="line"> </div><div class="line">        model.addAttribute("name","Ryan");</div><div class="line"> </div><div class="line">        return "index";</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public static void main(String[] args) throws Exception &#123;</div><div class="line">        SpringApplication.run(SampleController.class, args);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h2 id="Controller-不含main-的rest风格"><a href="#Controller-不含main-的rest风格" class="headerlink" title="Controller 不含main 的rest风格"></a>Controller 不含main 的rest风格</h2><p>HelloController.java</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">package hello;</div><div class="line"> </div><div class="line">import org.springframework.boot.*;</div><div class="line">import org.springframework.boot.autoconfigure.*;</div><div class="line">import org.springframework.stereotype.*;</div><div class="line">import org.springframework.web.bind.annotation.*;</div><div class="line">import org.springframework.ui.Model; </div><div class="line">import java.util.HashMap;</div><div class="line">import java.util.Map;</div><div class="line"> </div><div class="line">/**</div><div class="line"> * Created by miaorf on 2016/6/19.</div><div class="line"> */</div><div class="line">@Controller</div><div class="line">@RestController</div><div class="line">@RequestMapping("/hello")</div><div class="line">public class HelloController &#123;</div><div class="line"> </div><div class="line">    @RequestMapping("/index")</div><div class="line">    public String index(Model model)&#123;</div><div class="line"> </div><div class="line">        model.addAttribute("name","Ryan");</div><div class="line"> </div><div class="line">        return "index";</div><div class="line">    &#125;</div><div class="line"> </div><div class="line"> </div><div class="line">    @RequestMapping("/json")</div><div class="line">    @ResponseBody</div><div class="line">    public Map&lt;String,Object&gt; json()&#123;</div><div class="line">        Map&lt;String,Object&gt; map = new HashMap&lt;String,Object&gt;();</div><div class="line">        map.put("name","Ryan");</div><div class="line">        map.put("age","18");</div><div class="line">        map.put("sex","man");</div><div class="line">        return map;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="运行应用：mvn-spring-boot-run或在IDE中运行main-方法，在浏览器中访问http-localhost-8080"><a href="#运行应用：mvn-spring-boot-run或在IDE中运行main-方法，在浏览器中访问http-localhost-8080" class="headerlink" title="运行应用：mvn spring-boot:run或在IDE中运行main()方法，在浏览器中访问http://localhost:8080"></a>运行应用：mvn spring-boot:run或在IDE中运行main()方法，在浏览器中访问<a href="http://localhost:8080" target="_blank" rel="external">http://localhost:8080</a></h2><h2 id="简单分析"><a href="#简单分析" class="headerlink" title="简单分析"></a>简单分析</h2><p>我们从程序的入口SpringApplication.run(Application.class, args);开始分析：</p>
-<ul>
-<li><p>SpringApplication是Spring Boot框架中描述Spring应用的类，它的run()方法会创建一个Spring应用上下文（Application Context）。另一方面它会扫描当前应用类路径上的依赖，例如本例中发现spring-webmvc（由 spring-boot-starter-web传递引入）在类路径中，那么Spring Boot会判断这是一个Web应用，并启动一个内嵌的Servlet容器（默认是Tomcat）用于处理HTTP请求。</p>
-</li>
-<li><p>Spring WebMvc框架会将Servlet容器里收到的HTTP请求根据路径分发给对应的@Controller类进行处理，@RestController是一类特殊的@Controller，它的返回值直接作为HTTP Response的Body部分返回给浏览器。</p>
-</li>
-<li><p>@RequestMapping注解表明该方法处理那些URL对应的HTTP请求，也就是我们常说的URL路由（routing)，请求的分发工作是有Spring完成的。例如上面的代码中<a href="http://localhost:8080/" target="_blank" rel="external">http://localhost:8080/</a> 根路径就被路由至greeting()方法进行处理。如果访问<a href="http://localhost:8080/hello" target="_blank" rel="external">http://localhost:8080/hello</a> ，则会出现404 Not Found错误，因为我们并没有编写任何方法来处理/hello请求。</p>
-</li>
-<li><p>例如HelloController中，method方法匹配的URL是/classPath/methodPath”。</p>
-<p>提示</p>
-</li>
-</ul>
-<p>可以定义多个@Controller将不同URL的处理方法分散在不同的类中</p>
-<h2 id="URL中的变量——PathVariable"><a href="#URL中的变量——PathVariable" class="headerlink" title="URL中的变量——PathVariable"></a>URL中的变量——PathVariable</h2><p>在Web应用中URL通常不是一成不变的，例如微博两个不同用户的个人主页对应两个不同的URL:<a href="http://weibo.com/user1，http://weibo.com/user2。" target="_blank" rel="external">http://weibo.com/user1，http://weibo.com/user2。</a> 我们不可能对于每一个用户都编写一个被@RequestMapping注解的方法来处理其请求，Spring MVC提供了一套机制来处理这种情况：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta"> @RequestMapping("/users/&#123;username&#125;")</span></div><div class="line">public String userProfile(@PathVariable(<span class="string">"username"</span>) String username) &#123;</div><div class="line">    <span class="keyword">return</span> String.format(<span class="string">"user %s"</span>, username);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="meta">@RequestMapping("/posts/&#123;id&#125;")</span></div><div class="line">public String post(@PathVariable(<span class="string">"id"</span>) int id) &#123;</div><div class="line">    <span class="keyword">return</span> String.format(<span class="string">"post %d"</span>, id);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>在上述例子中，URL中的变量可以用{variableName}来表示，同时在方法的参数中加上@PathVariable(“variableName”)，那么当请求被转发给该方法处理时，对应的URL中的变量会被自动赋值给被@PathVariable注解的参数（能够自动根据参数类型赋值，例如上例中的int）。</p>
-<p>支持HTTP方法</p>
-<p>对于HTTP请求除了其URL，还需要注意它的方法（Method）。例如我们在浏览器中访问一个页面通常是GET方法，而表单的提交一般是POST方法。@Controller中的方法同样需要对其进行区分：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta"> @RequestMapping(value = "/login", method = RequestMethod.GET)</span></div><div class="line">public String loginGet() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="string">"Login Page"</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="meta">@RequestMapping(value = "/login", method = RequestMethod.POST)</span></div><div class="line">public String loginPost() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="string">"Login Post Request"</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h2 id="模板渲染"><a href="#模板渲染" class="headerlink" title="模板渲染"></a>模板渲染</h2><p>在之前所有的@RequestMapping注解的方法中，返回值字符串都被直接传送到浏览器端并显示给用户。但是为了能够呈现更加丰富、美观的页面，我们需要将HTML代码返回给浏览器，浏览器再进行页面的渲染、显示。</p>
-<p>一种很直观的方法是在处理请求的方法中，直接返回HTML代码，但是这样做的问题在于——一个复杂的页面HTML代码往往也非常复杂，并且嵌入在Java代码中十分不利于维护。更好的做法是将页面的HTML代码写在模板文件中，渲染后再返回给用户。为了能够进行模板渲染，需要将@RestController改成@Controller：<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"> import org.springframework.ui.Model;</div><div class="line"></div><div class="line">@Controller</div><div class="line">public class HelloController &#123;</div><div class="line"></div><div class="line">    @RequestMapping("/hello/&#123;name&#125;")</div><div class="line">    public String hello(@PathVariable("name") String name, Model model) &#123;</div><div class="line">        model.addAttribute("name", name);</div><div class="line">        return "hello"</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>在上述例子中，返回值”hello”并非直接将字符串返回给浏览器，而是寻找名字为hello的模板进行渲染，我们使用Thymeleaf模板引擎进行模板渲染，需要引入依赖：<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"> &lt;dependency&gt;</div><div class="line">  &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</div><div class="line">  &lt;artifactId&gt;spring-boot-starter-thymeleaf&lt;/artifactId&gt;</div><div class="line">&lt;/dependency&gt;</div></pre></td></tr></table></figure></p>
-<p>接下来需要在默认的模板文件夹src/main/resources/templates/目录下添加一个模板文件hello.html：<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"> &lt;!DOCTYPE HTML&gt;</div><div class="line">&lt;html xmlns:th="http://www.thymeleaf.org"&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;title&gt;Getting Started: Serving Web Content&lt;/title&gt;</div><div class="line">    &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">    &lt;p th:text="'Hello, ' + $&#123;name&#125; + '!'" /&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
-<p>th:text=”‘Hello, ‘ + ${name} + ‘!’”也就是将我们之前在@Controller方法里添加至Model的属性name进行渲染，并放入</p><p>标签中（因为th:text是</p><p>标签的属性）。模板渲染还有更多的用法，请参考Thymeleaf官方文档。</p>
-<h2 id="处理静态文件"><a href="#处理静态文件" class="headerlink" title="处理静态文件"></a>处理静态文件</h2><p>浏览器页面使用HTML作为描述语言，那么必然也脱离不了CSS以及JavaScript。为了能够浏览器能够正确加载类似/css/style.css, /js/main.js等资源，默认情况下我们只需要在src/main/resources/static目录下添加css/style.css和js/main.js文件后，Spring MVC能够自动将他们发布，通过访问/css/style.css, /js/main.js也就可以正确加载这些资源。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/01/10/SpringBoot-Help/" data-id="cjhcqjk2o000aoyffojdc8jjp" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-HexoHelper" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/01/10/HexoHelper/" class="article-date">
-  <time datetime="2017-01-10T06:37:46.000Z" itemprop="datePublished">2017-01-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/10/HexoHelper/">HexoHelper</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="hexo分支提交"><a href="#hexo分支提交" class="headerlink" title="hexo分支提交"></a>hexo分支提交</h1><p>git add –all<br>git commit -m “…”<br>git push origin hexo提交网站相关的文件；<br>多秘钥管理问题eval $(ssh-agent)，然后输入ssh-add ~/.ssh/id_rsa_songmaozh；</p>
-<h1 id="master提交"><a href="#master提交" class="headerlink" title="master提交"></a>master提交</h1><p>执行hexo g -d生成网站并部署到GitHub上。</p>
-<h1 id="创建新文件"><a href="#创建新文件" class="headerlink" title="创建新文件"></a>创建新文件</h1><p>hexo new “filename”</p>
-<h1 id="图片链接"><a href="#图片链接" class="headerlink" title="图片链接"></a>图片链接</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">![image](http://images2015.cnblogs.com/blog/<span class="number">33454</span>/<span class="number">201607</span>/<span class="number">33454</span><span class="number">-20160722105819779</span><span class="number">-322820644.</span>png)</div></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/01/10/HexoHelper/" data-id="cjhcqjk2e0002oyffa1oawqox" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-js自执行函数" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/12/15/js自执行函数/" class="article-date">
-  <time datetime="2016-12-15T06:59:19.000Z" itemprop="datePublished">2016-12-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/12/15/js自执行函数/">js自执行函数</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>js自执行函数的几种不同写法的比较</p>
-<p>经常需要一个函数自执行，可惜这一种写法是错的：<br>复制代码 代码如下:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">function()&#123;alert(<span class="number">1</span>);&#125;();</div></pre></td></tr></table></figure></p>
-<p>原因是前半段“function(){alert(1);}”被当成了函数声明，而不是一个函数表达式，从而让后面的“();”变得孤立，产生语法错。 </p>
-<p>按上面的分析，这一段代码虽说没有语法错，但也是不符合我们的预期的，因为这个函数并没有自执行。<br>复制代码 代码如下:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">function()&#123;alert(<span class="number">1</span>);&#125;(<span class="number">1</span>);</div></pre></td></tr></table></figure>
-<p>综上，症结在于，如何明确代码描述的是一个函数表达式，而不是函数声明语句。<br>正确的写法多种多样，也各有利弊： </p>
-<p>方法1：最前最后加括号 </p>
-<p>复制代码 代码如下:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(function()&#123;alert(<span class="number">1</span>);&#125;());</div></pre></td></tr></table></figure></p>
-<p>这是jslint推荐的写法，好处是，能提醒阅读代码的人，这段代码是一个整体。<br>例如，在有语法高亮匹配功能的编辑器里，光标在第一个左括号后时，最后一个右括号也会高亮，看代码的人一眼就可以看到这个整体。<br>不过，对于某些写代码不喜欢在行后加分号的同学，也会形成一些坑坑，例如以下代码会报运行错：<br>复制代码 代码如下:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var a=<span class="number">1</span> </div><div class="line">(function()&#123;alert(<span class="number">1</span>);&#125;());</div></pre></td></tr></table></figure></p>
-<p>方法2：function外面加括号 </p>
-<p>复制代码 代码如下:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(function()&#123;alert(<span class="number">1</span>);&#125;)();</div></pre></td></tr></table></figure></p>
-<p>这种做法比方法1少了一个代码整体性的好处。 </p>
-<p>方法3：function前面加运算符，常见的是!与void 。<br>复制代码 代码如下:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">!function()&#123;alert(<span class="number">1</span>);&#125;(); </div><div class="line">void function()&#123;alert(<span class="number">2</span>);&#125;();</div></pre></td></tr></table></figure></p>
-<p>显然，加上“!”或“+”等运算符，写起来是最简单的。<br>加上“void ”要敲五下键盘，但是听说有一个好处是，比加”!”少一次逻辑运算。—-我只是听说，不明所以。 </p>
-<p>最后，代表我个人，强烈支持方法1,即jslint的推荐写法：<br>复制代码 代码如下:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(function()&#123;alert(<span class="number">1</span>);&#125;());</div></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/12/15/js自执行函数/" data-id="cjhcqjk2s000goyff2phg7udr" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Jquery简写" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/12/15/Jquery简写/" class="article-date">
-  <time datetime="2016-12-15T06:49:37.000Z" itemprop="datePublished">2016-12-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/12/15/Jquery简写/">Jquery简写</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="function"><a href="#function" class="headerlink" title="~ function($) {}($)"></a>~ function($) {}($)</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var fn = function(opt)&#123;&#125;;</div><div class="line">fn($);</div></pre></td></tr></table></figure>
-<h2 id="this和-this"><a href="#this和-this" class="headerlink" title="$this和$(this)"></a>$this和$(this)</h2><p>// this其实是一个Html 元素。<br>// $this 只是个变量名，加$是为说明其是个jquery对象。<br>// 而$(this)是个转换，将this表示的dom对象转为jquery对象，这样就可以使用jquery提供的方法操作。</p>
-<h2 id="return-this-each-function"><a href="#return-this-each-function" class="headerlink" title="return this.each(function () {})"></a>return this.each(function () {})</h2><p>因为each返回的也是this对象，所以直接return this.each可以执行你的相关操作，还可以保持链式调用功能<br>因为this.each保证了遍历完成才执行下一个操作，否则迭代是延迟执行的，前面的插件并没有实际执行。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">jQuery.fn.test2= function()&#123; </div><div class="line">   this.css(<span class="string">"background"</span>,<span class="string">"#ff0"</span>);//这里面的this为jquery对象，而不是dom对象 </div><div class="line">   <span class="keyword">return</span> this.each(function()&#123; //遍历匹配的元素，此处的this表示为jquery对象，而不是dom对象 </div><div class="line">    alert(<span class="string">"this"</span>+this+this.innerHTML); </div><div class="line">    //提示当前对象的dom节点名称,这里的this关键字都指向一个不同的DOM元素（每次都是一个不同的匹配元素）。 </div><div class="line">     &#125;); </div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
-<p>this.css(),this.each（）里面的this为jquery对象，但是alert里面this为dom对象.<br>为什么要return this.each()<br>先return this.each(),后调用each（）方法，而each（）方法返回jQuery对象，所以这样就可以继续链式操作了。<br>首先在JQ中,each是遍历一个数组,比如你$(‘.some’)返回的不一定只是一个jq对象,有可能是个数组,好多个elements.<br>所以return this.each(){}是把所有你索引的对象都作用到这个插件下.<br>你若保证你的插件每次都只会用一个JQ对象,那么你可以直接return this.</p>
-<h2 id="JavaScript-prototype-属性"><a href="#JavaScript-prototype-属性" class="headerlink" title="JavaScript prototype 属性"></a>JavaScript prototype 属性</h2><p>定义和用法<br>prototype 属性允许您向对象添加属性和方法<br>注意： Prototype 是全局属性，适用于所有的Javascript对象。<br>语法<br>object.prototype.name=value</p>
-<h2 id="extend"><a href="#extend" class="headerlink" title="_.extend"></a>_.extend</h2><p><em>，在这里应该是接管了JQUERY，就是jQuery。(有不少人这样用，因为和$冲突)
-</em>.extend方法是把指定的对象进行扩展(在这里就是document.body.style)<br>Query中需要用到$符号，如果其他js库（例如大名鼎鼎的prototype)也定义了$符号，那么就会造成冲突，会影响到js代码的正常执行。</p>
-<h2 id="jquery-call方法和apply方法"><a href="#jquery-call方法和apply方法" class="headerlink" title="jquery call方法和apply方法"></a>jquery call方法和apply方法</h2><p>call方法:<br>语法：call([thisObj[,arg1[, arg2[,   [,.argN]]]]])<br>定义：调用一个对象的一个方法，以另一个对象替换当前对象。<br>说明：<br>call 方法可以用来代替另一个对象调用一个方法。call 方法可将一个函数的对象上下文从初始的上下文改变为由 thisObj 指定的新对象。<br>如果没有提供 thisObj 参数，那么 Global 对象被用作 thisObj。 </p>
-<p>apply方法：<br>语法：apply([thisObj[,argArray]])<br>定义：应用某一对象的一个方法，用另一个对象替换当前对象。<br>说明：<br>如果 argArray 不是一个有效的数组或者不是 arguments 对象，那么将导致一个 TypeError。<br>如果没有提供 argArray 和 thisObj 任何一个参数，那么 Global 对象将被用作 thisObj， 并且无法被传递任何参数。 </p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">  </div><div class="line">    &lt;script language="javascript"&gt;&lt;!--</div><div class="line">   </div><div class="line">    /**定义一个animal类*/  </div><div class="line">    function Animal()&#123;   </div><div class="line">    this.name = "Animal";   </div><div class="line">    this.showName = function()&#123;   </div><div class="line">    alert(this.name);   </div><div class="line">    &#125;   </div><div class="line">    &#125;   </div><div class="line">    /**定义一个Cat类*/  </div><div class="line">    function Cat()&#123;   </div><div class="line">    this.name = "Cat";   </div><div class="line">    &#125;   </div><div class="line">  </div><div class="line">    /**创建两个类对象*/  </div><div class="line">    var animal = new Animal();   </div><div class="line">    var cat = new Cat();   </div><div class="line">  </div><div class="line">    //通过call或apply方法，将原本属于Animal对象的showName()方法交给当前对象cat来使用了。   </div><div class="line">    //输入结果为"Cat"   </div><div class="line">    animal.showName.call(cat,",");   </div><div class="line">    //animal.showName.apply(cat,[]);   </div><div class="line">      </div><div class="line">    </div><div class="line">// --&gt;&lt;/script&gt;</div></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/12/15/Jquery简写/" data-id="cjhcqjk2h0004oyffyzudspec" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Namespace" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/12/14/Namespace/" class="article-date">
-  <time datetime="2016-12-14T06:00:00.000Z" itemprop="datePublished">2016-12-14</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/12/14/Namespace/">Namespace</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Jquery插件的开发包括两种："><a href="#Jquery插件的开发包括两种：" class="headerlink" title="Jquery插件的开发包括两种："></a>Jquery插件的开发包括两种：</h1><p>一种是类级别的插件开发，即给jQuery添加新的全局函数，相当于给jQuery类本身添加方法。jQuery的全局函数就是属于jQuery命名空间的函数，另一种是对象级别的插件开发，即给jQuery对象添加方法。下面就两种函数的开发做详细的说明。</p>
-<h2 id="1、类级别的插件开发"><a href="#1、类级别的插件开发" class="headerlink" title="1、类级别的插件开发"></a>1、类级别的插件开发</h2><p>类级别的插件开发最直接的理解就是给jQuery类添加类方法，可以理解为添加静态方法。典型的例子就是$.AJAX()这个函数，将函数定义于jQuery的命名空间中。关于类级别的插件开发可以采用如下几种形式进行扩展：</p>
-<h3 id="1-1-添加一个新的全局函数"><a href="#1-1-添加一个新的全局函数" class="headerlink" title="1.1 添加一个新的全局函数"></a>1.1 添加一个新的全局函数</h3><p>添加一个全局函数，我们只需如下定义：</p>
-<p>Java代码<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">jQuery.foo = function() &#123;    </div><div class="line">alert(<span class="string">'This is a test. This is only a test.'</span>);   </div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
-<h3 id="1-2-增加多个全局函数"><a href="#1-2-增加多个全局函数" class="headerlink" title="1.2 增加多个全局函数"></a>1.2 增加多个全局函数</h3><p>添加多个全局函数，可采用如下定义：</p>
-<p>Java代码<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">jQuery.foo = function() &#123;    </div><div class="line">alert(<span class="string">'This is a test. This is only a test.'</span>);   </div><div class="line">&#125;;   </div><div class="line">jQuery.bar = function(param) &#123;    </div><div class="line">alert(<span class="string">'This function takes a parameter, which is "'</span> + param + <span class="string">'".'</span>);   </div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
-<p>调用时和一个函数的一样的:jQuery.foo();jQuery.bar();或者$.foo();$.bar(‘bar’);  </p>
-<h3 id="1-3-使用jQuery-extend-object"><a href="#1-3-使用jQuery-extend-object" class="headerlink" title="1.3 使用jQuery.extend(object);　"></a>1.3 使用jQuery.extend(object);　</h3><p>Java代码<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">jQuery.extend(&#123;       </div><div class="line">foo: function() &#123;       </div><div class="line">alert(<span class="string">'This is a test. This is only a test.'</span>);       </div><div class="line">&#125;,       </div><div class="line">bar: function(param) &#123;       </div><div class="line">alert(<span class="string">'This function takes a parameter, which is "'</span> + param +<span class="string">'".'</span>);       </div><div class="line">&#125;      </div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<h3 id="1-4-使用命名空间"><a href="#1-4-使用命名空间" class="headerlink" title="1.4 使用命名空间"></a>1.4 使用命名空间</h3><p>虽然在jQuery命名空间中，我们禁止使用了大量的javaScript函数名和变量名。但是仍然不可避免某些函数或变量名将于其他jQuery插件冲突，因此我们习惯将一些方法封装到另一个自定义的命名空间。</p>
-<p>Java代码<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">jQuery.myPlugin = &#123;           </div><div class="line">foo:function() &#123;           </div><div class="line">alert(<span class="string">'This is a test. This is only a test.'</span>);           </div><div class="line">&#125;,           </div><div class="line">bar:function(param) &#123;           </div><div class="line">alert(<span class="string">'This function takes a parameter, which is "'</span> + param + <span class="string">'".'</span>);     </div><div class="line">&#125;          </div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
-<p>采用命名空间的函数仍然是全局函数，调用时采用的方法：<br>$.myPlugin.foo();<br>$.myPlugin.bar(‘baz’);  </p>
-<p>通过这个技巧（使用独立的插件名），我们可以避免命名空间内函数的冲突。</p>
-<h2 id="2、对象级别的插件开发"><a href="#2、对象级别的插件开发" class="headerlink" title="2、对象级别的插件开发"></a>2、对象级别的插件开发</h2><p>对象级别的插件开发需要如下的两种形式：、</p>
-<p>形式1：  </p>
-<p>Java代码<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">(function($)&#123;      </div><div class="line">$.fn.extend(&#123;      </div><div class="line">pluginName:function(opt,callback)&#123;      </div><div class="line"> /*Our plugin implementation code goes here.  */      </div><div class="line">&#125;      </div><div class="line">&#125;)      </div><div class="line">&#125;)(jQuery);</div></pre></td></tr></table></figure></p>
-<p>形式2：</p>
-<p>Java代码<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">(function($) &#123;        </div><div class="line">$.fn.pluginName = function() &#123;      </div><div class="line">/* Our plugin implementation code goes here. </div><div class="line">&#125;;      </div><div class="line">&#125;)(jQuery);</div></pre></td></tr></table></figure></p>
-<p>上面定义了一个jQuery函数,形参是$，函数定义完成之后,把jQuery这个实参传递进去.立即调用执行。这样的好处是,我们在写jQuery插件时,也可以使用$这个别名,而不会与prototype引起冲突.</p>
-<h3 id="2-1-在JQuery名称空间下申明一个名字"><a href="#2-1-在JQuery名称空间下申明一个名字" class="headerlink" title="2.1 在JQuery名称空间下申明一个名字"></a>2.1 在JQuery名称空间下申明一个名字</h3><p>这是一个单一插件的脚本。如果你的脚本中包含多个插件，或者互逆的插件（例如： $.fn.doSomething() 和 $.fn.undoSomething()），那么你需要声明多个函数名字。但是，通常当我们编写一个插件时，力求仅使用一个名字来包含它的所有内容。我们的示例插件命名为“highlight“    </p>
-<p>Java代码<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$.fn.hilight = function() &#123;     </div><div class="line">  // Our plugin implementation code goes here.     </div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
-<p>我们的插件通过这样被调用：<br>$(‘#myDiv’).hilight();     </p>
-<p>但是如果我们需要分解我们的实现代码为多个函数该怎么办？有很多原因：设计上的需要；这样做更容易或更易读的实现；而且这样更符合面向对象。 这真是一个麻烦事，把功能实现分解成多个函数而不增加多余的命名空间。出于认识到和利用函数是javascript中最基本的类对象，我们可以这样做。就像其他对象一样，函数可以被指定为属性。因此我们已经声明“hilight”为jQuery的属性对象，任何其他的属性或者函数我们需要暴露出来的，都可以在”hilight” 函数中被声明属性。稍后继续。</p>
-<h3 id="2-2-接受options参数以控制插件的行为"><a href="#2-2-接受options参数以控制插件的行为" class="headerlink" title="2.2 接受options参数以控制插件的行为"></a>2.2 接受options参数以控制插件的行为</h3><p>让我们为我们的插件添加功能指定前景色和背景色的功能。我们也许会让选项像一个options对象传递给插件函数。例如：   </p>
-<p>Java代码<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">// plugin definition     </div><div class="line">$.fn.hilight = function(options) &#123;     </div><div class="line">  var defaults = &#123;     </div><div class="line">    foreground: <span class="string">'red'</span>,     </div><div class="line">    background: <span class="string">'yellow'</span>     </div><div class="line">  &#125;;     </div><div class="line">  // Extend our default options <span class="keyword">with</span> those provided.     </div><div class="line">  var opts = $.extend(defaults, options);     </div><div class="line">  // Our plugin implementation code goes here.     </div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
-<p>我们的插件可以这样被调用：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'#myDiv'</span>).hilight(&#123;     </div><div class="line">  foreground: <span class="string">'blue'</span>     </div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<h3 id="2-3-暴露插件的默认设置"><a href="#2-3-暴露插件的默认设置" class="headerlink" title="2.3 暴露插件的默认设置"></a>2.3 暴露插件的默认设置</h3><p>我们应该对上面代码的一种改进是暴露插件的默认设置。这对于让插件的使用者更容易用较少的代码覆盖和修改插件。接下来我们开始利用函数对象。     </p>
-<p>Java代码<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">// plugin definition     </div><div class="line">$.fn.hilight = function(options) &#123;     </div><div class="line">  // Extend our default options <span class="keyword">with</span> those provided.     </div><div class="line">  // Note that the first arg to extend <span class="keyword">is</span> an empty object -     </div><div class="line">  // this <span class="keyword">is</span> to keep <span class="keyword">from</span> overriding our <span class="string">"defaults"</span> object.     </div><div class="line">  var opts = $.extend(&#123;&#125;, $.fn.hilight.defaults, options);     </div><div class="line">  // Our plugin implementation code goes here.     </div><div class="line">&#125;;     </div><div class="line">// plugin defaults - added <span class="keyword">as</span> a property on our plugin function     </div><div class="line">$.fn.hilight.defaults = &#123;     </div><div class="line">  foreground: <span class="string">'red'</span>,     </div><div class="line">  background: <span class="string">'yellow'</span>     </div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
-<p>现在使用者可以包含像这样的一行在他们的脚本里：<br>//这个只需要调用一次，且不一定要在ready块中调用<br>$.fn.hilight.defaults.foreground = ‘blue’;<br>接下来我们可以像这样使用插件的方法，结果它设置蓝色的前景色：<br>$(‘#myDiv’).hilight();   </p>
-<p>如你所见，我们允许使用者写一行代码在插件的默认前景色。而且使用者仍然在需要的时候可以有选择的覆盖这些新的默认值：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">// 覆盖插件缺省的背景颜色 </div><div class="line"></div><div class="line">$.fn.hilight.defaults.foreground = <span class="string">'blue'</span>; </div><div class="line"></div><div class="line">// ... </div><div class="line"></div><div class="line">// 使用一个新的缺省设置调用插件 </div><div class="line"></div><div class="line">$(<span class="string">'.hilightDiv'</span>).hilight(); </div><div class="line"></div><div class="line">// ... </div><div class="line"></div><div class="line">// 通过传递配置参数给插件方法来覆盖缺省设置 </div><div class="line"></div><div class="line">$(<span class="string">'#green'</span>).hilight(&#123; </div><div class="line"></div><div class="line"> foreground: <span class="string">'green'</span> </div><div class="line"></div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<h3 id="2-4-适当的暴露一些函数"><a href="#2-4-适当的暴露一些函数" class="headerlink" title="2.4 适当的暴露一些函数"></a>2.4 适当的暴露一些函数</h3><p>这段将会一步一步对前面那段代码通过有意思的方法扩展你的插件（同时让其他人扩展你的插件）。例如，我们插件的实现里面可以定义一个名叫”format”的函数来格式化高亮文本。我们的插件现在看起来像这样，默认的format方法的实现部分在hiligth函数下面。</p>
-<p>Java代码<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">// plugin definition     </div><div class="line">$.fn.hilight = function(options) &#123;     </div><div class="line">  // iterate <span class="keyword">and</span> reformat each matched element     </div><div class="line">  <span class="keyword">return</span> this.each(function() &#123;     </div><div class="line">    var $this = $(this);     </div><div class="line">    // ...     </div><div class="line">    var markup = $this.html();     </div><div class="line">    // call our format function     </div><div class="line">    markup = $.fn.hilight.format(markup);     </div><div class="line">    $this.html(markup);     </div><div class="line">  &#125;);     </div><div class="line">&#125;;     </div><div class="line">// define our format function     </div><div class="line">$.fn.hilight.format = function(txt) &#123;     </div><div class="line"><span class="keyword">return</span> <span class="string">'&lt;strong&gt;'</span> + txt + <span class="string">'&lt;/strong&gt;'</span>;     </div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
-<p>我们很容易的支持options对象中的其他的属性通过允许一个回调函数来覆盖默认的设置。这是另外一个出色的方法来修改你的插件。这里展示的技巧是进一步有效的暴露format函数进而让他能被重新定义。通过这技巧，是其他人能够传递他们自己设置来覆盖你的插件，换句话说，这样其他人也能够为你的插件写插件。<br>考虑到这个篇文章中我们建立的无用的插件，你也许想知道究竟什么时候这些会有用。一个真实的例子是Cycle插件.这个Cycle插件是一个滑动显示插件，他能支持许多内部变换作用到滚动，滑动，渐变消失等。但是实际上，没有办法定义也许会应用到滑动变化上每种类型的效果。那是这种扩展性有用的地方。 Cycle插件对使用者暴露”transitions”对象，使他们添加自己变换定义。插件中定义就像这样：<br>$.fn.cycle.transitions = { </p>
-<p>// … </p>
-<p>}; </p>
-<p>这个技巧使其他人能定义和传递变换设置到Cycle插件。</p>
-<h3 id="2-5-保持私有函数的私有性"><a href="#2-5-保持私有函数的私有性" class="headerlink" title="2.5 保持私有函数的私有性"></a>2.5 保持私有函数的私有性</h3><p>这种技巧暴露你插件一部分来被覆盖是非常强大的。但是你需要仔细思考你实现中暴露的部分。一但被暴露，你需要在头脑中保持任何对于参数或者语义的改动也许会破坏向后的兼容性。一个通理是，如果你不能肯定是否暴露特定的函数，那么你也许不需要那样做。</p>
-<p>那么我们怎么定义更多的函数而不搅乱命名空间也不暴露实现呢？这就是闭包的功能。为了演示，我们将会添加另外一个“debug”函数到我们的插件中。这个 debug函数将为输出被选中的元素格式到firebug控制台。为了创建一个闭包，我们将包装整个插件定义在一个函数中。 </p>
-<p>Java代码<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"> (function($) &#123;     </div><div class="line">  // plugin definition     </div><div class="line">  $.fn.hilight = function(options) &#123;     </div><div class="line">    debug(this);     </div><div class="line">   // ...     </div><div class="line">  &#125;;     </div><div class="line">  // private function <span class="keyword">for</span> debugging     </div><div class="line">  function debug($obj) &#123;     </div><div class="line">    <span class="keyword">if</span> (window.console &amp;&amp; window.console.log)     </div><div class="line">    window.console.log(<span class="string">'hilight selection count: '</span> + $obj.size());     </div><div class="line">  &#125;;     </div><div class="line">//  ...     </div><div class="line">&#125;)(jQuery);</div></pre></td></tr></table></figure></p>
-<p>我们的“debug”方法不能从外部闭包进入,因此对于我们的实现是私有的。</p>
-<h3 id="2-6-支持Metadata插件"><a href="#2-6-支持Metadata插件" class="headerlink" title="2.6 支持Metadata插件"></a>2.6 支持Metadata插件</h3><p>在你正在写的插件的基础上，添加对Metadata插件的支持能使他更强大。个人来说，我喜欢这个Metadata插件，因为它让你使用不多的”markup”覆盖插件的选项（这非常有用当创建例子时）。而且支持它非常简单。更新：注释中有一点优化建议。</p>
-<p>Java代码<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$.fn.hilight = function(options) &#123;     </div><div class="line">  // ...     </div><div class="line">  // build main options before element iteration     </div><div class="line">  var opts = $.extend(&#123;&#125;, $.fn.hilight.defaults, options);     </div><div class="line">  return this.each(function() &#123;     </div><div class="line">    var $this = $(this);     </div><div class="line">    // build element specific options     </div><div class="line">    var o = $.meta ? $.extend(&#123;&#125;, opts, $this.data()) : opts;     </div><div class="line">    //...</div></pre></td></tr></table></figure></p>
-<p> 这些变动行做了一些事情：它是测试Metadata插件是否被安装如果它被安装了，它能扩展我们的options对象通过抽取元数据这行作为最后一个参数添加到JQuery.extend，那么它将会覆盖任何其它选项设置。现在我们能从”markup”处驱动行为,如果我们选择了“markup”：</p>
-<p> 调用的时候可以这样写： jQuery.foo(); 或 $.foo(); </p>
-<p>Java代码<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;!--  markup  --&gt;     </div><div class="line">&lt;div class="hilight &#123; background: 'red', foreground: 'white' &#125;"&gt;     </div><div class="line">  Have a nice day!     </div><div class="line">&lt;/div&gt;     </div><div class="line">&lt;div class="hilight &#123; foreground: 'orange' &#125;"&gt;     </div><div class="line">  Have a nice day!     </div><div class="line">&lt;/div&gt;     </div><div class="line">&lt;div class="hilight &#123; background: 'green' &#125;"&gt;     </div><div class="line">  Have a nice day!     </div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
-<p>现在我们能高亮哪些div仅使用一行脚本：<br>$(‘.hilight’).hilight();     </p>
-<h3 id="2-7-整合"><a href="#2-7-整合" class="headerlink" title="2.7 整合"></a>2.7 整合</h3><p>下面使我们的例子完成后的代码：</p>
-<p>Java代码<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line">// 创建一个闭包     </div><div class="line">(function($) &#123;     </div><div class="line">  // 插件的定义     </div><div class="line">  $.fn.hilight = function(options) &#123;     </div><div class="line">    debug(this);     </div><div class="line">    // build main options before element iteration     </div><div class="line">    var opts = $.extend(&#123;&#125;, $.fn.hilight.defaults, options);     </div><div class="line">    // iterate and reformat each matched element     </div><div class="line">    return this.each(function() &#123;     </div><div class="line">    $this = $(this);     </div><div class="line"> // build element specific options     </div><div class="line"> var o = $.meta ? $.extend(&#123;&#125;, opts, $this.data()) : opts;     </div><div class="line"> // update element styles     </div><div class="line">$this.css(&#123;     </div><div class="line">   backgroundColor: o.background,     </div><div class="line">  color: o.foreground     </div><div class="line">  &#125;);     </div><div class="line">  var markup = $this.html();     </div><div class="line">   // call our format function     </div><div class="line"> markup = $.fn.hilight.format(markup);     </div><div class="line"> $this.html(markup);     </div><div class="line">    &#125;);     </div><div class="line">  &#125;;     </div><div class="line">  // 私有函数：debugging     </div><div class="line">  function debug($obj) &#123;     </div><div class="line">    if (window.console &amp;&amp; window.console.log)     </div><div class="line">      window.console.log('hilight selection count: ' + $obj.size());     </div><div class="line">  &#125;;     </div><div class="line">  // 定义暴露format函数     </div><div class="line">  $.fn.hilight.format = function(txt) &#123;     </div><div class="line">    return '&lt;strong&gt;' + txt + '&lt;/strong&gt;';     </div><div class="line">  &#125;;     </div><div class="line">  // 插件的defaults     </div><div class="line">  $.fn.hilight.defaults = &#123;     </div><div class="line">    foreground: 'red',     </div><div class="line">    background: 'yellow'     </div><div class="line">  &#125;;     </div><div class="line">// 闭包结束     </div><div class="line">&#125;)(jQuery);</div></pre></td></tr></table></figure></p>
-<p>这段设计已经让我创建了强大符合规范的插件。我希望它能让你也能做到。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/12/14/Namespace/" data-id="cjhcqjk2k0006oyffj738hgj7" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Technical-Term" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/12/14/Technical-Term/" class="article-date">
-  <time datetime="2016-12-14T01:10:25.000Z" itemprop="datePublished">2016-12-14</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/12/14/Technical-Term/">Technical Term</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>###模块规范</p>
-<ul>
-<li>CommonJS - 规范了js在任何地方运行，不限于浏览器中，定义的模块为模块引用（require）、模块定义（exports）、模块标识（module）,NodeJs就是基于CommonJs做了一些取舍和补充的重要应用。</li>
-<li>AMD - 异步模块加载，接口为define(id?,dependencies?,factory),需要声明模块的时候制定所有以来dep，并且作为形参传入factory中，例如definr([‘dep1’,’dep2’],function(dep1,dep2){…});RequireJS实现了AMD规范</li>
-<li>CMD</li>
-</ul>
-<p>###专业术语</p>
-<ul>
-<li>module bundler - 模块打包</li>
-<li>flexible - 灵活</li>
-<li>unbiased - 无偏</li>
-<li>extensible - 可扩展的</li>
-<li>framework - 框架</li>
-<li>Monolithic - [ˌmɒnə’lɪθɪk]整体的,独块巨石的</li>
-</ul>
-<p>###概念</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/12/14/Technical-Term/" data-id="cjhcqjk2n0009oyffo2vcieqn" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
-
-  <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/">&laquo; __('prev')</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
   </nav>
-</section>
+</div>
+
+      </header>
+      <div id="content">
         
-          <aside id="sidebar">
-  
+    <div id="primary" class="home">
+        
+            
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2017/01/13/Microservice/">Microservice</a>
+        
+      </h1>
+
+      <time class="post-time">
+          Jan 13 2017
+      </time>
+    </header>
+
+
+
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/小玖乐团/">小玖乐团</a></li></ul>
+        <div class="post-excerpt">
+            
+            
+
+            
+          
+
+    
+  </article>
+
+        
+            
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2017/01/12/jhipster搭建Mciroservice/">jhipster搭建Mciroservice</a>
+        
+      </h1>
+
+      <time class="post-time">
+          Jan 12 2017
+      </time>
+    </header>
+
+
+
+    
+        <div class="post-excerpt">
+            
+            
+
+            
+          
+
+    
+  </article>
+
+        
+            
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2017/01/12/AngularJS/">AngularJS</a>
+        
+      </h1>
+
+      <time class="post-time">
+          Jan 12 2017
+      </time>
+    </header>
+
+
+
+    
+        <div class="post-excerpt">
+            
+            
+
+            
+          
+
+    
+  </article>
+
+        
+            
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2017/01/12/Html-标签/">Html 标签</a>
+        
+      </h1>
+
+      <time class="post-time">
+          Jan 12 2017
+      </time>
+    </header>
+
+
+
+    
+        <div class="post-excerpt">
+            
+            
+
+            
+          
+
+    
+  </article>
+
+        
+            
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2017/01/10/SpringBoot-Help/">SpringBoot Help</a>
+        
+      </h1>
+
+      <time class="post-time">
+          Jan 10 2017
+      </time>
+    </header>
+
+
+
+    
+        <div class="post-excerpt">
+            
+            
+
+            
+          
+
+    
+  </article>
+
+        
+            
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2017/01/10/HexoHelper/">HexoHelper</a>
+        
+      </h1>
+
+      <time class="post-time">
+          Jan 10 2017
+      </time>
+    </header>
+
+
+
+    
+        <div class="post-excerpt">
+            
+            
+
+            
+          
+
+    
+  </article>
+
+        
+            
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2016/12/15/js自执行函数/">js自执行函数</a>
+        
+      </h1>
+
+      <time class="post-time">
+          Dec 15 2016
+      </time>
+    </header>
+
+
+
+    
+        <div class="post-excerpt">
+            
+            
+
+            
+          
+
+    
+  </article>
+
+        
+            
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2016/12/15/Jquery简写/">Jquery简写</a>
+        
+      </h1>
+
+      <time class="post-time">
+          Dec 15 2016
+      </time>
+    </header>
+
+
+
+    
+        <div class="post-excerpt">
+            
+            
+
+            
+          
+
+    
+  </article>
+
+        
+            
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2016/12/14/Namespace/">Namespace</a>
+        
+      </h1>
+
+      <time class="post-time">
+          Dec 14 2016
+      </time>
+    </header>
+
+
+
+    
+        <div class="post-excerpt">
+            
+            
+
+            
+          
+
+    
+  </article>
+
+        
+            
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2016/12/14/Technical-Term/">Technical Term</a>
+        
+      </h1>
+
+      <time class="post-time">
+          Dec 14 2016
+      </time>
+    </header>
+
+
+
+    
+        <div class="post-excerpt">
+            
+            
+
+            
+          
+
+    
+  </article>
+
+        
+        
+  <nav class="pagination">
+    
+      <a class="prev" href="/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text">Prev</span>
+      </a>
+    
+    
+  </nav>
+
     </div>
-  </div>
-
-
-  
+    <div id="secondary">
     
 
-  
     
-  
+
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li></ul>
-    </div>
-  </div>
+    <section id="tags" class="widget-area widget_tags">
+        <h3 class="widget-title">Tags</h3>
+        
+    </section>
 
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2018/05/17/给阿玖做件小睡衣/">给阿玖做件小睡衣</a>
-          </li>
-        
-          <li>
-            <a href="/2018/05/16/hello-world/">Hello World</a>
-          </li>
-        
-          <li>
-            <a href="/2017/01/19/Webflow配置文件分析/">Webflow配置文件分析</a>
-          </li>
-        
-          <li>
-            <a href="/2017/01/19/AngularJS供应商/">AngularJS供应商</a>
-          </li>
-        
-          <li>
-            <a href="/2017/01/18/css小记录/">css小记录</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
+</div>
 
-  
-</aside>
-        
+
       </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2018 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+
+      <footer id="colophon"><span class="copyright-year">
+    
+        &copy;
+    
+        2014 -
+    
+    2018
+    <span class="footer-author">John Doe.</span>
+    <span class="power-by">
+        Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a> and <a class="theme-link" href="https://github.com/frostfan/hexo-theme-polarbear">Polar Bear</a>
+    </span>
+</span>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
     </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
     
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+    
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
-<script src="/js/script.js"></script>
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
 
-  </div>
-</body>
+  
+
+    <script type="text/javascript" src="/js/src/theme.js?v=1.1"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=1.1"></script>
+
+  </body>
 </html>
