@@ -1,11 +1,39 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  <title>Namespace | Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Jquery插件的开发包括两种：一种是类级别的插件开发，即给jQuery添加新的全局函数，相当于给jQuery类本身添加方法。jQuery的全局函数就是属于jQuery命名空间的函数，另一种是对象级别的插件开发，即给jQuery对象添加方法。下面就两种函数的开发做详细的说明。
+<html lang="">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="Namespace"/>
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/default" title="Hexo">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=1.1" />
+
+
+
+<link rel="canonical" href="http://yoursite.com/2016/12/14/Namespace/"/>
+
+
+<meta name="description" content="Jquery插件的开发包括两种：一种是类级别的插件开发，即给jQuery添加新的全局函数，相当于给jQuery类本身添加方法。jQuery的全局函数就是属于jQuery命名空间的函数，另一种是对象级别的插件开发，即给jQuery对象添加方法。下面就两种函数的开发做详细的说明。
 1、类级别的插件开发类级别的插件开发最直接的理解就是给jQuery类添加类方法，可以理解为添加静态方法。典型的例子就是$.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Namespace">
@@ -18,77 +46,90 @@
 <meta name="twitter:title" content="Namespace">
 <meta name="twitter:description" content="Jquery插件的开发包括两种：一种是类级别的插件开发，即给jQuery添加新的全局函数，相当于给jQuery类本身添加方法。jQuery的全局函数就是属于jQuery命名空间的函数，另一种是对象级别的插件开发，即给jQuery对象添加方法。下面就两种函数的开发做详细的说明。
 1、类级别的插件开发类级别的插件开发最直接的理解就是给jQuery类添加类方法，可以理解为添加静态方法。典型的例子就是$.">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=1.1" />
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+
+
+
+
+
+<script type="text/javascript">
+  var themeConfig = {
+    fancybox: {
+      enable: false
+    },
+  };
+</script>
+
+
+
+
   
 
-</head>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-Namespace" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/12/14/Namespace/" class="article-date">
-  <time datetime="2016-12-14T06:00:00.000Z" itemprop="datePublished">2016-12-14</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      Namespace
+
+    <title> Namespace - Hexo </title>
+  </head>
+
+  <body>
+    <div id="page">
+      <header id="masthead"><div class="site-header-inner">
+    <h1 class="site-title">
+        <a href="/." class="logo">Hexo</a>
     </h1>
-  
+
+    <nav id="nav-top">
+        
+            <ul id="menu-top" class="nav-top-items">
+                
+                    <li class="menu-item">
+                        <a href="/archives">
+                            
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li class="menu-item">
+                        <a href="/about">
+                            
+                            
+                                About
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        
+  </nav>
+</div>
 
       </header>
+      <div id="content">
+        
+    <div id="primary">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          Namespace
+        
+      </h1>
+
+      <time class="post-time">
+          Dec 14 2016
+      </time>
+    </header>
+
+
+
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Jquery插件的开发包括两种："><a href="#Jquery插件的开发包括两种：" class="headerlink" title="Jquery插件的开发包括两种："></a>Jquery插件的开发包括两种：</h1><p>一种是类级别的插件开发，即给jQuery添加新的全局函数，相当于给jQuery类本身添加方法。jQuery的全局函数就是属于jQuery命名空间的函数，另一种是对象级别的插件开发，即给jQuery对象添加方法。下面就两种函数的开发做详细的说明。</p>
+            <div class="post-content">
+            <h1 id="Jquery插件的开发包括两种："><a href="#Jquery插件的开发包括两种：" class="headerlink" title="Jquery插件的开发包括两种："></a>Jquery插件的开发包括两种：</h1><p>一种是类级别的插件开发，即给jQuery添加新的全局函数，相当于给jQuery类本身添加方法。jQuery的全局函数就是属于jQuery命名空间的函数，另一种是对象级别的插件开发，即给jQuery对象添加方法。下面就两种函数的开发做详细的说明。</p>
 <h2 id="1、类级别的插件开发"><a href="#1、类级别的插件开发" class="headerlink" title="1、类级别的插件开发"></a>1、类级别的插件开发</h2><p>类级别的插件开发最直接的理解就是给jQuery类添加类方法，可以理解为添加静态方法。典型的例子就是$.AJAX()这个函数，将函数定义于jQuery的命名空间中。关于类级别的插件开发可以采用如下几种形式进行扩展：</p>
 <h3 id="1-1-添加一个新的全局函数"><a href="#1-1-添加一个新的全局函数" class="headerlink" title="1.1 添加一个新的全局函数"></a>1.1 添加一个新的全局函数</h3><p>添加一个全局函数，我们只需如下定义：</p>
 <p>Java代码<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">jQuery.foo = function() &#123;    </div><div class="line">alert(<span class="string">'This is a test. This is only a test.'</span>);   </div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
@@ -137,129 +178,81 @@
 <p>Java代码<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line">// 创建一个闭包     </div><div class="line">(function($) &#123;     </div><div class="line">  // 插件的定义     </div><div class="line">  $.fn.hilight = function(options) &#123;     </div><div class="line">    debug(this);     </div><div class="line">    // build main options before element iteration     </div><div class="line">    var opts = $.extend(&#123;&#125;, $.fn.hilight.defaults, options);     </div><div class="line">    // iterate and reformat each matched element     </div><div class="line">    return this.each(function() &#123;     </div><div class="line">    $this = $(this);     </div><div class="line"> // build element specific options     </div><div class="line"> var o = $.meta ? $.extend(&#123;&#125;, opts, $this.data()) : opts;     </div><div class="line"> // update element styles     </div><div class="line">$this.css(&#123;     </div><div class="line">   backgroundColor: o.background,     </div><div class="line">  color: o.foreground     </div><div class="line">  &#125;);     </div><div class="line">  var markup = $this.html();     </div><div class="line">   // call our format function     </div><div class="line"> markup = $.fn.hilight.format(markup);     </div><div class="line"> $this.html(markup);     </div><div class="line">    &#125;);     </div><div class="line">  &#125;;     </div><div class="line">  // 私有函数：debugging     </div><div class="line">  function debug($obj) &#123;     </div><div class="line">    if (window.console &amp;&amp; window.console.log)     </div><div class="line">      window.console.log('hilight selection count: ' + $obj.size());     </div><div class="line">  &#125;;     </div><div class="line">  // 定义暴露format函数     </div><div class="line">  $.fn.hilight.format = function(txt) &#123;     </div><div class="line">    return '&lt;strong&gt;' + txt + '&lt;/strong&gt;';     </div><div class="line">  &#125;;     </div><div class="line">  // 插件的defaults     </div><div class="line">  $.fn.hilight.defaults = &#123;     </div><div class="line">    foreground: 'red',     </div><div class="line">    background: 'yellow'     </div><div class="line">  &#125;;     </div><div class="line">// 闭包结束     </div><div class="line">&#125;)(jQuery);</div></pre></td></tr></table></figure></p>
 <p>这段设计已经让我创建了强大符合规范的插件。我希望它能让你也能做到。</p>
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/12/14/Namespace/" data-id="cjhcqjk2k0006oyffj738hgj7" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
+            </div>
+          
+
     
-<nav id="article-nav">
-  
-    <a href="/2016/12/15/Jquery简写/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
+      <footer class="post-footer">
+		
+
         
-          Jquery简写
         
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2016/12/15/Jquery简写/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">Jquery简写</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/2016/12/14/Technical-Term/">
+        <span class="next-text nav-default">Technical Term</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+        
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+      </footer>
+    
+  </article>
+
+    </div>
+
       </div>
-    </a>
-  
-  
-    <a href="/2016/12/14/Technical-Term/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Technical Term</div>
-    </a>
-  
-</nav>
 
-  
-</article>
-
-</section>
-        
-          <aside id="sidebar">
-  
+      <footer id="colophon"><span class="copyright-year">
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/小玖乐团/">小玖乐团</a></li></ul>
-    </div>
-  </div>
-
-
-  
+        &copy;
     
-
-  
+        2014 -
     
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li></ul>
-    </div>
-  </div>
+    2018
+    <span class="footer-author">John Doe.</span>
+    <span class="power-by">
+        Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a> and <a class="theme-link" href="https://github.com/frostfan/hexo-theme-polarbear">Polar Bear</a>
+    </span>
+</span>
 
+      </footer>
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2018/05/17/给阿玖做件小睡衣/">给阿玖做件小睡衣</a>
-          </li>
-        
-          <li>
-            <a href="/2018/05/16/hello-world/">Hello World</a>
-          </li>
-        
-          <li>
-            <a href="/2017/01/19/Webflow配置文件分析/">Webflow配置文件分析</a>
-          </li>
-        
-          <li>
-            <a href="/2017/01/19/AngularJS供应商/">AngularJS供应商</a>
-          </li>
-        
-          <li>
-            <a href="/2017/01/18/css小记录/">css小记录</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
       </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2018 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
     
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+    
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
-<script src="/js/script.js"></script>
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
 
-  </div>
-</body>
+  
+
+    <script type="text/javascript" src="/js/src/theme.js?v=1.1"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=1.1"></script>
+
+  </body>
 </html>
